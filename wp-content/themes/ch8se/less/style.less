@@ -34,6 +34,13 @@ Tags: ch8se, minimal
   right: 0;
   margin: auto;
 }
+.transition (@transition) {
+  -webkit-transition: @transition;  
+  -moz-transition:    @transition;
+  -ms-transition:     @transition; 
+  -o-transition:      @transition;  
+  transition:         @transition;  
+}
 
 // Fonts
 .font-face (@fontname, @fontfile) {
@@ -135,4 +142,51 @@ header.site-header {
       }
     }
   }
+
+
+  .counter {
+    // width: 580px;
+    // .center-horizontal();
+    position: relative;
+    margin: 72px auto 0;
+    display: flex;
+    justify-content: center;
+
+    span {
+      background: url(img/counter.png) no-repeat;
+      text-align: center;
+      width: 124px;
+      padding-top: 134px;
+      float: left;
+      font-size: 36px;
+      margin: 0 52px;
+
+      &.food {
+        background-position: -229px 0;
+      }
+      &.water {
+        background-position: -461px 0;
+      }
+    }
+  }
+
+  .block {
+    width: 100%;
+    text-align: center;
+    box-sizing: border-box;
+    padding: 100px;
+  }
+
+  .graphic-slideshow {
+    img {
+      .center-horizontal();
+      .transition(all 0.5s linear);
+      max-width: 100%;
+      opacity: 0;
+
+    }
+  }
+
+
+
 }
