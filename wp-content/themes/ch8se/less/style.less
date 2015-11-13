@@ -28,6 +28,12 @@ Tags: ch8se, minimal
   margin: auto;
   position: relative;
 }
+.center-horizontal() {
+  position: absolute;
+  left: 0;
+  right: 0;
+  margin: auto;
+}
 
 // Fonts
 .font-face (@fontname, @fontfile) {
@@ -98,4 +104,35 @@ header.site-header {
 // Content
 .site-content {
   .site-width();
+
+  .carousel {
+    width: 100%;
+    position: relative;
+
+    .slick-dots {
+      position: absolute;
+      bottom: 0;
+      text-align: center;
+      width: 100%;
+
+      li {
+        background: transparent;
+        border-radius: 50%;
+        width: 6px;
+        height: 6px;
+        border: 1px solid @base;
+        margin: 0 6px 24px;
+        display: inline-block;
+        cursor: pointer;
+
+        &.slick-active {
+          background: @base;
+        }
+      }
+
+      button {
+        display: none;
+      }
+    }
+  }
 }

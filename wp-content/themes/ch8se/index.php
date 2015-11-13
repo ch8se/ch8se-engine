@@ -6,9 +6,9 @@
 get_header(); ?>
 
 <div class="content">
-  <div class="slide-show">
-    <div class="slide"></div>
-    <div class="slide"></div>
+  <div class="carousel">
+    <div><img src="<?php echo get_template_directory_uri() ?>/img/demo/carousel.jpg" alt=""></div>
+    <div><img src="<?php echo get_template_directory_uri() ?>/img/demo/carousel.jpg" alt=""></div>
   </div>
 
 
