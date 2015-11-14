@@ -13,11 +13,24 @@ ch8se.init = function() {
   });
 
 
-//1643007057
+  ch8se.menuFix();
   ch8se.instafeedInit();
   ch8se.opacitySlider();
 }
 
+
+ch8se.menuFix = function() {
+  var $siteNav = $('.site-nav');
+
+  $siteNav.find('> ul > li').each(function() {
+    var $this = $(this),
+        $ul = $(this).find('> ul');
+
+    if ($ul.length) {
+      $ul.find('> li:first-child').css({'margin-left': ($this.offset().left - $this.width() - 90)});
+    }
+  });
+}
 
 ch8se.instafeedInit = function() {
   var feed = new Instafeed({
@@ -27,6 +40,7 @@ ch8se.instafeedInit = function() {
     resolution: 'standard_resolution',
     after: function() {
       $('#instafeed').slick({
+        adaptiveHeight: true,
         slidesToShow: 8,
         arrows: false,
         swipeToSlide: true,

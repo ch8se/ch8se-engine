@@ -16,11 +16,49 @@
     <nav class="site-nav clearfix">
       <ul>
         <li><a href="<?php echo esc_url( home_url( '/' ) ); ?>">Home</a></li>
-        <li><a href="<?php echo esc_url( home_url( '/' ) ); ?>">Shop</a></li>
-        <li><a href="<?php echo esc_url( home_url( '/test' ) ); ?>">Impact</a></li>
-        <li><a href="<?php echo esc_url( home_url( '/' ) ); ?>">Community</a></li>
-        <li><a href="<?php echo esc_url( home_url( '/' ) ); ?>">Crafts</a></li>
-        <li><a href="<?php echo esc_url( home_url( '/' ) ); ?>">About us</a></li>
+        <li>
+          <a href="<?php echo esc_url( home_url( '/' ) ); ?>">Shop</a>
+          <ul class="man-woman">
+            <li><a href="<?php echo esc_url( home_url( '/' ) ); ?>">Men</a></li>
+            <li><a href="<?php echo esc_url( home_url( '/' ) ); ?>">Woman</a></li>
+          </ul>
+        </li>
+        <li>
+          <a href="<?php echo esc_url( home_url( '/test' ) ); ?>">Impact</a>
+          <ul>
+            <li><a href="">How it works</a></li>
+            <li><a href="">Transparency</a></li>
+            <li><a href="">Causes</a></li>
+          </ul>
+        </li>
+        <li>
+          <a href="<?php echo esc_url( home_url( '/' ) ); ?>">Community</a>
+          <ul>
+            <li><a href="">Blog</a></li>
+            <li><a href="">Ch8seplay</a></li>
+            <li>
+              <a href="">Ch8sers</a>
+              <ul>
+                <li><a href="">Firestarters</a></li>
+                <li><a href="">Ambassadors</a></li>
+              </ul>
+            </li>
+          </ul>
+        </li>
+        <li>
+          <a href="<?php echo esc_url( home_url( '/' ) ); ?>">Crafts</a>
+          <ul>
+            <li>
+              <a href="">Design</a>
+            </li>
+            <li>
+              <a href="">Craftsmanship</a>
+            </li>
+          </ul>
+        </li>
+        <li>
+          <a href="<?php echo esc_url( home_url( '/' ) ); ?>">About us</a>
+        </li>
       </ul>
     </nav>
   </header><!-- .site-header -->
