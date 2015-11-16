@@ -19,8 +19,8 @@
         <li>
           <a href="<?php echo esc_url( home_url( '/' ) ); ?>">Shop</a>
           <ul class="man-woman">
-            <li><a href="<?php echo esc_url( home_url( '/' ) ); ?>">Men</a></li>
-            <li><a href="<?php echo esc_url( home_url( '/' ) ); ?>">Woman</a></li>
+            <li><a href="<?php echo esc_url( home_url( '/products-men' ) ); ?>">Men</a></li>
+            <li><a href="<?php echo esc_url( home_url( '/products-woman' ) ); ?>">Woman</a></li>
           </ul>
         </li>
         <li>

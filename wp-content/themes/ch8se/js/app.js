@@ -33,6 +33,8 @@ ch8se.menuFix = function() {
 }
 
 ch8se.instafeedInit = function() {
+  if (!$('#instafeed').length) return;
+  
   var feed = new Instafeed({
     get: 'user',
     userId: '1643007057',

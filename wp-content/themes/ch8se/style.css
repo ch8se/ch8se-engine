@@ -239,6 +239,10 @@ h1 {
   font-size: 2em;
   margin: 0.67em 0;
 }
+h2 {
+  font-size: 1.5em;
+  margin: 0.67em 0;
+}
 /**
 ** Address styling not present in IE 8/9.
 **/
@@ -2513,6 +2517,14 @@ th {
 .fa-fonticons:before {
   content: "\f280";
 }
+.center-all {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  margin: auto;
+}
 @font-face {
   font-family: 'MyriadProLight';
   src: url('fonts/myriadpro-light-webfont.eot');
@@ -2697,6 +2709,73 @@ header.site-header {
 }
 #instafeed img {
   width: 100%;
+}
+.products {
+  margin: 30px;
+}
+.products > h1,
+.products > h2 {
+  color: #909191;
+  text-align: center;
+  text-transform: uppercase;
+}
+.product {
+  max-width: 50%;
+  position: relative;
+  overflow: hidden;
+  margin: 5px;
+}
+.product img {
+  width: 100%;
+  height: auto;
+}
+.product .overlay {
+  background-color: rgba(255, 255, 255, 0.67);
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  color: #909191;
+  display: none;
+}
+.product .title {
+  position: absolute;
+  width: 100%;
+  bottom: 25%;
+  text-align: center;
+  font-size: 30px;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+}
+.product .price {
+  position: absolute;
+  bottom: 15px;
+  right: 15px;
+  font-size: 30px;
+}
+.product .graphic {
+  background: url(img/water-overlay.png);
+  position: absolute;
+  width: 285px;
+  height: 264px;
+}
+.product .graphic span {
+  position: absolute;
+  bottom: 20px;
+  right: 18px;
+  font-family: 'MyriadProBold';
+  font-size: 47px;
+}
+.product:hover img {
+  -webkit-filter: blur(10px);
+  -moz-filter: blur(10px);
+  -ms-filter: blur(10px);
+  -o-filter: blur(10px);
+  filter: blur(10px);
+}
+.product:hover .overlay {
+  display: block;
 }
 footer.site-footer {
   width: 100%;

@@ -35,12 +35,28 @@ Tags: ch8se, minimal
   right: 0;
   margin: auto;
 }
+.center-all {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  margin: auto;
+}
 .transition (@transition) {
   -webkit-transition: @transition;  
   -moz-transition:    @transition;
   -ms-transition:     @transition; 
   -o-transition:      @transition;  
   transition:         @transition;  
+}
+
+.blur(@val) {
+  -webkit-filter: blur(@val);
+  -moz-filter: blur(@val);
+  -ms-filter: blur(@val);
+  -o-filter: blur(@val);
+  filter: blur(@val);
 }
 
 // Fonts
@@ -260,6 +276,80 @@ header.site-header {
   }
   img {
     width: 100%;
+  }
+}
+
+
+
+//Product page
+@productGray: #909191;
+.products {
+  margin: 30px;
+
+  > h1, > h2 {
+    color: @productGray;
+    text-align: center;
+    text-transform: uppercase;
+  }
+}
+.product {
+  max-width: 50%;
+  position: relative;
+  overflow: hidden;
+  margin: 5px;
+
+  img {
+    width: 100%;
+    height: auto;
+  }
+  .overlay {
+    background-color: rgba(255, 255, 255, 0.67);
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    color: @productGray;
+    display: none;
+  }
+  .title {
+    position: absolute;
+    width: 100%;
+    bottom: 25%;
+    text-align: center;
+    font-size: 30px;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+  }
+  .price {
+    position: absolute;
+    bottom: 15px;
+    right: 15px;
+    font-size: 30px;
+  }
+  .graphic {
+    background: url(img/water-overlay.png);
+    position: absolute;
+    width: 285px;
+    height: 264px;
+
+    span {
+      position: absolute;
+      bottom: 20px;
+      right: 18px;
+      font-family: 'MyriadProBold';
+      font-size: 47px;
+    }
+  }
+
+  &:hover {
+    img {
+      .blur(10px);
+    }
+
+    .overlay {
+      display: block;
+    }
   }
 }
 

@@ -14,8 +14,7 @@ function ch8se_scripts()
 
 add_action( 'wp_enqueue_scripts', 'ch8se_scripts' );
 
-
-
+add_theme_support( 'post-thumbnails' );
 
 
 add_action( 'init', 'register_ch8se_product' );
@@ -42,7 +41,7 @@ function register_ch8se_product() {
         'menu_icon' => 'dashicons-carrot',
         'hierarchical' => false,
         'description' => 'Product',
-        'supports' => array( 'title', 'editor' ),
+        'supports' => array( 'title', 'thumbnail' ),
         'taxonomies' => array( 'Gender' ),
         'public' => true,
         'show_ui' => true,
