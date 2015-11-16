@@ -24,6 +24,8 @@
         <li><a href="">Impact</a></li>
       </ul>
     </nav>
+
+    <p class="copyright">&copy; ch8se 2015</p>
   </footer><!-- .site-footer -->
 
 </div><!-- .site -->
