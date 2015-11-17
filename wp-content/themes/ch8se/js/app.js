@@ -16,7 +16,7 @@ ch8se.init = function() {
   ch8se.menuFix();
   ch8se.instafeedInit();
   ch8se.opacitySlider();
-  ch8se.fixProductHeight();
+  // ch8se.fixProductHeight();
 }
 
 ch8se.fixProductHeight = function() {
