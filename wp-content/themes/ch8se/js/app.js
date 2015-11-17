@@ -16,8 +16,16 @@ ch8se.init = function() {
   ch8se.menuFix();
   ch8se.instafeedInit();
   ch8se.opacitySlider();
+  ch8se.fixProductHeight();
 }
 
+ch8se.fixProductHeight = function() {
+  $('.product').each(function() {
+    var $this = $(this);
+
+    $this.height($this.width()*6/5);
+  });
+}
 
 ch8se.menuFix = function() {
   var $siteNav = $('.site-nav');
