@@ -24,10 +24,10 @@ ch8se.menuFix = function() {
 
   $siteNav.find('> ul > li').each(function() {
     var $this = $(this),
-        $ul = $(this).find('> ul');
+        $ul = $(this).find('> div > ul');
 
     if ($ul.length) {
-      $ul.find('> li:first-child').css({'margin-left': ($this.offset().left - $this.width() - 90)});
+      $ul.css({'margin-left': ($this.position().left)});
     }
   });
 }

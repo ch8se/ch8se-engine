@@ -18,43 +18,51 @@
         <li><a href="<?php echo esc_url( home_url( '/' ) ); ?>">Home</a></li>
         <li>
           <a href="<?php echo esc_url( home_url( '/' ) ); ?>">Shop</a>
-          <ul class="man-woman">
-            <li><a href="<?php echo esc_url( home_url( '/products-men' ) ); ?>">Men</a></li>
-            <li><a href="<?php echo esc_url( home_url( '/products-woman' ) ); ?>">Woman</a></li>
-          </ul>
+          <div>
+            <ul class="man-woman">
+              <li><a href="<?php echo esc_url( home_url( '/products-men' ) ); ?>">Men</a></li>
+              <li><a href="<?php echo esc_url( home_url( '/products-woman' ) ); ?>">Woman</a></li>
+            </ul>
+          </div>
         </li>
         <li>
           <a href="<?php echo esc_url( home_url( '/test' ) ); ?>">Impact</a>
-          <ul>
-            <li><a href="">How it works</a></li>
-            <li><a href="">Transparency</a></li>
-            <li><a href="">Causes</a></li>
-          </ul>
+          <div>
+            <ul class="stack">
+              <li><a href="">How it works</a></li>
+              <li><a href="">Transparency</a></li>
+              <li><a href="">Causes</a></li>
+            </ul>
+          </div>
         </li>
         <li>
           <a href="<?php echo esc_url( home_url( '/' ) ); ?>">Community</a>
-          <ul>
-            <li><a href="">Blog</a></li>
-            <li><a href="">Ch8seplay</a></li>
-            <li>
-              <a href="">Ch8sers</a>
-              <ul>
-                <li><a href="">Firestarters</a></li>
-                <li><a href="">Ambassadors</a></li>
-              </ul>
-            </li>
-          </ul>
+          <div>
+            <ul>
+              <li><a href="">ch8seday Tuesday<br><span>The critical mass of fashion.</span></a></li>
+              <li>
+                <a href="">Ch8sers</a>
+                <ul>
+                  <li><a href="">Firestarters</a></li>
+                  <li><a href="">Ambassadors</a></li>
+                </ul>
+              </li>
+              <li><a href="">Blog</a></li>
+            </ul>
+          </div>
         </li>
         <li>
           <a href="<?php echo esc_url( home_url( '/' ) ); ?>">Crafts</a>
-          <ul>
-            <li>
-              <a href="">Design</a>
-            </li>
-            <li>
-              <a href="">Craftsmanship</a>
-            </li>
-          </ul>
+          <div>
+            <ul>
+              <li>
+                <a href="">Design</a>
+              </li>
+              <li>
+                <a href="">Craftsmanship</a>
+              </li>
+            </ul>
+          </div>
         </li>
         <li>
           <a href="<?php echo esc_url( home_url( '/' ) ); ?>">About us</a>

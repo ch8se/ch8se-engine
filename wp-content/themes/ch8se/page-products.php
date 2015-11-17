@@ -8,7 +8,7 @@ get_header(); ?>
 
 
 
-<div class="products">
+<div class="products clearfix">
 <h1>the firestarter collection</h1>
 <br>
 <h2>- handcrafted in europe -</h2>

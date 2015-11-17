@@ -2559,32 +2559,35 @@ header.site-header {
   margin: 0 20px;
   float: left;
 }
-.site-nav > ul > li:hover > a,
-.site-nav > ul > li:hover span {
+.site-nav > ul > li:hover > a {
   border-bottom: 1px solid #000;
 }
-.site-nav > ul > li:hover > ul {
+.site-nav > ul > li:hover > div {
   display: block;
 }
 .site-nav > ul > li:first-child {
   padding: 21px 0;
 }
-.site-nav > ul > li:first-child a,
-.site-nav > ul > li:first-child span {
+.site-nav > ul > li:first-child a {
   border-bottom: 1px solid transparent !important;
   background: url(img/ch8se-logo.png) no-repeat;
   border-bottom: 1px solid transparent;
-  width: 217px;
-  height: 46px;
+  width: 160px;
+  height: 34px;
   padding: 0;
   font-size: 0;
   display: block;
 }
-.site-nav > ul > li a,
-.site-nav > ul > li span {
+.site-nav > ul > li a {
   padding: 12px 0;
+  letter-spacing: 2px;
 }
-.site-nav > ul > li > ul {
+.site-nav > ul > li a span {
+  font-size: 16px;
+  font-weight: normal;
+  letter-spacing: 0px;
+}
+.site-nav > ul > li > div {
   background: rgba(255, 255, 255, 0.67);
   width: 100%;
   display: none;
@@ -2593,30 +2596,44 @@ header.site-header {
   top: 90px;
   z-index: 5;
 }
-.site-nav > ul > li > ul:hover {
+.site-nav > ul > li > div:hover {
   display: block;
 }
-.site-nav > ul > li > ul > li {
+.site-nav > ul > li > div li {
   padding: 12px 0;
-  margin: 40px 0;
+  margin: 34px 50px 34px 10px;
   float: left;
 }
-.site-nav > ul > li > ul > li > a {
-  padding: 0 50px;
+.site-nav > ul > li > div li > a {
+  padding: 0;
+  font-weight: bold;
 }
-.site-nav > ul > li > ul.man-woman li {
+.site-nav > ul > li > div ul.man-woman li {
+  margin-right: 10px;
   background: url(img/ch8se-split.png) no-repeat -114px center;
 }
-.site-nav > ul > li > ul.man-woman li:first-child {
-  background-position: 100px center;
-  margin-left: 160px;
+.site-nav > ul > li > div ul.man-woman li a {
+  padding: 0 0 0 50px;
 }
-.site-nav > ul ul ul {
-  position: absolute;
-  display: none;
+.site-nav > ul > li > div ul.man-woman li:first-child {
+  background-position: 50px center;
+}
+.site-nav > ul > li > div ul.man-woman li:first-child a {
+  padding: 0 50px 0 0;
+}
+.site-nav > ul > li > div ul.stack li,
+.site-nav > ul > li > div ul ul li {
+  clear: both;
+  margin: 5px 0;
+}
+.site-nav > ul > li > div ul.stack a,
+.site-nav > ul > li > div ul ul a {
+  padding: 0 !important;
+  font-weight: normal;
+  font-size: 18px;
 }
 .site-nav > ul ul ul li {
-  padding: 10px 0 0 50px;
+  padding: 14px 0 0 0;
 }
 .site-content {
   width: 100%;
@@ -2721,10 +2738,11 @@ header.site-header {
   text-transform: uppercase;
 }
 .product {
-  max-width: 50%;
+  max-width: calc(33% - 10px);
   position: relative;
   overflow: hidden;
   margin: 5px;
+  float: left;
 }
 .product img {
   width: 100%;
@@ -2756,17 +2774,18 @@ header.site-header {
   font-size: 30px;
 }
 .product .graphic {
-  background: url(img/water-overlay.png);
+  background: url(img/water-overlay.png) no-repeat center;
+  background-size: 160px;
   position: absolute;
   width: 285px;
   height: 264px;
 }
 .product .graphic span {
   position: absolute;
-  bottom: 20px;
-  right: 18px;
+  bottom: 68px;
+  right: 72px;
+  font-size: 26px;
   font-family: 'MyriadProBold';
-  font-size: 47px;
 }
 .product:hover img {
   -webkit-filter: blur(10px);

@@ -105,11 +105,11 @@ header.site-header {
     float: left;
 
     &:hover {
-      > a, span {
+      > a {
         border-bottom: 1px solid #000;
       }
 
-      > ul {
+      > div {
         display: block;
       }
     }
@@ -117,21 +117,29 @@ header.site-header {
     &:first-child {
       padding: 21px 0;
 
-      a, span {
+      a {
         border-bottom: 1px solid transparent !important;
         background: url(img/ch8se-logo.png) no-repeat;
         border-bottom: 1px solid transparent;
-        width: 217px;
-        height: 46px;
+        width: 160px;
+        height: 34px;
         padding: 0;
         font-size: 0;
         display: block;
       }
     }
-    a, span {
+
+    a {
       padding: 12px 0;
+      letter-spacing: 2px;
+      span {
+        font-size: 16px;
+        font-weight: normal;
+        letter-spacing: 0px;
+      }
     }
-    > ul {
+
+    > div {
       background: rgba(255, 255, 255, 0.67);
       width: 100%;
       display: none;
@@ -144,32 +152,50 @@ header.site-header {
         display: block;
       }
 
-      > li {
+      li {
         padding: 12px 0;
-        margin: 40px 0;
+        margin: 34px 50px 34px 10px;
         float: left;
         > a {
-          padding: 0 50px;
+          padding: 0;
+          font-weight: bold;
         }
       }
 
-      &.man-woman {
+      ul.man-woman {
         li {
+          margin-right: 10px;
           background: url(img/ch8se-split.png) no-repeat -114px center;
-          &:first-child {
-            background-position: 100px center;
-            margin-left: 160px;
+          a {
+            padding: 0 0 0 50px;
           }
+          &:first-child {
+            background-position: 50px center;
+            a {
+              padding: 0 50px 0 0;
+            }
+          }
+        }
+      }
+      ul.stack, ul ul {
+        li {
+          clear: both;
+          margin: 5px 0;
+        }
+        a {
+          padding: 0 !important;
+          font-weight: normal;
+          font-size: 18px;
         }
       }
     }
   }
   > ul ul ul {
-    position: absolute;
-    display: none; //CHECK DESIGN
+    // position: absolute;
+    // display: none; //CHECK DESIGN
     
     li {
-      padding: 10px 0 0 50px;
+      padding: 14px 0 0 0;
     }
   }
 }
@@ -294,10 +320,11 @@ header.site-header {
   }
 }
 .product {
-  max-width: 50%;
+  max-width: ~"calc(33% - 10px)";
   position: relative;
   overflow: hidden;
   margin: 5px;
+  float: left;
 
   img {
     width: 100%;
@@ -329,17 +356,18 @@ header.site-header {
     font-size: 30px;
   }
   .graphic {
-    background: url(img/water-overlay.png);
+    background: url(img/water-overlay.png) no-repeat center;
+    background-size: 160px;
     position: absolute;
     width: 285px;
     height: 264px;
 
     span {
       position: absolute;
-      bottom: 20px;
-      right: 18px;
+      bottom: 68px;
+      right: 72px;
+      font-size: 26px;
       font-family: 'MyriadProBold';
-      font-size: 47px;
     }
   }
 
