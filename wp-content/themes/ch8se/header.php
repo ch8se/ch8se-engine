@@ -14,8 +14,11 @@
 
   <header id="masthead" class="site-header" role="banner">
     <nav class="site-nav clearfix">
+      <i class="fa fa-bars"></i>
+      <a href="<?php echo esc_url( home_url( '/' ) ); ?>" class="logo">Home</a>
+
+
       <ul>
-        <li><a href="<?php echo esc_url( home_url( '/' ) ); ?>">Home</a></li>
         <li>
           <a href="<?php echo esc_url( home_url( '/' ) ); ?>">Shop</a>
           <div>

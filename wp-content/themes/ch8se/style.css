@@ -2553,11 +2553,102 @@ header.site-header {
   margin: auto;
   position: relative;
 }
-.site-nav > ul > li {
+.site-nav {
   font-size: 20px;
+  position: relative;
+}
+@media screen and (max-width: 900px) {
+  .site-nav {
+    font-size: 16px;
+  }
+}
+.site-nav .fa-bars {
+  display: none;
+  height: 90px;
+  line-height: 90px;
+  font-size: 40px;
+  padding: 0 20px;
+  float: left;
+  cursor: pointer;
+}
+@media screen and (max-width: 600px) {
+  .site-nav .fa-bars {
+    display: block;
+  }
+}
+.site-nav a.logo {
+  background: url(img/ch8se-logo.png) no-repeat center center;
+  background-size: 100% auto;
+  width: 160px;
+  height: 90px;
+  padding: 0;
+  font-size: 0;
+  display: block;
+  float: left;
+  margin: 0 10px;
+}
+@media screen and (max-width: 900px) {
+  .site-nav a.logo {
+    width: 100px;
+  }
+}
+@media screen and (max-width: 600px) {
+  .site-nav > ul {
+    background: #fff;
+    width: 100%;
+    position: absolute;
+    left: 0;
+    top: 90px;
+    z-index: 5;
+    box-shadow: 0 4px 4px 4px rgba(0, 0, 0, 0.25);
+    -webkit-transition: all 0.5s ease;
+    -moz-transition: all 0.5s ease;
+    -ms-transition: all 0.5s ease;
+    -o-transition: all 0.5s ease;
+    transition: all 0.5s ease;
+    -moz-transform: translate(-110%, 0);
+    -webkit-transform: translate(-110%, 0);
+    -o-transform: translate(-110%, 0);
+    -ms-transform: translate(-110%, 0);
+    transform: translate(-110%, 0);
+  }
+  .site-nav > ul.expand {
+    -moz-transform: translate(0, 0);
+    -webkit-transform: translate(0, 0);
+    -o-transform: translate(0, 0);
+    -ms-transform: translate(0, 0);
+    transform: translate(0, 0);
+  }
+}
+.site-nav > ul > li {
+  font-size: 1em;
   padding: 35px 0;
   margin: 0 20px;
   float: left;
+}
+@media screen and (max-width: 900px) {
+  .site-nav > ul > li {
+    margin: 0 10px;
+  }
+}
+@media screen and (max-width: 600px) {
+  .site-nav > ul > li {
+    border-bottom: 1px solid #ccc;
+    padding: 15px 10px 0;
+    clear: left;
+    width: calc(50% - 40px);
+  }
+  .site-nav > ul > li:last-child {
+    border: none;
+  }
+  .site-nav > ul > li:nth-child(n+3) {
+    float: right;
+    clear: right;
+  }
+  .site-nav > ul > li > a {
+    font-size: 1.2em;
+    padding: 12px 0 4px !important;
+  }
 }
 .site-nav > ul > li:hover > a {
   border-bottom: 1px solid #000;
@@ -2565,25 +2656,12 @@ header.site-header {
 .site-nav > ul > li:hover > div {
   display: block;
 }
-.site-nav > ul > li:first-child {
-  padding: 21px 0;
-}
-.site-nav > ul > li:first-child a {
-  border-bottom: 1px solid transparent !important;
-  background: url(img/ch8se-logo.png) no-repeat;
-  border-bottom: 1px solid transparent;
-  width: 160px;
-  height: 34px;
-  padding: 0;
-  font-size: 0;
-  display: block;
-}
 .site-nav > ul > li a {
   padding: 12px 0;
   letter-spacing: 2px;
 }
 .site-nav > ul > li a span {
-  font-size: 16px;
+  font-size: 0.8em;
   font-weight: normal;
   letter-spacing: 0px;
 }
@@ -2595,6 +2673,19 @@ header.site-header {
   left: 0;
   top: 90px;
   z-index: 5;
+}
+@media screen and (max-width: 900px) {
+  .site-nav > ul > li > div {
+    top: 86px;
+  }
+}
+@media screen and (max-width: 600px) {
+  .site-nav > ul > li > div {
+    display: block;
+    position: relative;
+    top: 0;
+    width: auto;
+  }
 }
 .site-nav > ul > li > div:hover {
   display: block;
@@ -2608,9 +2699,17 @@ header.site-header {
   padding: 0;
   font-weight: bold;
 }
+@media screen and (max-width: 600px) {
+  .site-nav > ul > li > div li {
+    padding: 5px 0;
+    margin: 10px 0;
+    clear: both;
+  }
+}
 .site-nav > ul > li > div ul.man-woman li {
   margin-right: 10px;
   background: url(img/ch8se-split.png) no-repeat -114px center;
+  clear: none !important;
 }
 .site-nav > ul > li > div ul.man-woman li a {
   padding: 0 0 0 50px;
@@ -2621,6 +2720,14 @@ header.site-header {
 .site-nav > ul > li > div ul.man-woman li:first-child a {
   padding: 0 50px 0 0;
 }
+.site-nav > ul > li > div ul.stack {
+  padding-left: 16px;
+}
+@media screen and (max-width: 600px) {
+  .site-nav > ul > li > div ul.stack {
+    padding-left: 0;
+  }
+}
 .site-nav > ul > li > div ul.stack li,
 .site-nav > ul > li > div ul ul li {
   clear: both;
@@ -2630,7 +2737,7 @@ header.site-header {
 .site-nav > ul > li > div ul ul a {
   padding: 0 !important;
   font-weight: normal;
-  font-size: 18px;
+  font-size: 0.9em;
 }
 .site-nav > ul ul ul li {
   padding: 14px 0 0 0;
@@ -2703,6 +2810,11 @@ header.site-header {
   margin: auto;
   font-size: 24px;
 }
+@media screen and (max-width: 600px) {
+  .site-content .block p {
+    font-size: 18px;
+  }
+}
 .site-content .graphic-video {
   margin-bottom: 100px;
 }
@@ -2710,22 +2822,6 @@ header.site-header {
   margin: auto;
   max-width: 100%;
   display: block;
-}
-.site-content .graphic-slideshow {
-  height: 450px;
-}
-.site-content .graphic-slideshow img {
-  position: absolute;
-  left: 0;
-  right: 0;
-  margin: auto;
-  -webkit-transition: all 0.5s linear;
-  -moz-transition: all 0.5s linear;
-  -ms-transition: all 0.5s linear;
-  -o-transition: all 0.5s linear;
-  transition: all 0.5s linear;
-  max-width: 100%;
-  opacity: 0;
 }
 #instafeed {
   width: 100%;
@@ -2746,7 +2842,7 @@ header.site-header {
   text-transform: uppercase;
 }
 .product {
-  max-width: calc(33% - 10px);
+  width: calc(33% - 10px);
   position: relative;
   overflow: hidden;
   margin: 5px;
@@ -2806,6 +2902,16 @@ header.site-header {
 .product:hover .overlay {
   display: block;
 }
+@media screen and (max-width: 600px) {
+  .product {
+    width: calc(50% - 10px);
+  }
+}
+@media screen and (max-width: 450px) {
+  .product {
+    width: calc(100% - 10px);
+  }
+}
 footer.site-footer {
   width: 100%;
   max-width: 1600px;
@@ -2813,6 +2919,11 @@ footer.site-footer {
   position: relative;
   box-sizing: border-box;
   padding: 100px;
+}
+@media screen and (max-width: 600px) {
+  footer.site-footer {
+    padding: 40px 20px;
+  }
 }
 footer.site-footer .social {
   text-align: center;
@@ -2848,6 +2959,13 @@ footer.site-footer .footer-nav ul {
   -webkit-column-rule: 1px solid #929292;
   -moz-column-rule: 1px solid #929292;
   column-rule: 1px solid #929292;
+}
+@media screen and (max-width: 600px) {
+  footer.site-footer .footer-nav ul {
+    -webkit-column-count: 2;
+    -moz-column-count: 2;
+    column-count: 2;
+  }
 }
 footer.site-footer .footer-nav li {
   font-size: 16px;
