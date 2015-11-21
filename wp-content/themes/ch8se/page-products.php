@@ -14,9 +14,9 @@ get_header(); ?>
 <h2>- handcrafted in europe -</h2>
 <br>
 <br>
-  
+<?php is_page('products-men'); ?>
 
-  <?php $args = array( 'post_type' => 'product');
+  <?php $args = array( 'post_type' => 'product', 'meta_key' => 'gender', 'meta_value' => (is_page('products-men') ? 'Boys' : 'Girls'));
   $loop = new WP_Query( $args );
   while ( $loop->have_posts() ) : $loop->the_post(); ?>
     <div class="product">
