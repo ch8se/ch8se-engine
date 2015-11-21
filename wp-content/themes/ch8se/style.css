@@ -2564,9 +2564,10 @@ header.site-header {
   }
 }
 .site-nav .fa-bars {
+  color: #fcfbfb;
   display: none;
-  height: 90px;
-  line-height: 90px;
+  height: 76px;
+  line-height: 76px;
   font-size: 40px;
   padding: 0 20px;
   float: left;
@@ -2595,11 +2596,11 @@ header.site-header {
 }
 @media screen and (max-width: 600px) {
   .site-nav > ul {
-    background: #fff;
+    background: #282828;
     width: 100%;
     position: absolute;
     left: 0;
-    top: 90px;
+    top: 76px;
     z-index: 5;
     box-shadow: 0 4px 4px 4px rgba(0, 0, 0, 0.25);
     -webkit-transition: all 0.5s ease;
@@ -2670,7 +2671,7 @@ header.site-header {
   letter-spacing: 0px;
 }
 .site-nav > ul > li > div {
-  background: rgba(255, 255, 255, 0.67);
+  background: rgba(40, 40, 40, 0.41);
   width: 100%;
   display: none;
   position: absolute;
@@ -2702,6 +2703,7 @@ header.site-header {
 .site-nav > ul > li > div li > a {
   padding: 0;
   font-weight: bold;
+  color: #fcfbfb;
 }
 @media screen and (max-width: 600px) {
   .site-nav > ul > li > div li {
@@ -2787,6 +2789,10 @@ footer.site-footer .footer-nav {
 }
 footer.site-footer .footer-nav a {
   color: #a5a5a5;
+  letter-spacing: 2px;
+}
+footer.site-footer .footer-nav a:hover {
+  color: #fcfbfb;
 }
 footer.site-footer .footer-nav ul {
   -webkit-column-count: 3;
