@@ -20,7 +20,7 @@
 
       <ul>
         <li>
-          <a href="<?php echo esc_url( home_url( '/' ) ); ?>">Shop</a>
+          <a href="<?php echo esc_url( home_url( '/shop' ) ); ?>">Shop</a>
           <div>
             <ul class="man-woman">
               <li><a href="<?php echo esc_url( home_url( '/products-men' ) ); ?>">Men</a></li>
