@@ -2549,7 +2549,7 @@ a {
 }
 header.site-header {
   width: 100%;
-  max-width: 1600px;
+  max-width: 1920px;
   margin: auto;
   position: relative;
 }
@@ -2744,7 +2744,7 @@ header.site-header {
 }
 .site-content {
   width: 100%;
-  max-width: 1600px;
+  max-width: 1920px;
   margin: auto;
   position: relative;
 }
@@ -2914,7 +2914,7 @@ header.site-header {
 }
 footer.site-footer {
   width: 100%;
-  max-width: 1600px;
+  max-width: 1920px;
   margin: auto;
   position: relative;
   box-sizing: border-box;
