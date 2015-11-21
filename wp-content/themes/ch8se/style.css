@@ -2918,6 +2918,26 @@ footer.site-footer .copyright {
 #instafeed img {
   width: 100%;
 }
+.store-links {
+  width: 100%;
+  position: relative;
+}
+.store-links img {
+  width: 100%;
+}
+.store-links a {
+  display: block;
+  width: 50%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  right: 0;
+  font-size: 0;
+}
+.store-links a.man {
+  right: auto;
+  left: 0;
+}
 .products {
   margin: 30px;
 }
