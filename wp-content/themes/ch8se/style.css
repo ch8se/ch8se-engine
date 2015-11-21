@@ -2945,7 +2945,8 @@ footer.site-footer .copyright {
   left: 0;
 }
 .products {
-  margin: 30px;
+  margin: 0 30px;
+  padding: 30px 0;
 }
 .products > h1,
 .products > h2 {
