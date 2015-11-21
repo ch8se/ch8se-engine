@@ -75,5 +75,5 @@
   </header><!-- .site-header -->
 
   <?php /*get_sidebar(); */?>
-
-  <div id="content" class="site-content">
+  <div class="wrap">
+    <div id="content" class="site-content">

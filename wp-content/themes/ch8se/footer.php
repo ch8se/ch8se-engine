@@ -1,5 +1,6 @@
 
-  </div><!-- .site-content -->
+    </div><!-- .site-content -->
+  </div><!-- wrap -->
 
   <footer class="site-footer" role="contentinfo">
 
