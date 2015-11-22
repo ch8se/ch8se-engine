@@ -2974,7 +2974,7 @@ footer.site-footer .copyright {
   overflow: hidden;
   margin: 5px;
   float: left;
-  max-height: 600px;
+  display: block;
 }
 .product img {
   width: 100%;
@@ -2990,34 +2990,147 @@ footer.site-footer .copyright {
   color: #909191;
   display: none;
 }
-.product .title {
-  position: absolute;
-  width: 100%;
-  bottom: 25%;
-  text-align: center;
-  font-size: 30px;
-  letter-spacing: 4px;
-  text-transform: uppercase;
-}
 .product .price {
   position: absolute;
   bottom: 15px;
   right: 15px;
   font-size: 30px;
 }
+@media screen and (min-width: 601px) and (max-width: 900px) {
+  .product .price {
+    font-size: 20px;
+  }
+}
+@media screen and (min-width: 451px) and (max-width: 600px) {
+  .product .price {
+    font-size: 20px;
+  }
+}
+.product .title {
+  position: absolute;
+  width: 100%;
+  bottom: 0;
+  text-align: center;
+  font-size: 30px;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+  -moz-transform: translate(0, 100%);
+  -webkit-transform: translate(0, 100%);
+  -o-transform: translate(0, 100%);
+  -ms-transform: translate(0, 100%);
+  transform: translate(0, 100%);
+}
 .product .graphic {
   background: url(img/water-overlay.png) no-repeat center;
   background-size: 160px;
   position: absolute;
   width: 285px;
+  max-width: 100%;
   height: 264px;
+}
+@media screen and (min-width: 601px) and (max-width: 900px) {
+  .product .graphic {
+    margin-top: 0;
+  }
+}
+@media screen and (min-width: 451px) and (max-width: 600px) {
+  .product .graphic {
+    margin-top: 0;
+  }
 }
 .product .graphic span {
   position: absolute;
-  bottom: 68px;
-  right: 72px;
   font-size: 26px;
   font-family: 'MyriadProBold';
+  bottom: 68px;
+  left: 69%;
+  -moz-transform: translate(-50%, 0);
+  -webkit-transform: translate(-50%, 0);
+  -o-transform: translate(-50%, 0);
+  -ms-transform: translate(-50%, 0);
+  transform: translate(-50%, 0);
+}
+@media screen and (min-width: 601px) and (max-width: 1100px) {
+  .product .graphic {
+    background-size: 40%;
+    height: 200px;
+  }
+  .product .graphic span {
+    font-size: 16px;
+    bottom: auto;
+    top: 66%;
+    left: 63%;
+    -moz-transform: translate(-35%, -35%);
+    -webkit-transform: translate(-35%, -35%);
+    -o-transform: translate(-35%, -35%);
+    -ms-transform: translate(-35%, -35%);
+    transform: translate(-35%, -35%);
+  }
+  .product .graphic .title {
+    font-size: 20px;
+  }
+}
+@media screen and (min-width: 601px) and (max-width: 900px) {
+  .product .graphic span {
+    top: 64%;
+  }
+}
+@media screen and (min-width: 601px) and (max-width: 782px) {
+  .product .graphic span {
+    top: 62%;
+    font-size: 12px;
+  }
+  .product .graphic .title {
+    font-size: 16px;
+    -moz-transform: translate(0, 0);
+    -webkit-transform: translate(0, 0);
+    -o-transform: translate(0, 0);
+    -ms-transform: translate(0, 0);
+    transform: translate(0, 0);
+  }
+}
+@media screen and (min-width: 451px) and (max-width: 600px) {
+  .product .graphic {
+    background-size: 40%;
+    height: 200px;
+  }
+  .product .graphic span {
+    font-size: 14px;
+    bottom: auto;
+    top: 62%;
+    left: 63%;
+    -moz-transform: translate(-35%, -35%);
+    -webkit-transform: translate(-35%, -35%);
+    -o-transform: translate(-35%, -35%);
+    -ms-transform: translate(-35%, -35%);
+    transform: translate(-35%, -35%);
+  }
+  .product .graphic .title {
+    font-size: 16px;
+    -moz-transform: translate(0, 0);
+    -webkit-transform: translate(0, 0);
+    -o-transform: translate(0, 0);
+    -ms-transform: translate(0, 0);
+    transform: translate(0, 0);
+  }
+}
+@media screen and (max-width: 450px) {
+  .product .graphic {
+    background-size: 120px;
+  }
+  .product .graphic span {
+    font-size: 20px;
+    bottom: 84px;
+    left: 68%;
+  }
+  .product .graphic .title {
+    font-size: 16px;
+    -moz-transform: translate(0, 0);
+    -webkit-transform: translate(0, 0);
+    -o-transform: translate(0, 0);
+    -ms-transform: translate(0, 0);
+    transform: translate(0, 0);
+  }
 }
 .product:hover img {
   -webkit-filter: blur(10px);

@@ -36,7 +36,7 @@ ch8se.fixProductHeight = function() {
   $('.product').each(function() {
     var $this = $(this);
 
-    $this.height($this.width()*6/5);
+    $this.height($this.width()*(6/5));
   });
 }
 

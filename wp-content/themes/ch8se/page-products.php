@@ -19,19 +19,19 @@ get_header(); ?>
   <?php $args = array( 'post_type' => 'product', 'meta_key' => 'gender', 'meta_value' => (is_page('products-men') ? 'Boys' : 'Girls'));
   $loop = new WP_Query( $args );
   while ( $loop->have_posts() ) : $loop->the_post(); ?>
-    <div class="product">
+    <a href="<?php the_permalink(); ?>" class="product">
       <?php echo get_the_post_thumbnail( $post->ID, 'medium', array( 'class' => 'className' ) ); ?>
       <div class="overlay">
-        <h2 class="title">- <?php the_title(); ?> -</h2>
 
         <div class="graphic center-all <?php echo get_post_meta($post->ID, 'product_function', true); ?>">
           <span><?php echo get_post_meta($post->ID, 'function_sum', true); ?></span>
+          <h2 class="title">- <?php the_title(); ?> -</h2>
         </div>
 
         <span class="price"><sup>$</sup><?php echo get_post_meta($post->ID, 'price', true); ?></span>
       </div>
 
-    </div>
+    </a>
   <?php endwhile; ?>
 
 </div>
