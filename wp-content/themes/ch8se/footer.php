@@ -30,7 +30,18 @@
   </footer><!-- .site-footer -->
 
 </div><!-- .site -->
-
+<div class="overlay">
+  <div class="box plant">
+    <h2>Hello ch8ser!</h2>
+    <h2>Wanna plant a tree?</h2>
+    <p>Let’s make the world a better place. Subscribe and we will send you your first tree planting code. When you redeem it, a tree will be planted, guarded and nurtured to maturity. No purchase necessary.</p>
+  </div>
+  <div class="box">
+    <h2>Hello ch8ser!</h2>
+    <p>We will publish our first impact report after our Indiegogo campaign. Subscribe and we will let you know.</p>
+    
+  </div>
+</div>
 <?php wp_footer(); ?>
 
 </body>
