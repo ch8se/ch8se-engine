@@ -18,6 +18,7 @@ ch8se.init = function() {
   ch8se.instafeedInit();
   ch8se.opacitySlider();
   ch8se.fixProductHeight();
+  ch8se.productView();
 
 
 
@@ -134,6 +135,23 @@ ch8se.opacitySlider = function() {
     changeOpacity();
   }, 4000);
 
+}
+
+ch8se.productView = function() {
+  var $preview = $('.single-product-block'),
+      $enlargedImg = $preview.find('.enlarged img'),
+      $thumbs = $preview.find('.thumbs a');
+
+  $thumbs.on('click', function(e) {
+    e.preventDefault();
+
+    $thumbs.removeClass('active');
+    var $this = $(this);
+
+    $enlargedImg.attr('src', $this.attr('href'));
+
+    $this.addClass('active');
+  });
 }
 
 

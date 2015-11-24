@@ -3146,7 +3146,7 @@ footer.site-footer .copyright {
   overflow: hidden;
   float: left;
 }
-.single-product-block .preview .thumbs img.active {
+.single-product-block .preview .thumbs a.active img {
   -webkit-filter: blur(10px);
   -moz-filter: blur(10px);
   -ms-filter: blur(10px);

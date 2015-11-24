@@ -1,4 +1,5 @@
 <?php
+$image1 = wp_get_attachment_image_src(get_post_thumbnail_id(),'medium', true)[0];
 
 
 
@@ -9,18 +10,26 @@ get_header(); ?>
   <div class="single-product-block clearfix">
     <div class="preview">
       <div class="enlarged">
-        <img src="<?php echo wp_get_attachment_image_src(get_post_thumbnail_id(),'medium', true)[0]; ?>" alt="">
+        <img src="<?php echo $image1 ?>" alt="">
       </div>
       <div class="thumbs">
-        <a href=""><img class="active" src="<?php echo wp_get_attachment_image_src(get_post_thumbnail_id(),'thumbnail', true)[0]; ?>" alt=""></a>
+        <a class="active" href="<?php echo $image1 ?>">
+          <img src="<?php echo wp_get_attachment_image_src(get_post_thumbnail_id(),'thumbnail', true)[0]; ?>" alt="">
+        </a>
         <?php if (get_post_meta($post->ID, 'image_2', true)) { ?>
-          <a href=""><img src="<?php echo wp_get_attachment_image_src(get_post_meta($post->ID, 'image_2', true),'thumbnail', true)[0]; ?>" alt=""></a>
+          <a href="<?php echo wp_get_attachment_image_src(get_post_meta($post->ID, 'image_2', true),'medium', true)[0]; ?>">
+            <img src="<?php echo wp_get_attachment_image_src(get_post_meta($post->ID, 'image_2', true),'thumbnail', true)[0]; ?>" alt="">
+          </a>
         <?php } ?>
         <?php if (get_post_meta($post->ID, 'image_3', true)) { ?>
-          <a href=""><img src="<?php echo wp_get_attachment_image_src(get_post_meta($post->ID, 'image_3', true),'thumbnail', true)[0]; ?>" alt=""></a>
+          <a href="<?php echo wp_get_attachment_image_src(get_post_meta($post->ID, 'image_3', true),'medium', true)[0]; ?>">
+            <img src="<?php echo wp_get_attachment_image_src(get_post_meta($post->ID, 'image_3', true),'thumbnail', true)[0]; ?>" alt="">
+          </a>
         <?php } ?>
         <?php if (get_post_meta($post->ID, 'image_4', true)) { ?>
-          <a href=""><img src="<?php echo wp_get_attachment_image_src(get_post_meta($post->ID, 'image_4', true),'thumbnail', true)[0]; ?>" alt=""></a>
+          <a href="<?php echo wp_get_attachment_image_src(get_post_meta($post->ID, 'image_4', true),'medium', true)[0]; ?>">
+            <img src="<?php echo wp_get_attachment_image_src(get_post_meta($post->ID, 'image_4', true),'thumbnail', true)[0]; ?>" alt="">
+          </a>
         <?php } ?>
       </div>
       
