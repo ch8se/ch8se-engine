@@ -3234,6 +3234,14 @@ footer.site-footer .copyright {
   line-height: 32px;
   text-align: center;
 }
+.single-product-block .details .qoute {
+  font-style: italic;
+  padding: 10px 40px;
+}
+.single-product-block .details .author {
+  font-weight: bold;
+  padding: 0 20px 60px;
+}
 .single-product-block .details .btn {
   display: inline-block;
   margin: 30px auto;

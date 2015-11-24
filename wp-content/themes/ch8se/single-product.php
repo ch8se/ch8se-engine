@@ -48,6 +48,14 @@ get_header(); ?>
         <br>
         <h5>- handcrafted in europe -</h5>
       </div>
+
+
+      <?php if (get_post_meta($post->ID, 'qoute', true)) { ?>
+        <p class="qoute">"<?php echo get_post_meta($post->ID, 'qoute', true); ?>"</p>
+        <p class="author"><?php echo get_post_meta($post->ID, 'author', true); ?></p>
+
+
+      <?php } ?>
       <p><?php echo get_post_meta($post->ID, 'description', true); ?></p>
 
       <a href="" class="btn">IndieGoGo button</a>
