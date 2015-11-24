@@ -607,7 +607,7 @@ footer.site-footer {
     width: 100%;
     height: 100%;
     color: @productGray;
-    // display: none;
+    display: none;
   }
   .price {
     position: absolute;
@@ -652,6 +652,13 @@ footer.site-footer {
     position: absolute;
     width: 160px;
     height: 160px;
+
+    &.tree {
+      background-image: url(img/tree-overlay.png);
+    }
+    &.food {
+      background-image: url(img/food-overlay.png);
+    }
 
     span {
       position: absolute;
@@ -774,6 +781,13 @@ footer.site-footer {
       top: 0;
       width: 162px;
       height: 149px;
+
+      &.water {
+        background-image: url(img/water-detail.png);
+      }
+      &.food {
+        background-image: url(img/food-detail.png);
+      }
 
       span {
         position: absolute;

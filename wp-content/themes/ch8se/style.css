@@ -3001,6 +3001,7 @@ footer.site-footer .copyright {
   width: 100%;
   height: 100%;
   color: #909191;
+  display: none;
 }
 .product .price {
   position: absolute;
@@ -3057,6 +3058,12 @@ footer.site-footer .copyright {
   position: absolute;
   width: 160px;
   height: 160px;
+}
+.product .graphic.tree {
+  background-image: url(img/tree-overlay.png);
+}
+.product .graphic.food {
+  background-image: url(img/food-overlay.png);
 }
 .product .graphic span {
   position: absolute;
@@ -3178,6 +3185,12 @@ footer.site-footer .copyright {
   top: 0;
   width: 162px;
   height: 149px;
+}
+.single-product-block .details .graphic.water {
+  background-image: url(img/water-detail.png);
+}
+.single-product-block .details .graphic.food {
+  background-image: url(img/food-detail.png);
 }
 .single-product-block .details .graphic span {
   position: absolute;
