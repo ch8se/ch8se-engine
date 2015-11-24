@@ -22,9 +22,10 @@ get_header(); ?>
     <a href="<?php the_permalink(); ?>" class="product">
       <?php echo get_the_post_thumbnail( $post->ID, 'medium', array( 'class' => 'className' ) ); ?>
       <div class="overlay">
-
-        <div class="graphic center-all <?php echo get_post_meta($post->ID, 'product_function', true); ?>">
-          <span><?php echo get_post_meta($post->ID, 'function_sum', true); ?></span>
+        <div class="central-holder center-all">
+          <div class="graphic center-all <?php echo get_post_meta($post->ID, 'product_function', true); ?>">
+            <span><?php echo get_post_meta($post->ID, 'function_sum', true); ?></span>
+          </div>
           <h2 class="title">- <?php the_title(); ?> -</h2>
         </div>
 

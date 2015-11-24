@@ -222,7 +222,7 @@ header.site-header {
     }
 
     > div {
-      background: rgba(40, 40, 40, 0.41);
+      background: rgba(40, 40, 40, 0.61);
       width: 100%;
       display: none;
       position: absolute;
@@ -596,19 +596,34 @@ footer.site-footer {
     width: 100%;
     height: 100%;
     color: @productGray;
-    display: none;
+    // display: none;
   }
   .price {
     position: absolute;
     bottom: 15px;
     right: 15px;
     font-size: 30px;
-    @media screen and (min-width: 601px) and (max-width: 900px) {
+    @media screen and (max-width: 900px) {
       font-size: 20px;
     }
-    @media screen and (min-width: 451px) and (max-width: 600px) {
-      font-size: 20px;
-    }
+  }
+  .central-holder {
+    height: 264px;
+
+      @media screen and (max-width: 1200px) {
+        height: 150px;
+
+        .title {
+          font-size: 24px;
+        }
+      }
+      @media screen and (max-width: 900px) {
+        height: 120px;
+        .title {
+          font-size: 18px;
+          .transform(translate(0, 50%));
+        }
+      }
   }
   .title {
     position: absolute;
@@ -622,88 +637,42 @@ footer.site-footer {
   }
   .graphic {
     background: url(img/water-overlay.png) no-repeat center;
-    background-size: 160px;
+    background-size: 100% auto;
     position: absolute;
-    width: 285px;
-    max-width: 100%;
-    height: 264px;
-
-    @media screen and (min-width: 601px) and (max-width: 900px) {
-      margin-top: 0;
-    }
-    @media screen and (min-width: 451px) and (max-width: 600px) {
-      margin-top: 0;
-    }
+    width: 160px;
+    height: 160px;
 
     span {
       position: absolute;
-      font-size: 26px;
       font-family: 'MyriadProBold';
-      bottom: 68px;
-      left: 69%;
-      .transform(translate(-50%, 0));
+      font-size: 26px;
+      bottom: 18px;
+      left: 122px;
+      // .transform(translate(-50%, 0));
     }
 
-    @media screen and (min-width: 601px) and (max-width: 1100px) {
-      background-size: 40%;
-      height: 200px;
+    @media screen and (max-width: 1200px) {
+      width: 100px;
+      height: 100px;
 
       span {
-        font-size: 16px;
-        bottom: auto;
-        top: 66%;
-        left: 63%;
-        .transform(translate(-35%, -35%));
-      }
-
-      .title {
-        font-size: 20px;
+        font-size: 18px;
+        bottom: 10px;
+        left: 75px;
       }
     }
-    @media screen and (min-width: 601px) and (max-width: 900px) {
-      span {
-        top: 64%;
-      }
-    }
-    @media screen and (min-width: 601px) and (max-width: 782px) {
-      span {
-        top: 62%;
-        font-size: 12px;
-      }
-      .title {
-        font-size: 16px;
-        .transform(translate(0, 0));
-      }
-    }
-    @media screen and (min-width: 451px) and (max-width: 600px) {
-      background-size: 40%;
-      height: 200px;
+    @media screen and (max-width: 900px) {
+      width: 80px;
+      height: 80px;
+      margin-top: 0;
 
       span {
         font-size: 14px;
-        bottom: auto;
-        top: 62%;
-        left: 63%;
-        .transform(translate(-35%, -35%));
-      }
-      .title {
-        font-size: 16px;
-        .transform(translate(0, 0));
+        bottom: 8px;
+        left: 60px;
       }
     }
-    @media screen and (max-width: 450px) {
-      background-size: 120px;
-      
-      span {
-        font-size: 20px;
-        bottom: 84px;
-        left: 68%;
-      }
-      .title {
-        font-size: 16px;
-        .transform(translate(0, 0));
-      }
-    }
+    
   }
 
   &:hover {

@@ -33,10 +33,14 @@ function trueWindowWidth() {
 
 
 ch8se.fixProductHeight = function() {
-  $('.product').each(function() {
+  var trueHeight = 0; //Make sure same width is used for all elements
+
+  $('.product').each(function(i) {
     var $this = $(this);
 
-    $this.height($this.width()*(6/5));
+    if (!i) trueHeight = $this.width()*(6/5);
+
+    $this.height(trueHeight);
   });
 }
 
