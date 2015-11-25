@@ -29,12 +29,12 @@
           </div>
         </li>
         <li>
-          <a href="<?php echo esc_url( home_url( '/test' ) ); ?>">Impact</a>
+          <a href="<?php echo esc_url( home_url( '/impact' ) ); ?>">Impact</a>
           <div>
             <ul class="stack">
-              <li><a href="">How it works</a></li>
-              <li><a href="">Transparency</a></li>
-              <li><a href="">Causes</a></li>
+              <li><a href="<?php echo esc_url( home_url( '/impact/#how-it-works' ) ); ?>">How it works</a></li>
+              <li><a href="<?php echo esc_url( home_url( '/impact/#causes' ) ); ?>">Causes</a></li>
+              <li><a href="<?php echo esc_url( home_url( '/impact/#transparency' ) ); ?>">Transparency</a></li>
             </ul>
           </div>
         </li>

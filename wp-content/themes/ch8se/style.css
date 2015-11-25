@@ -3374,7 +3374,7 @@ footer.site-footer .copyright {
   line-height: 30px;
   letter-spacing: 2px;
 }
-.page-content .transparency {
+.page-content #transparency {
   position: relative;
 }
 .page-content .float-block {
