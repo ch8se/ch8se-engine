@@ -3377,6 +3377,14 @@ footer.site-footer .copyright {
 .page-content #transparency {
   position: relative;
 }
+.page-content #transparency:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+.page-content #transparency img {
+  float: right;
+}
 .page-content .float-block {
   background-color: rgba(34, 34, 34, 0.64);
   width: 550px;
