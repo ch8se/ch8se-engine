@@ -95,45 +95,105 @@ ch8se.menuFix = function() {
 }
 
 ch8se.instafeedInit = function() {
-  if (!$('#instafeed').length) return;
-  
-  var feed = new Instafeed({
-    get: 'user',
-    userId: '1643007057',
-    clientId: 'e6c9243435d84aeabf438796399d841c',
-    resolution: 'standard_resolution',
-    after: function() {
-      $('#instafeed').slick({
-        adaptiveHeight: true,
-        slidesToShow: 8,
-        arrows: false,
-        swipeToSlide: true,
-        autoplay: true,
-        autoplaySpeed: 10000,
-        responsive: [
-          {
-            breakpoint: 900,
-            settings: {
-              slidesToShow: 6,
+  if ($('#instafeed').length) {
+    var feed = new Instafeed({
+      get: 'user',
+      userId: '1643007057',
+      clientId: 'e6c9243435d84aeabf438796399d841c',
+      resolution: 'standard_resolution',
+      after: function() {
+        $('#instafeed').slick({
+          adaptiveHeight: true,
+          slidesToShow: 8,
+          arrows: false,
+          swipeToSlide: true,
+          autoplay: true,
+          autoplaySpeed: 10000,
+          responsive: [
+            {
+              breakpoint: 900,
+              settings: {
+                slidesToShow: 6,
+              }
+            },
+            {
+              breakpoint: 700,
+              settings: {
+                slidesToShow: 4,
+              }
+            },
+            {
+              breakpoint: 400,
+              settings: {
+                slidesToShow: 3,
+              }
             }
-          },
-          {
-            breakpoint: 700,
-            settings: {
-              slidesToShow: 4,
-            }
-          },
-          {
-            breakpoint: 400,
-            settings: {
-              slidesToShow: 3,
-            }
-          }
-        ]
-      });
-    }
-  });
-  feed.run();
+          ]
+        });
+      }
+    });
+    feed.run();
+  }
+
+
+
+  //TODO: optimise this!!!!!!!!
+  if ($('#ch8sedayFeed').length) {
+    var $ch8sedayFeed = $('#ch8sedayFeed');
+    $ch8sedayFeed.addClass('tag-feed');
+
+
+    var ch8sedayFeed = new Instafeed({
+      target: 'ch8sedayFeed',
+      get: 'tagged',
+      tagName : 'ch8se', //change to ch8seday
+      clientId: 'e6c9243435d84aeabf438796399d841c',
+      resolution: 'standard_resolution',
+      limit: 10,
+      after: function() {
+        $ch8sedayFeed.append('<div>#ch8seday</div>');
+        $ch8sedayFeed.find('img').on('load', function() {
+          var height = $ch8sedayFeed.find('img').height();
+          $ch8sedayFeed.find('div').css({height: height, lineHeight: height + 'px', fontSize: height/10*3});
+        });
+
+        $(window).on('resize', function() {
+          var height = $ch8sedayFeed.find('img').height();
+          $ch8sedayFeed.find('div').css({height: height, lineHeight: height + 'px', fontSize: height/10*3});
+        });
+      }
+    });
+
+    ch8sedayFeed.run();
+  }
+
+  if ($('#ch8serFeed').length) {
+    var $ch8serFeed = $('#ch8serFeed');
+    $ch8serFeed.addClass('tag-feed');
+
+    var ch8ser = new Instafeed({
+      target: 'ch8serFeed',
+      get: 'tagged',
+      tagName : 'ch8ser',
+      clientId: 'e6c9243435d84aeabf438796399d841c',
+      resolution: 'standard_resolution',
+      limit: 46,
+      after: function() {
+        $ch8serFeed.append('<div>#ch8ser</div>');
+        $ch8serFeed.find('img').on('load', function() {
+          var height = $ch8serFeed.find('img').height();
+          $ch8serFeed.find('div').css({height: height, lineHeight: height + 'px', fontSize: height/10*3});
+        });
+
+        $(window).on('resize', function() {
+          var height = $ch8serFeed.find('img').height();
+          $ch8serFeed.find('div').css({height: height, lineHeight: height + 'px', fontSize: height/10*3});
+        });
+      }
+    });
+
+    ch8ser.run();
+  }
 }
 
 ch8se.opacitySlider = function() {

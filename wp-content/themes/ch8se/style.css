@@ -2766,6 +2766,9 @@ header.site-header {
   border-radius: 50%;
   margin: 12px;
 }
+.social a:hover {
+  background-color: rgba(251, 251, 251, 0.5);
+}
 .social.invert a {
   background: #1f1f20;
   color: #fcfbfb;
@@ -2857,6 +2860,44 @@ footer.site-footer .copyright {
   left: 0;
   z-index: 5000;
   display: none;
+}
+.tag-feed:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+.tag-feed a {
+  width: calc(8.33% - 5px);
+  padding: 0 5px 5px 0;
+  position: relative;
+  float: left;
+}
+.tag-feed a img {
+  width: 100%;
+}
+.tag-feed > div {
+  background-color: #1d1d1f;
+  width: calc(16.66% - 5px);
+  position: relative;
+  float: left;
+  color: #fff;
+  text-align: center;
+}
+@media screen and (max-width: 1200px) {
+  .tag-feed a {
+    width: calc(16.66% - 5px);
+  }
+  .tag-feed > div {
+    width: calc(33.32% - 5px);
+  }
+}
+@media screen and (max-width: 600px) {
+  .tag-feed a {
+    width: calc(33.33% - 5px);
+  }
+  .tag-feed > div {
+    width: calc(66.66% - 5px);
+  }
 }
 .wrap {
   background: #fcfbfb;
@@ -3303,6 +3344,9 @@ footer.site-footer .copyright {
 .page-content {
   font-size: 100%;
 }
+.page-content img {
+  max-width: 100%;
+}
 @media screen and (max-width: 600px) {
   .page-content {
     font-size: 60%;
@@ -3384,6 +3428,7 @@ footer.site-footer .copyright {
 }
 .page-content #transparency img {
   float: right;
+  max-width: auto;
 }
 .page-content .float-block {
   background-color: rgba(34, 34, 34, 0.64);

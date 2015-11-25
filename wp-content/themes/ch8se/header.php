@@ -42,7 +42,7 @@
           <a href="<?php echo esc_url( home_url( '/' ) ); ?>">Community</a>
           <div>
             <ul>
-              <li><a href="">ch8seday Tuesday<br><span>The critical mass of fashion.</span></a></li>
+              <li><a href="<?php echo esc_url( home_url( '/ch8seday' ) ); ?>">ch8seday Tuesday<br><span>The critical mass of fashion.</span></a></li>
               <li>
                 <a href="">Ch8sers</a>
                 <ul>
