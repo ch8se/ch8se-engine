@@ -3300,3 +3300,83 @@ footer.site-footer .copyright {
     display: none;
   }
 }
+.page-content {
+  font-size: 100%;
+}
+@media screen and (max-width: 600px) {
+  .page-content {
+    font-size: 60%;
+  }
+}
+.page-content .white {
+  background-color: #fff;
+}
+.page-content h2 {
+  font-size: 2.4em;
+  text-align: center;
+}
+.page-content .cols-3 {
+  max-width: 1500px;
+  padding: 60px;
+  margin: auto;
+}
+.page-content .cols-3 > div {
+  width: 33.33%;
+  float: left;
+  box-sizing: border-box;
+  padding: 30px;
+  position: relative;
+}
+@media screen and (max-width: 1200px) {
+  .page-content .cols-3 > div {
+    width: 100%;
+  }
+}
+.page-content .cols-3 > div h2 {
+  text-align: left;
+}
+.page-content .cols-3 > div .info {
+  position: absolute;
+  width: 162px;
+  height: 149px;
+  top: 0;
+  right: 0;
+}
+.page-content .cols-3 > div .info span {
+  position: absolute;
+  bottom: 10px;
+  right: 11px;
+  font-size: 26px;
+  font-weight: bold;
+}
+.page-content .cols-3 > div.trees .info {
+  background: url(img/tree-detail.png) no-repeat center / 100%;
+}
+.page-content .cols-3 > div.food .info {
+  background: url(img/food-detail.png) no-repeat center / 100%;
+}
+.page-content .cols-3 > div.water .info {
+  background: url(img/water-detail.png) no-repeat center / 100%;
+}
+.page-content .cols-3 h4 {
+  font-size: 32px;
+}
+.page-content .cols-3 p {
+  padding: 80px 0;
+  font-size: 1.38em;
+  line-height: 40px;
+}
+.page-content p {
+  font-size: 1.63em;
+  line-height: 30px;
+  letter-spacing: 2px;
+}
+.text-content {
+  text-align: center;
+  padding: 160px 0 130px;
+}
+.text-content p {
+  max-width: 1200px;
+  padding: 30px 80px;
+  margin: auto;
+}
