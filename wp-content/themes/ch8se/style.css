@@ -3308,6 +3308,9 @@ footer.site-footer .copyright {
     font-size: 60%;
   }
 }
+.page-content > div {
+  position: relative;
+}
 .page-content .white {
   background-color: #fff;
 }
@@ -3370,6 +3373,32 @@ footer.site-footer .copyright {
   font-size: 1.63em;
   line-height: 30px;
   letter-spacing: 2px;
+}
+.page-content .transparency {
+  position: relative;
+}
+.page-content .float-block {
+  background-color: rgba(34, 34, 34, 0.64);
+  width: 550px;
+  box-sizing: border-box;
+  padding: 70px;
+  border-radius: 4px;
+  color: #fff;
+  text-align: center;
+  position: absolute;
+  top: 50%;
+  right: 100px;
+  -moz-transform: translate(0, -50%);
+  -webkit-transform: translate(0, -50%);
+  -o-transform: translate(0, -50%);
+  -ms-transform: translate(0, -50%);
+  transform: translate(0, -50%);
+}
+.page-content .float-block h4 {
+  font-size: 32px;
+}
+.page-content .float-block p {
+  padding-top: 60px;
 }
 .text-content {
   text-align: center;
