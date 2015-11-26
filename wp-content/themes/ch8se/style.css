@@ -2878,6 +2878,7 @@ footer.site-footer .copyright {
   border-radius: 4px;
   border: 1px solid #1f1f20;
   color: #1f1f20;
+  display: inline-block;
 }
 .btn.invert {
   border: 1px solid #fcfbfb;
@@ -3481,6 +3482,11 @@ footer.site-footer .copyright {
 .page-content .cols-3 h4 {
   font-size: 32px;
 }
+@media screen and (max-width: 600px) {
+  .page-content .cols-3 h4 {
+    font-size: 24px;
+  }
+}
 .page-content .cols-3 p {
   padding: 80px 0;
   font-size: 1.38em;
@@ -3564,5 +3570,8 @@ footer.site-footer .copyright {
 @media screen and (max-width: 600px) {
   .text-content {
     padding: 30px;
+  }
+  .text-content p {
+    padding: 0;
   }
 }
