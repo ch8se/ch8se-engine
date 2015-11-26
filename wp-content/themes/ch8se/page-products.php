@@ -22,7 +22,7 @@ get_header(); ?>
 <br>
 
 
-  <?php $args = array( 'post_type' => 'product', 'meta_key' => 'gender', 'meta_value' => (is_page('products-men') ? 'Boys' : 'Girls', 'posts_per_page'=>'-1'));
+  <?php $args = array( 'post_type' => 'product', 'meta_key' => 'gender', 'meta_value' => (is_page('products-men') ? 'Boys' : 'Girls'), 'posts_per_page'=>'-1');
   $loop = new WP_Query( $args );
   while ( $loop->have_posts() ) : $loop->the_post(); ?>
     <a href="<?php the_permalink(); ?>" class="product">

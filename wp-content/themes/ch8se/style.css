@@ -3254,7 +3254,6 @@ footer.site-footer .copyright {
 .single-product-block .preview {
   max-width: 770px;
   width: 40%;
-  width: 50%;
   float: left;
 }
 @media screen and (max-width: 600px) {
@@ -3286,7 +3285,7 @@ footer.site-footer .copyright {
   filter: blur(10px);
 }
 .single-product-block .details {
-  width: 50%;
+  width: 60%;
   float: left;
   box-sizing: border-box;
   padding: 0 60px;
