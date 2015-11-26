@@ -2854,13 +2854,14 @@ footer.site-footer .copyright {
   bottom: 0;
   margin: auto;
 }
-.iframe-holder .fa-times-circle-o {
+.iframe-holder .fa {
   position: absolute;
   right: 3%;
   top: 8%;
   color: #fff;
-  font-size: 50px;
+  font-size: 30px;
   cursor: pointer;
+  color: #fcfbfb;
   z-index: 5;
   -moz-transform: translate(50%, -50%);
   -webkit-transform: translate(50%, -50%);
