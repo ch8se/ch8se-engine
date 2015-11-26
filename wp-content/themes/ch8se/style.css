@@ -3510,6 +3510,13 @@ footer.site-footer .copyright {
     padding: 0;
   }
 }
+.page-content p.qoute {
+  font-style: italic;
+}
+.page-content p.qoute span {
+  font-style: normal;
+  font-weight: bold;
+}
 .page-content #transparency {
   position: relative;
 }
