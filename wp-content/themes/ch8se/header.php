@@ -44,10 +44,10 @@
             <ul>
               <li><a href="<?php echo esc_url( home_url( '/ch8seday' ) ); ?>">ch8seday Tuesday<br><span>The critical mass of fashion.</span></a></li>
               <li>
-                <a href="">Ch8sers</a>
+                <a href="<?php echo esc_url( home_url( '/ch8sers' ) ); ?>">Ch8sers</a>
                 <ul>
-                  <li><a href="">Firestarters</a></li>
-                  <li><a href="">Ambassadors</a></li>
+                  <li><a href="<?php echo esc_url( home_url( '/ch8sers/#firestarters' ) ); ?>">Firestarters</a></li>
+                  <li><a href="<?php echo esc_url( home_url( '/ch8sers/#ambassadors' ) ); ?>">Ambassadors</a></li>
                 </ul>
               </li>
               <li><a href="">Blog</a></li>
