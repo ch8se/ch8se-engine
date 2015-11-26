@@ -3501,6 +3501,14 @@ footer.site-footer .copyright {
   font-size: 1.63em;
   line-height: 30px;
   letter-spacing: 2px;
+  max-width: 1200px;
+  padding: 30px 80px;
+  margin: auto;
+}
+@media screen and (max-width: 600px) {
+  .page-content p {
+    padding: 0;
+  }
 }
 .page-content #transparency {
   position: relative;
@@ -3562,16 +3570,8 @@ footer.site-footer .copyright {
   text-align: center;
   padding: 160px 0 130px;
 }
-.text-content p {
-  max-width: 1200px;
-  padding: 30px 80px;
-  margin: auto;
-}
 @media screen and (max-width: 600px) {
   .text-content {
     padding: 30px;
-  }
-  .text-content p {
-    padding: 0;
   }
 }

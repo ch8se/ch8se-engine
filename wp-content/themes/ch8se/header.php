@@ -68,7 +68,7 @@
           </div>
         </li>
         <li>
-          <a href="<?php echo esc_url( home_url( '/' ) ); ?>">About us</a>
+          <a href="<?php echo esc_url( home_url( '/about-us' ) ); ?>">About us</a>
         </li>
       </ul>
     </nav>
