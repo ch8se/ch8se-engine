@@ -37,7 +37,7 @@ ch8se.init = function() {
     var $target = $(e.target);
 
     if ($target.hasClass('iframe-holder') || $target.hasClass('fa')) {
-      $('.iframe-holder').hide(500);
+      $('.iframe-holder').hide();
     }
   });
 
@@ -62,14 +62,14 @@ ch8se.init = function() {
   }
 
 function trueWindowWidth() {
-  return Math.max(document.documentElement.clientWidth, window.innerWidth || 0)
+  return Math.max(document.documentElement.clientWidth, window.innerWidth || 0);
 }
 
 ch8se.fixIframeSize = function() {
   var $iframe = $('.iframe-holder iframe');
 
   $iframe.height($iframe.width()*9/16);
-  $iframe.siblings('i').css({top: $iframe.offset().top, right: $iframe.offset().left })
+  $iframe.siblings('i').css({top: $iframe.offset().top - $(document).scrollTop(), right: $iframe.offset().left })
 }
 
 ch8se.fixProductHeight = function() {
