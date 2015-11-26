@@ -2829,6 +2829,38 @@ footer.site-footer .copyright {
   text-align: center;
   color: #a5a5a5;
 }
+.iframe-holder {
+  background: rgba(34, 34, 34, 0.64);
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+}
+.iframe-holder iframe {
+  width: 90%;
+  max-height: 90%;
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  margin: auto;
+}
+.iframe-holder .fa-times-circle-o {
+  position: absolute;
+  right: 3%;
+  top: 8%;
+  color: #fff;
+  font-size: 50px;
+  cursor: pointer;
+  z-index: 5;
+  -moz-transform: translate(50%, -50%);
+  -webkit-transform: translate(50%, -50%);
+  -o-transform: translate(50%, -50%);
+  -ms-transform: translate(50%, -50%);
+  transform: translate(50%, -50%);
+}
 .btn {
   box-sizing: border-box;
   min-width: 240px;

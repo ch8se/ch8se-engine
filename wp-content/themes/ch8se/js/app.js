@@ -19,13 +19,30 @@ ch8se.init = function() {
   ch8se.opacitySlider();
   ch8se.fixProductHeight();
   ch8se.productView();
+  ch8se.fixIframeSize();
 
 
 
   $(window).on('resize', function() {
     ch8se.menuFix();
     ch8se.fixProductHeight();
+    ch8se.fixIframeSize();
   });
+
+  // console.log(myIP());
+
+
+
+  $('.iframe-holder').on('click', function(e) {
+    var $target = $(e.target);
+
+    if ($target.hasClass('iframe-holder') || $target.hasClass('fa')) {
+      $('.iframe-holder').hide(500);
+    }
+  });
+
+
+}
 
   function myIP() {
     if (window.XMLHttpRequest) xmlhttp = new XMLHttpRequest();
@@ -44,13 +61,16 @@ ch8se.init = function() {
     return false;
   }
 
-  // console.log(myIP());
-}
-
 function trueWindowWidth() {
   return Math.max(document.documentElement.clientWidth, window.innerWidth || 0)
 }
 
+ch8se.fixIframeSize = function() {
+  var $iframe = $('.iframe-holder iframe');
+
+  $iframe.height($iframe.width()*9/16);
+  $iframe.siblings('i').css({top: $iframe.offset().top, right: $iframe.offset().left })
+}
 
 ch8se.fixProductHeight = function() {
   var trueHeight = 0; //Make sure same width is used for all elements

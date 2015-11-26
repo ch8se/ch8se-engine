@@ -411,6 +411,34 @@ footer.site-footer {
   }
 }
 
+.iframe-holder {
+  background: rgba(34, 34, 34, 0.64);
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+
+  iframe {
+    width: 90%;
+    max-height: 90%;
+    .center-all;
+  }
+
+  .fa-times-circle-o {
+    position: absolute;
+    right: 3%;
+    top: 8%;
+    color: #fff;
+    font-size: 50px;
+    cursor: pointer;
+    z-index: 5;
+    .transform(translate(50%, -50%));
+  }
+}
+
+
+
 .btn {
   box-sizing: border-box;
   min-width: 240px;
