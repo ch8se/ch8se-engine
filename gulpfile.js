@@ -16,8 +16,8 @@ gulp.task("javascript", function () {
     .pipe(babel({
             presets: ['es2015']
         }))
-    // .pipe(concat("app.js"))
-    // .pipe(sourcemaps.write('.'))
+    .pipe(concat("app.js"))
+    .pipe(sourcemaps.write('.'))
     .pipe(gulp.dest(path + '/js/'));
 });
 
