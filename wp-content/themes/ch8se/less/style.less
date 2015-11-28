@@ -454,7 +454,7 @@ footer.site-footer {
   font-size: 20px;
   line-height: 20px;
   text-align: center;
-  border-radius: 4px;
+  border-radius: 10px;
   border: 1px solid @night;
   color: @night;
   display: inline-block;
@@ -1051,6 +1051,10 @@ footer.site-footer {
   h2 {
     font-size: 2.4em;
     text-align: center;
+
+    @media screen and (max-width: 600px) {
+      font-size: 4.4em;
+    }
   }
 
   .cols-3 {
@@ -1071,35 +1075,42 @@ footer.site-footer {
 
       @media screen and (max-width: 1200px) {
         width: 100%;
+        &:not(:last-child) {
+          border-bottom: 1px solid @night;
+        }
       }
 
       h2 {
         text-align: left;
+        @media screen and (max-width: 600px) {
+          font-size: 4em;
+        }
       }
       .info {
+        background: url(img/counter.png) no-repeat center;
         position: absolute;
         width: 162px;
         height: 149px;
         top: 0;
         right: 0;
 
-        span {
-          position: absolute;
-          bottom: 10px;
-          right: 11px;
-          font-size: 26px;
-          font-weight: bold;
-        }
+        // span {
+        //   position: absolute;
+        //   bottom: 10px;
+        //   right: 11px;
+        //   font-size: 26px;
+        //   font-weight: bold;
+        // }
 
       }
       &.trees .info {
-        background: url(img/tree-detail.png) no-repeat center ~"/" 100%;
+        background-position: 21px center;
       }
       &.food .info {
-        background: url(img/food-detail.png) no-repeat center ~"/" 100%;
+         background-position: -212px center;
       }
       &.water .info {
-        background: url(img/water-detail.png) no-repeat center ~"/" 100%;
+         background-position: -445px center;
       }
     }
     h4 {
@@ -1117,6 +1128,7 @@ footer.site-footer {
 
       @media screen and (max-width: 600px) {
         line-height: 28px;
+        font-size: 1.63em;
       }
     }
 
@@ -1141,7 +1153,7 @@ footer.site-footer {
     position: relative;
     .clearfix;
     img {
-      float: right;
+      float: left;
       max-width: initial;
 
     }
