@@ -64,6 +64,11 @@ Tags: ch8se, minimal
   -ms-transform: @transform;
   transform: @transform;
 }
+.center-transform {
+  left: 50%;
+  top: 50%;
+  .transform(translate(-50%, -50%));
+}
 
 .blur(@val) {
   -webkit-filter: blur(@val);
@@ -127,7 +132,7 @@ header.site-header {
     display: none;
     height: @headerHeight;
     line-height: @headerHeight;
-    font-size: 40px;
+    font-size: 26px;
     padding: 0 20px;
     float: left;
     cursor: pointer;
@@ -151,6 +156,10 @@ header.site-header {
     @media screen and (max-width: 900px) {
       width: 100px;
       height: 72px;
+    }
+    @media screen and (max-width: 600px) {
+      position: absolute;
+      .center-transform;
     }
   }
 
@@ -362,6 +371,12 @@ footer.site-footer {
 
   @media screen and (max-width: 600px) {
     padding: 40px 20px;
+
+    .social {
+      position: absolute;
+      left: 50%;
+      .transform(translate(-50%, 0));
+    }
   }
 
 
@@ -396,17 +411,28 @@ footer.site-footer {
         column-count: 2;
 
       }
+      @media screen and (max-width: 450px) {
+        -webkit-column-count: 1;
+        -moz-column-count: 1;
+        column-count: 1;
+
+      }
     }
 
     li {
       font-size: 16px;
       padding: 20px 0;
 
-      &:nth-child(3n+1) {
-        padding-top: 0;
+      @media screen and (min-width: 600px) {
+        &:nth-child(3n+1) {
+          padding-top: 0;
+        }
+        &:nth-child(3n) {
+          padding-bottom: 0;
+        }
       }
-      &:nth-child(3n) {
-        padding-bottom: 0;
+      @media screen and (max-width: 450px) {
+        padding: 10px 0;
       }
     }
   }
@@ -631,6 +657,10 @@ footer.site-footer {
     text-align: center;
     box-sizing: border-box;
     padding: 100px;
+
+    h1 {
+      padding-bottom: 40px;
+    }
 
     p {
       max-width: 900px;
