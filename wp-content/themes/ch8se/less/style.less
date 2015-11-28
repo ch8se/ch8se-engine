@@ -172,7 +172,8 @@ header.site-header {
       top: @headerHeight;
       z-index: 5;
       box-shadow: 0 4px 4px 4px rgba(0,0,0,0.25);
-      .transition(all 0.5s ease);
+      padding-bottom: 20px;
+      // .transition(all 0.5s ease);
       .transform(translate(-110%, 0));
 
       &.expand {
@@ -189,6 +190,16 @@ header.site-header {
 
     > a {
       color: @base;
+
+      &.has-children:after {
+        content: ' +';
+        opacity: 0.5;
+        padding-left: 10px;
+      }
+    }
+
+    ul {
+      .clearfix;
     }
 
     @media screen and (max-width: 900px) {
@@ -196,19 +207,20 @@ header.site-header {
     }
 
     @media screen and (max-width: 600px) {
-      border-bottom: 1px solid #ccc;
+      // border-bottom: 1px solid #ccc;
       padding: 15px 10px 0;
       clear: left;
-      width: ~"calc(50% - 40px)";
+      // width: ~"calc(50% - 40px)";
+      width: 100%;
 
       &:last-child {
         border: none;
       }
 
-      &:nth-child(n+3) {
-        float: right;
-        clear: right;
-      }
+      // &:nth-child(n+3) {
+      //   float: right;
+      //   clear: right;
+      // }
 
       > a {
         font-size: 1.2em;
@@ -255,6 +267,9 @@ header.site-header {
         position: relative;
         top: 0;
         width: auto;
+
+        height: 0;
+        overflow: hidden;
       }
 
       &:hover {
@@ -272,9 +287,11 @@ header.site-header {
         }
 
         @media screen and (max-width: 600px) {
-          padding: 5px 0;
-          margin: 5px 0;
+          padding: 10px 0 5px 0;
+          margin: 15px 5px 5px 20px;
           clear: both;
+          // height: 0;
+          overflow: hidden;
         }
       }
 
@@ -304,9 +321,6 @@ header.site-header {
 
       ul.stack {
         padding-left: 16px;
-        @media screen and (max-width: 600px) {
-          padding-left: 0;
-        }
       }
 
       ul.stack, ul ul {
@@ -318,6 +332,9 @@ header.site-header {
           padding: 0 !important;
           font-weight: normal;
           font-size: 0.9em;
+        }
+        @media screen and (max-width: 600px) {
+          display: none;
         }
       }
     }
