@@ -413,6 +413,18 @@ footer.site-footer {
   box-sizing: border-box;
   padding: 100px;
 
+  // .shrooms {
+    &:after {
+    background: url(img/shrooms.png) no-repeat bottom center;
+    background-size: 100% auto;
+    content: '';
+    width: 104px;
+    height: 158px;
+    position: absolute;
+    right: 40px;
+    bottom: 0;
+  }
+
   @media screen and (max-width: 600px) {
     padding: 40px 20px;
 
@@ -1296,6 +1308,7 @@ footer.site-footer {
 
   #transparency {
     position: relative;
+    overflow: hidden;
     .clearfix;
     img {
       float: left;

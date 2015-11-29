@@ -194,13 +194,17 @@ ch8se.menuToggle = function() {
   $menu.find('> li > a').on('click', function(e) {
     var $this = $(this);
 
-    if (trueWindowWidth() < 600 && !$this.parent().hasClass('expand') && $this.siblings().length && $this.text() !== 'Impact') {
+    if (trueWindowWidth() < 600 /*&& !$this.parent().hasClass('expand')*/ && $this.siblings().length && $this.text() !== 'Impact') {
       e.preventDefault();
-      $this.parent().addClass('expand');
-
       var $cont = $this.siblings('div');
 
-      $cont.css({transition: 'all 0.5s ease', height: $cont.find('ul').height() + 20});
+      if (!$this.parent().hasClass('expand')) {
+        $this.parent().addClass('expand');
+        $cont.css({transition: 'all 0.5s ease', height: $cont.find('ul').height() + 20});
+      } else {
+        $this.parent().removeClass('expand');
+        $cont.css({transition: 'all 0.5s ease', height: 0});
+      }
 
       setTimeout(function() {
         $cont.css({transition: ''});
