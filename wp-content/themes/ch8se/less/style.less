@@ -187,6 +187,7 @@ header.site-header {
     padding: @navPadding 0;
     margin: 0 20px;
     float: left;
+    position: relative;
 
     > a {
       color: @base;
@@ -200,6 +201,18 @@ header.site-header {
 
     &:last-child {
       padding: 18px 0;
+      width: 60px;
+      text-align: center;
+
+      span {
+        position: absolute;
+        bottom: 10px;
+        left: 0;
+        width: 100%;
+        margin-top: -20px;
+        color: @base;
+        font-size: 10px;
+      }
     }
 
     i {
@@ -548,8 +561,8 @@ footer.site-footer {
 }
 
 .animated {
-  -webkit-animation-duration: 1s;
-  animation-duration: 1s;
+  -webkit-animation-duration: 0.5s;
+  animation-duration: 0.5s;
   -webkit-animation-fill-mode: both;
   animation-fill-mode: both;
 }

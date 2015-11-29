@@ -72,6 +72,7 @@
         </li>
         <li>
           <i class="fa fa-youtube-play"></i>
+          <span>play the video</span>
         </li>
       </ul>
     </nav>
