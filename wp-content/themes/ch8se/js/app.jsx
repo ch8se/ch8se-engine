@@ -86,7 +86,6 @@ ch8se.fixIframeSize = function() {
 
   //Get youtubeLink position and start iframe size from it
   //console.log(ch8se.$youtubeLink.offset(), ch8se.$youtubeLink.width());
-  if (trueWindowWidth() >= 600) {
     var $underlay = $iframeHolder.find('.underlay');
 
     var originalCss = {
@@ -131,7 +130,7 @@ ch8se.fixIframeSize = function() {
     }, 500);
 
 
-    $iframeHolder.on('click', function(e) {
+    $iframeHolder.on('click touchstart', function(e) {
       var $target = $(e.target);
 
       if ($target.hasClass('iframe-holder') || $target.hasClass('fa')) {
@@ -156,9 +155,6 @@ ch8se.fixIframeSize = function() {
         }, 500);
       }
     });
-  } else {
-    // mobile
-  }
 
   $(window).on('resize', function() {
     $iframeHolder.remove();
@@ -204,7 +200,7 @@ ch8se.menuToggle = function() {
 
       var $cont = $this.siblings('div');
 
-      $cont.css({transition: 'all 0.5s ease', height: $cont.find('ul').height()});
+      $cont.css({transition: 'all 0.5s ease', height: $cont.find('ul').height() + 20});
 
       setTimeout(function() {
         $cont.css({transition: ''});
@@ -235,7 +231,6 @@ ch8se.menuFix = function() {
 
       if (i === 0 || i === 2 || i === 3) {
         $this.find('> a').addClass('has-children');
-        console.log($this.find('> a'));
       }
       // if (i >= 2) {
       //   $this.css({transform: 'translateY(-' + $siteNav.find('> ul > li:first-child').height() + 'px)'});

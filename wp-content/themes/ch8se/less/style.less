@@ -195,6 +195,7 @@ header.site-header {
         content: ' +';
         opacity: 0.5;
         padding-left: 10px;
+        position: absolute;
       }
     }
 
@@ -213,6 +214,10 @@ header.site-header {
         color: @base;
         font-size: 10px;
       }
+
+      @media screen and (max-width: 600px) {
+        width: 100%;
+      }
     }
 
     i {
@@ -230,9 +235,11 @@ header.site-header {
     }
 
     @media screen and (max-width: 600px) {
-      padding: 15px 10px 0;
+      padding: 15px 0 0;
+      margin: 0 auto;
       clear: left;
       width: 100%;
+      text-align: center;
 
 
       > a {
@@ -301,8 +308,9 @@ header.site-header {
 
         @media screen and (max-width: 600px) {
           padding: 10px 0 5px 0;
-          margin: 15px 5px 5px 20px;
+          margin: 15px 0 5px 0;
           clear: both;
+          float: none;
           // height: 0;
           overflow: hidden;
         }
@@ -316,19 +324,25 @@ header.site-header {
           a {
             padding: 0 0 0 50px;
           }
-          @media screen and (min-width: 600px) {
+          // @media screen and (min-width: 600px) {
             &:first-child {
               background-position: 50px center;
+              margin-left: 30px;
+
               a {
                 padding: 0 50px 0 0;
               }
             }
-          }
-          @media screen and (max-width: 600px) {
-            &:first-child {
-              background-position: 10px center;
-            }
-          }
+          // }
+          // @media screen and (max-width: 600px) {
+          //   &:first-child {
+          //     background-position: 10px center;
+          //   }
+          // }
+        }
+        @media screen and (max-width: 600px) {
+          display: flex;
+          justify-content: center;
         }
       }
 
@@ -482,6 +496,7 @@ footer.site-footer {
   height: 100%;
   width: 100%;
   .transition(all 1s linear);
+  z-index: 5000;
 
   iframe {
     width: 100%;
