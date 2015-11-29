@@ -70,6 +70,9 @@
         <li>
           <a href="<?php echo esc_url( home_url( '/about-us' ) ); ?>">About us</a>
         </li>
+        <li>
+          <i class="fa fa-youtube-play"></i>
+        </li>
       </ul>
     </nav>
   </header><!-- .site-header -->

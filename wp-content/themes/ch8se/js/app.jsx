@@ -19,8 +19,7 @@ ch8se.init = function() {
   ch8se.opacitySlider();
   ch8se.fixProductHeight();
   ch8se.productView();
-  ch8se.fixIframeSize();
-  // ch8se.fixIframeSize();
+  ch8se.youtubePopup();
 
 
 
@@ -31,16 +30,6 @@ ch8se.init = function() {
   });
 
   // console.log(myIP());
-
-
-
-  $('.iframe-holder').on('click', function(e) {
-    var $target = $(e.target);
-
-    if ($target.hasClass('iframe-holder') || $target.hasClass('fa')) {
-      $('.iframe-holder').hide();
-    }
-  });
 
 
 }
@@ -62,18 +51,113 @@ ch8se.init = function() {
     return false;
   }
 
+
 function trueWindowWidth() {
   return Math.max(document.documentElement.clientWidth, window.innerWidth || 0);
 }
+
+
+ch8se.youtubePopup = function() {
+
+  var popup = `<div class="iframe-holder">
+    <i class="fa fa-times-circle"></i>
+    <div class="underlay"></div>
+    <iframe src="https://www.youtube.com/embed/bAlx_pRYmwg" frameborder="0" allowfullscreen></iframe>
+  </div>`
+
+  ch8se.$youtubeLink = $('.fa-youtube-play');
+  ch8se.$youtubeLink.on('click', function() {
+
+  $('body').append(popup);
+  ch8se.fixIframeSize();
+
+
+    
+    
+  });
+  
+
+}
+
 
 ch8se.fixIframeSize = function() {
   var $iframe = $('.iframe-holder iframe');
   if (!$iframe.length) return;
 
+  //Get youtubeLink position and start iframe size from it
+  //console.log(ch8se.$youtubeLink.offset(), ch8se.$youtubeLink.width());
+  if (trueWindowWidth() >= 600) {
+    var $underlay = $iframe.siblings('.underlay');
+
+    var originalCss = {
+      backgroundColor: 'rgba(0, 0, 0, 0)',
+      position: 'absolute',
+      top: ch8se.$youtubeLink.offset().top,
+      left: ch8se.$youtubeLink.offset().left,
+      width: ch8se.$youtubeLink.width(),
+      height: ch8se.$youtubeLink.height()
+    };
+
+
+    $underlay.css(originalCss);
+
+
+    var afterAnimationStyles = {
+      top: trueWindowWidth() * 0.05,
+      left: trueWindowWidth() * 0.075 * 9 / 16,
+      width: trueWindowWidth() * 0.9,
+      height: trueWindowWidth() * 0.9 * 9 / 16
+    };
+
+    $('.iframe-holder').css({backgroundColor: 'rgba(34, 34, 34, 0.64)'});
+    $underlay.css($.extend({
+      transition: 'all 0.5s ease',
+      backgroundColor: 'rgba(0, 0, 0, 1)',
+    }, afterAnimationStyles));
+
+    setTimeout(function() {
+      // $underlay.hide();
+
+      $iframe.css($.extend({
+        display: 'block'
+      }, afterAnimationStyles));
+
+      $iframe.siblings('i').css({top: afterAnimationStyles.top - $(document).scrollTop(), right: afterAnimationStyles.left, opacity: 1 });
+    }, 500);
+
+
+    $('.iframe-holder').on('click', function(e) {
+      var $target = $(e.target);
+
+      if ($target.hasClass('iframe-holder') || $target.hasClass('fa')) {
+        // $('.iframe-holder').hide();
+        // $underlay.show();
+
+        $iframe.siblings('i').hide();
+        $iframe.css({
+          display: 'none'
+        });
+
+        $('.iframe-holder').css({backgroundColor: 'rgba(34, 34, 34, 0)'});
+        $underlay.css($.extend({backgroundColor: 'rgba(0, 0, 0, 0)'}, originalCss));
+
+        setTimeout(function() {
+          $('.iframe-holder').remove();
+          ch8se.$youtubeLink.addClass('swing animated');
+
+          setTimeout(function() {
+            ch8se.$youtubeLink.removeClass('swing animated');
+          }, 1000);
+        }, 500);
+      }
+    });
+  } else {
+    // mobile
+  }
   
-  $iframe.height($iframe.width()*9/16);
-  $iframe.siblings('i').css({top: $iframe.offset().top - $(document).scrollTop(), right: $iframe.offset().left })
-}
+  // $iframe.height($iframe.width()*9/16);
+  // 
+};
 
 ch8se.fixProductHeight = function() {
   var trueHeight = 0; //Make sure same width is used for all elements
@@ -131,7 +215,9 @@ ch8se.menuFix = function() {
         $ul = $(this).find('> div > ul');
 
     if (trueWindowWidth() >= 600) {
-      // $this.removeAttr('style');
+      $this.find('> a').removeClass('has-children');
+
+
       if ($ul.length) {
         $ul.css({'margin-left': ($this.position().left)});
       }

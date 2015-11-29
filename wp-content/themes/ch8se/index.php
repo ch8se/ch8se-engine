@@ -37,10 +37,5 @@ get_header(); ?>
 </div>
 <div id="instafeed"></div>
 
-<div class="iframe-holder">
-  <i class="fa fa-times-circle"></i>
-  <iframe src="https://www.youtube.com/embed/bAlx_pRYmwg" frameborder="0" allowfullscreen></iframe>
-</div>
-
 <?php /*get_sidebar(); */?>
 <?php get_footer(); ?>
