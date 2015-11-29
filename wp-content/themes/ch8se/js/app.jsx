@@ -26,7 +26,7 @@ ch8se.init = function() {
   $(window).on('resize', function() {
     ch8se.menuFix();
     ch8se.fixProductHeight();
-    ch8se.fixIframeSize();
+    // ch8se.fixIframeSize();
   });
 
   // console.log(myIP());
@@ -55,25 +55,24 @@ ch8se.init = function() {
 function trueWindowWidth() {
   return Math.max(document.documentElement.clientWidth, window.innerWidth || 0);
 }
+function trueWindowHeight() {
+  return Math.max(document.documentElement.clientHeight, window.innerHeight || 0);
+}
 
 
 ch8se.youtubePopup = function() {
 
   var popup = `<div class="iframe-holder">
-    <i class="fa fa-times-circle"></i>
-    <div class="underlay"></div>
-    <iframe src="https://www.youtube.com/embed/bAlx_pRYmwg" frameborder="0" allowfullscreen></iframe>
+    <div class="underlay">
+      <i class="fa fa-times-circle"></i>
+      <iframe src="https://www.youtube.com/embed/bAlx_pRYmwg" frameborder="0" allowfullscreen></iframe>
+    </div>
   </div>`
 
   ch8se.$youtubeLink = $('.fa-youtube-play');
   ch8se.$youtubeLink.on('click', function() {
-
-  $('body').append(popup);
-  ch8se.fixIframeSize();
-
-
-    
-    
+    $('body').append(popup);
+    ch8se.fixIframeSize();    
   });
   
 
@@ -81,13 +80,14 @@ ch8se.youtubePopup = function() {
 
 
 ch8se.fixIframeSize = function() {
+  var $iframeHolder = $('.iframe-holder');
   var $iframe = $('.iframe-holder iframe');
   if (!$iframe.length) return;
 
   //Get youtubeLink position and start iframe size from it
   //console.log(ch8se.$youtubeLink.offset(), ch8se.$youtubeLink.width());
   if (trueWindowWidth() >= 600) {
-    var $underlay = $iframe.siblings('.underlay');
+    var $underlay = $iframeHolder.find('.underlay');
 
     var originalCss = {
       backgroundColor: 'rgba(0, 0, 0, 0)',
@@ -102,35 +102,40 @@ ch8se.fixIframeSize = function() {
     $underlay.css(originalCss);
 
 
-    var afterAnimationStyles = {
-      top: trueWindowWidth() * 0.05,
-      left: trueWindowWidth() * 0.075 * 9 / 16,
+    var animationStyles = trueWindowWidth() / trueWindowHeight() <= 16/9 ? {
+      top: (trueWindowHeight() - trueWindowWidth() * 0.9 * 9 / 16) / 2,
+      left: (trueWindowWidth() - trueWindowWidth() * 0.9)  / 2,
       width: trueWindowWidth() * 0.9,
       height: trueWindowWidth() * 0.9 * 9 / 16
+    } : {
+      top: (trueWindowHeight() - trueWindowHeight() * 0.9) / 2,
+      left: (trueWindowWidth() - trueWindowHeight() * 0.9 * 16 / 9) / 2,
+      width: trueWindowHeight() * 0.9 * 16 / 9,
+      height: trueWindowHeight() * 0.9
     };
 
-    $('.iframe-holder').css({backgroundColor: 'rgba(34, 34, 34, 0.64)'});
+    $iframeHolder.css({backgroundColor: 'rgba(34, 34, 34, 0.64)'});
     $underlay.css($.extend({
       transition: 'all 0.5s ease',
       backgroundColor: 'rgba(0, 0, 0, 1)',
-    }, afterAnimationStyles));
+    }, animationStyles));
 
     setTimeout(function() {
       // $underlay.hide();
 
-      $iframe.css($.extend({
+      $iframe.css({
         display: 'block'
-      }, afterAnimationStyles));
+      });
 
-      $iframe.siblings('i').css({top: afterAnimationStyles.top - $(document).scrollTop(), right: afterAnimationStyles.left, opacity: 1 });
+      $iframe.siblings('i').css({opacity: 1 });
     }, 500);
 
 
-    $('.iframe-holder').on('click', function(e) {
+    $iframeHolder.on('click', function(e) {
       var $target = $(e.target);
 
       if ($target.hasClass('iframe-holder') || $target.hasClass('fa')) {
-        // $('.iframe-holder').hide();
+        // $iframeHolder.hide();
         // $underlay.show();
 
         $iframe.siblings('i').hide();
@@ -138,11 +143,11 @@ ch8se.fixIframeSize = function() {
           display: 'none'
         });
 
-        $('.iframe-holder').css({backgroundColor: 'rgba(34, 34, 34, 0)'});
+        $iframeHolder.css({backgroundColor: 'rgba(34, 34, 34, 0)'});
         $underlay.css($.extend({backgroundColor: 'rgba(0, 0, 0, 0)'}, originalCss));
 
         setTimeout(function() {
-          $('.iframe-holder').remove();
+          $iframeHolder.remove();
           ch8se.$youtubeLink.addClass('swing animated');
 
           setTimeout(function() {
@@ -154,6 +159,10 @@ ch8se.fixIframeSize = function() {
   } else {
     // mobile
   }
+
+  $(window).on('resize', function() {
+    $iframeHolder.remove();
+  });
   
   // $iframe.height($iframe.width()*9/16);
   // 
