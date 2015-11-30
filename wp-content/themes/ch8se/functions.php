@@ -70,6 +70,12 @@ register_sidebar( array(
     'description' => __( 'Subscribe in footer area.', 'text_domain' ),
 ) );
 
+register_sidebar( array(
+    'id'          => 'popup',
+    'name'        => 'Popup',
+    'description' => __( 'Subscribe in Popup.', 'text_domain' ),
+) );
+
 
 
 ?>

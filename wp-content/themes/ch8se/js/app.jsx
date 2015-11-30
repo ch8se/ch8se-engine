@@ -35,10 +35,29 @@ ch8se.init = function() {
     url: 'http://api.hostip.info/get_html.php',
     success: function(data) {
       $('.subscribe-footer input[name="ip-address"]').val(data);
+      $('.subscribe-overlay input[name="ip-address"]').val(data);
     }
   });
 
+  $('.site-nav .subscribe').on('click', e => {
+    $('.subscribe-overlay').show(500);
+  });
 
+  $('.subscribe-overlay').on('click', e => {
+    var $target = $(e.target);
+
+    if ($target.hasClass('subscribe-overlay') || $target.hasClass('close')) {
+      $('.subscribe-overlay').hide(500);
+    }
+  });
+
+  $('.subscribe-overlay form').on('submit', e => {
+
+    setTimeout(function() {
+      if ($('.subscribe-overlay form').hasClass('sent')) $('.subscribe-overlay').hide(500);
+    }, 2000);
+
+  });
 }
 
 

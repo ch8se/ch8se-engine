@@ -48,6 +48,13 @@
     
   </div>
 </div>
+<?php if ( is_active_sidebar( 'popup' ) ) : ?>
+  <div class="subscribe-overlay">
+  <div class="popup widget-area" role="complementary">
+    <?php dynamic_sidebar( 'popup' ); ?>
+  </div>
+  </div>
+<?php endif; ?>
 <?php wp_footer(); ?>
 
 </body>

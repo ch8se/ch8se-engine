@@ -72,9 +72,11 @@
         </li>
         <li>
           <i class="fa fa-youtube-play"></i>
+          <br>
           <span>play the video</span>
         </li>
       </ul>
+      <span class="subscribe">Subscribe</span>
     </nav>
   </header><!-- .site-header -->
 
