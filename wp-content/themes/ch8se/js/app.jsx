@@ -29,27 +29,17 @@ ch8se.init = function() {
     // ch8se.fixIframeSize();
   });
 
-  // console.log(myIP());
+
+  $.ajax({
+    type: 'GET',
+    url: 'http://api.hostip.info/get_html.php',
+    success: function(data) {
+      $('.subscribe-footer input[name="ip-address"]').val(data);
+    }
+  });
 
 
 }
-
-  function myIP() {
-    if (window.XMLHttpRequest) xmlhttp = new XMLHttpRequest();
-    else xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");
-
-    xmlhttp.open("GET","http://api.hostip.info/get_html.php",false);
-    xmlhttp.send();
-
-    hostipInfo = xmlhttp.responseText.split("\n");
-
-    for (i=0; hostipInfo.length >= i; i++) {
-        ipAddress = hostipInfo[i].split(":");
-        if ( ipAddress[0] == "IP" ) return ipAddress[1];
-    }
-
-    return false;
-  }
 
 
 function trueWindowWidth() {

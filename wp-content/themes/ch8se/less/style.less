@@ -108,7 +108,9 @@ a {
   text-decoration: none;
   color: #000;
 }
-
+.hide {
+  display: none;
+}
 
 // Header
 header.site-header {
@@ -408,6 +410,9 @@ header.site-header {
 
 
 // Footer
+li.widget {
+  list-style: none;
+}
 footer.site-footer {
   .site-width();
   background: url(img/grass.png) no-repeat bottom center;
@@ -498,6 +503,34 @@ footer.site-footer {
     padding-top: 100px;
     text-align: center;
     color: #a5a5a5;
+  }
+
+  .subscribe-footer {
+    position: absolute;
+    right: 100px;
+    top: 100px;
+    text-align: center;
+    max-width: 306px;
+
+    h2 {
+      color: #fff;
+      font-size: 18px;
+    }
+
+    .ajax-loader {
+      position: absolute;
+      right: -22px;
+      bottom: 4px;
+    }
+
+    .wpcf7-response-output {
+      max-width: 100%;
+      color: #fff;
+    }
+
+    input[type="submit"] {
+      display: none;
+    }
   }
 }
 

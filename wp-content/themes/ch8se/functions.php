@@ -64,7 +64,11 @@ function register_ch8se_product() {
 
 
 
-
+register_sidebar( array(
+    'id'          => 'subscribe-footer',
+    'name'        => 'Subscribe in footer area',
+    'description' => __( 'Subscribe in footer area.', 'text_domain' ),
+) );
 
 
 

@@ -10,7 +10,13 @@
         <a href=""><i class="fa fa-instagram"></i></a>
         <a href=""><i class="fa fa-twitter"></i></a>
     </div>
+    
 
+    <?php if ( is_active_sidebar( 'subscribe-footer' ) ) : ?>
+      <div class="subscribe-footer widget-area" role="complementary">
+        <?php dynamic_sidebar( 'subscribe-footer' ); ?>
+      </div>
+    <?php endif; ?>
 
     <nav class="footer-nav">
       <ul>
