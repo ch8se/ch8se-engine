@@ -20,7 +20,7 @@
 
       <ul>
         <li>
-          <a href="<?php echo esc_url( home_url( '/shop' ) ); ?>">Shop</a>
+          <span>Shop</span>
           <div>
             <ul class="man-woman">
               <li><a href="<?php echo esc_url( home_url( '/products-men' ) ); ?>">Men</a></li>
@@ -29,10 +29,10 @@
           </div>
         </li>
         <li>
-          <a href="<?php echo esc_url( home_url( '/impact' ) ); ?>">Impact</a>
+          <span>Impact</span>
           <div>
             <ul class="stack">
-              <li><a href="<?php echo esc_url( home_url( '/impact/#how-it-works' ) ); ?>">How it works</a></li>
+              <li><a href="<?php echo esc_url( home_url( '/impact' ) ); ?>">How it works</a></li>
               <li><a href="<?php echo esc_url( home_url( '/impact/#causes' ) ); ?>">Causes</a></li>
               <li><a href="<?php echo esc_url( home_url( '/impact/#transparency' ) ); ?>">Transparency</a></li>
             </ul>
@@ -59,7 +59,7 @@
           <div>
             <ul>
               <li>
-                <a href="">Design</a>
+                <a href="<?php echo esc_url( home_url( '/design' ) ); ?>">Design</a>
               </li>
               <li>
                 <a href="">Craftsmanship</a>

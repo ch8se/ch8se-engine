@@ -200,7 +200,7 @@ ch8se.menuToggle = function() {
   });
 
 
-  $menu.find('> li > a').on('click', function(e) {
+  $menu.find('> li > a, > li > span').on('click', function(e) {
     var $this = $(this);
 
     if (trueWindowWidth() < 600 /*&& !$this.parent().hasClass('expand')*/ && $this.siblings().length && $this.text() !== 'Impact') {

@@ -20,15 +20,15 @@
 
     <nav class="footer-nav">
       <ul>
-        <li><a href="">Home</a></li>
+        <li><a href="<?php echo esc_url( home_url( '/' ) ); ?>">Home</a></li>
         <li><a href="">Shop</a></li>
-        <li><a href="">Shipping and return</a></li>
+        <li><a href="<?php echo esc_url( home_url( '/shipping-and-returns' ) ); ?>">Shipping and return</a></li>
         <li><a href="">Privacy</a></li>
         <li><a href="">Contact us</a></li>
         <li><a href="">FAQ</a></li>
-        <li><a href="">ch8seday</a></li>
-        <li><a href="">Ambassadors</a></li>
-        <li><a href="">Impact</a></li>
+        <li><a href="<?php echo esc_url( home_url( '/ch8seday' ) ); ?>">ch8seday</a></li>
+        <li><a href="<?php echo esc_url( home_url( '/ch8sers/#ambassadors' ) ); ?>">Ambassadors</a></li>
+        <li><a href="<?php echo esc_url( home_url( '/impact' ) ); ?>">Impact</a></li>
       </ul>
     </nav>
 
