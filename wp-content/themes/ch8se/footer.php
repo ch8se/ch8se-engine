@@ -4,7 +4,7 @@
 
   <footer class="site-footer" role="contentinfo">
 
-    <div class="social">
+    <div class="social clearfix">
         <p>If you share our vision,<br>follow us</p>
         <a href=""><i class="fa fa-facebook"></i></a>
         <a href=""><i class="fa fa-instagram"></i></a>

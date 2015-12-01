@@ -426,7 +426,7 @@ footer.site-footer {
   .site-width();
   background: url(img/grass.png) no-repeat bottom center;
   box-sizing: border-box;
-  padding: 100px;
+  padding: 40px;
 
   // .shrooms {
     &:after {
@@ -444,7 +444,7 @@ footer.site-footer {
     padding: 40px 20px;
 
     .social {
-      position: absolute;
+      position: relative;
       left: 50%;
       .transform(translate(-50%, 0));
     }
@@ -458,6 +458,11 @@ footer.site-footer {
     position: relative;
     text-align: center;
     padding-top: 100px;
+
+    @media screen and (max-width: 600px) {
+      padding-top: 20px;
+
+    }
     
     a {
       color: #a5a5a5;
@@ -537,8 +542,23 @@ footer.site-footer {
       color: #fff;
     }
 
+    input {
+      max-width: 100%;
+    }
+
     input[type="submit"] {
       display: none;
+    }
+
+    @media screen and (max-width: 782px) {
+      max-width: 200px;
+    }
+
+    @media screen and (max-width: 600px) {
+      position: relative;
+      right: auto;
+      left: 50%;
+      .transform(translate(-50%, 0));
     }
   }
 }
