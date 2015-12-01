@@ -254,6 +254,7 @@ header.site-header {
         padding: 2px 12px;
         min-width: initial;
         font-size: 16px;
+        margin-left: 10px;
       }
       
       @media screen and (max-width: 1200px) {
@@ -262,6 +263,10 @@ header.site-header {
         .btn {
           font-size: 10px;
         }
+      }
+
+      @media screen and (max-width: 782px) { 
+        position: relative;
       }
 
     }
@@ -671,9 +676,11 @@ footer.site-footer {
 
 }
 
-input[type="email"] {
-  border-radius: 10px;
-  border: 1px solid #000;
+input {
+  &[type="email"], &[type="text"] {
+    border-radius: 10px;
+    border: 1px solid #000;
+  }
 }
 
 .iframe-holder {
@@ -1559,3 +1566,11 @@ input[type="email"] {
   }
 }
 
+.contact-us {
+  text-align: left;
+  form {
+    p {
+      padding: 4px 0;
+    }
+  }
+}

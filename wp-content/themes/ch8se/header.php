@@ -55,7 +55,7 @@
           </div>
         </li>
         <li>
-          <a href="<?php echo esc_url( home_url( '/' ) ); ?>">Crafts</a>
+          <a href="<?php echo esc_url( home_url( '/' ) ); ?>">Creation</a>
           <div>
             <ul>
               <li>
