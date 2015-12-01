@@ -30,6 +30,8 @@ ch8se.init = function() {
   });
 
 
+
+  //TODO add these into seperate functions
   $.ajax({
     type: 'GET',
     url: 'http://api.hostip.info/get_html.php',
@@ -58,6 +60,17 @@ ch8se.init = function() {
     }, 2000);
 
   });
+
+
+
+
+
+  $('.contact-us input[type="email"], .contact-us input[type="text"]').each(function() {
+    var $this = $(this);
+
+    $this.attr('placeholder', $this.attr('name'));
+  });
+
 }
 
 
@@ -232,7 +245,7 @@ ch8se.menuFix = function() {
     var $this = $(this),
         $ul = $(this).find('> div > ul');
 
-    if (trueWindowWidth() >= 600) {
+    if (trueWindowWidth() > 762) {
       $this.find('> a').removeClass('has-children');
 
 

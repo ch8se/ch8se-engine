@@ -21,11 +21,11 @@
     <nav class="footer-nav">
       <ul>
         <li><a href="<?php echo esc_url( home_url( '/' ) ); ?>">Home</a></li>
-        <li><a href="">Shop</a></li>
-        <li><a href="<?php echo esc_url( home_url( '/shipping-and-returns' ) ); ?>">Shipping and return</a></li>
+        <li><a href="<?php echo esc_url( home_url( '/products-men' ) ); ?>">Men</a></li>
+        <li><a href="<?php echo esc_url( home_url( '/products-woman' ) ); ?>">Woman</a></li>
         <li><a href="">Privacy</a></li>
         <li><a href="">Contact us</a></li>
-        <li><a href="">FAQ</a></li>
+        <li><a href="<?php echo esc_url( home_url( '/shipping-and-returns' ) ); ?>">Shipping and return</a></li>
         <li><a href="<?php echo esc_url( home_url( '/ch8seday' ) ); ?>">ch8seday</a></li>
         <li><a href="<?php echo esc_url( home_url( '/about-us' ) ); ?>">About us</a></li>
         <li><a href="<?php echo esc_url( home_url( '/impact' ) ); ?>">Impact</a></li>

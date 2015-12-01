@@ -1569,8 +1569,28 @@ input {
 .contact-us {
   text-align: left;
   form {
+    margin: 10px;
+    position: relative;
+
     p {
       padding: 4px 0;
+    }
+
+    input[type="email"], input[type="text"] {
+      max-width: 300px;
+      width: 100%;
+      padding: 2px 8px;
+      font-size: 16px;
+      line-height: 22px;
+      box-sizing: border-box;
+    }
+    input[type="submit"] {
+      background: #fff;
+      .btn;
+    }
+    textarea {
+      width: 100%;
+      max-width: 600px;
     }
   }
 }
