@@ -6,9 +6,9 @@
 
     <div class="social clearfix">
         <p>If you share our vision,<br>follow us</p>
-        <a href=""><i class="fa fa-facebook"></i></a>
-        <a href=""><i class="fa fa-instagram"></i></a>
-        <a href=""><i class="fa fa-twitter"></i></a>
+        <a targe="_blank" href="https://www.facebook.com/ch8seofficial/"><i class="fa fa-facebook"></i></a>
+        <a targe="_blank" href="https://www.instagram.com/ch8se/"><i class="fa fa-instagram"></i></a>
+        <a targe="_blank" href="https://twitter.com/ch8sedotcom"><i class="fa fa-twitter"></i></a>
     </div>
     
 
@@ -27,7 +27,7 @@
         <li><a href="">Contact us</a></li>
         <li><a href="">FAQ</a></li>
         <li><a href="<?php echo esc_url( home_url( '/ch8seday' ) ); ?>">ch8seday</a></li>
-        <li><a href="<?php echo esc_url( home_url( '/ch8sers/#ambassadors' ) ); ?>">Ambassadors</a></li>
+        <li><a href="<?php echo esc_url( home_url( '/about-us' ) ); ?>">About us</a></li>
         <li><a href="<?php echo esc_url( home_url( '/impact' ) ); ?>">Impact</a></li>
       </ul>
     </nav>

@@ -199,8 +199,12 @@ header.site-header {
     margin: 0 20px;
     float: left;
 
-    > a, span {
+    > a, > span {
       color: @base;
+      font-size: 16px;
+      font-weight: 400;
+      // padding: 0;
+      // letter-spacing: 0;
 
       &.has-children:after {
         content: ' +';
@@ -271,8 +275,8 @@ header.site-header {
     }
 
     a {
-      padding: 8px 0;
-      letter-spacing: 2px;
+      // padding: 8px 0;
+      // letter-spacing: 2px;
 
       span {
         font-size: 0.8em;
@@ -466,7 +470,7 @@ footer.site-footer {
     
     a {
       color: #a5a5a5;
-      letter-spacing: 2px;
+      // letter-spacing: 2px;
 
       &:hover {
         color: @base;
@@ -1347,11 +1351,33 @@ input[type="email"] {
     background-color: #fff;
   }
   h2 {
-    font-size: 2.4em;
+    font-size: 3.75em;
     text-align: center;
+    line-height: 1.366;
 
     @media screen and (max-width: 600px) {
       font-size: 4.4em;
+    }
+  }
+
+  h4 {
+    line-height: 1.366;
+  }
+
+  p {
+    font-size: 1.5em;
+    font-weight: 200;
+    line-height: 1.3666;
+    // letter-spacing: 2px;
+    max-width: 1000px;
+    margin: auto;
+
+    &.qoute {
+      font-style: italic;
+      span {
+        font-style: normal;
+        font-weight: bold;
+      }
     }
   }
 
@@ -1380,9 +1406,10 @@ input[type="email"] {
 
       h2 {
         text-align: left;
-        @media screen and (max-width: 600px) {
-          font-size: 4em;
-        }
+        font-size: 46px;
+        // @media screen and (max-width: 600px) {
+        //   font-size: 4em;
+        // }
       }
       .info {
         background: url(img/counter.png) no-repeat center;
@@ -1413,6 +1440,8 @@ input[type="email"] {
     }
     h4 {
       font-size: 32px;
+      font-weight: 400;
+      line-height: 1.366;
 
       @media screen and (max-width: 600px) {
         font-size: 24px;
@@ -1421,31 +1450,19 @@ input[type="email"] {
 
     p {
       padding: 80px 0;
-      font-size: 1.38em;
-      line-height: 40px;
+      font-size: 22px;
+      font-weight: 0;
+      // line-height: 40px;
+      text-align: justify;
 
-      @media screen and (max-width: 600px) {
-        line-height: 28px;
-        font-size: 1.63em;
-      }
+      // @media screen and (max-width: 600px) {
+      //   // line-height: 28px;
+      //   font-size: 1.63em;
+      // }
     }
 
   }
-  p {
-    font-size: 1.63em;
-    line-height: 30px;
-    letter-spacing: 2px;
-    max-width: 1200px;
-    margin: auto;
 
-    &.qoute {
-      font-style: italic;
-      span {
-        font-style: normal;
-        font-weight: bold;
-      }
-    }
-  }
 
   #transparency {
     position: relative;
@@ -1478,7 +1495,7 @@ input[type="email"] {
       font-size: 50%;
     }
     h4 {
-      font-size: 32px;
+      font-size: 3.75em;
       // padding-bottom: 60px;
     }
     p {
