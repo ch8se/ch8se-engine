@@ -39,7 +39,7 @@
           </div>
         </li>
         <li>
-          <a href="<?php echo esc_url( home_url( '/' ) ); ?>">Community</a>
+          <span>Community</span>
           <div>
             <ul>
               <li><a href="<?php echo esc_url( home_url( '/ch8seday' ) ); ?>">ch8seday Tuesday<br><span>The critical mass of fashion.</span></a></li>
@@ -50,19 +50,19 @@
                   <li><a href="<?php echo esc_url( home_url( '/ch8sers/#ambassadors' ) ); ?>">Ambassadors</a></li>
                 </ul>
               </li>
-              <li><a href="">Blog</a></li>
+              <li><a href="<?php echo esc_url( home_url( '/coming-soon' ) ); ?>">Blog</a></li>
             </ul>
           </div>
         </li>
         <li>
-          <a href="<?php echo esc_url( home_url( '/' ) ); ?>">Creation</a>
+          <span>Creation</span>
           <div>
             <ul>
               <li>
                 <a href="<?php echo esc_url( home_url( '/design' ) ); ?>">Design</a>
               </li>
               <li>
-                <a href="">Craftsmanship</a>
+                <a href="<?php echo esc_url( home_url( '/coming-soon' ) ); ?>">Craftsmanship</a>
               </li>
             </ul>
           </div>

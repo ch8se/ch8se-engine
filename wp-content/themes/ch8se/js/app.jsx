@@ -92,7 +92,7 @@ ch8se.youtubePopup = function() {
   </div>`
 
   ch8se.$youtubeLink = $('.fa-youtube-play');
-  ch8se.$youtubeLink.on('click', function() {
+  $('.youtube-play').on('click', function() {
     $('body').append(popup);
     ch8se.fixIframeSize();    
   });
@@ -246,7 +246,7 @@ ch8se.menuFix = function() {
         $ul = $(this).find('> div > ul');
 
     if (trueWindowWidth() > 762) {
-      $this.find('> a').removeClass('has-children');
+      $this.find('> a, > span').removeClass('has-children');
 
 
       if ($ul.length) {
@@ -261,7 +261,7 @@ ch8se.menuFix = function() {
       $ul.removeAttr('style');
 
       if (i === 0 || i === 2 || i === 3) {
-        $this.find('> a').addClass('has-children');
+        $this.find('> a, > span').addClass('has-children');
       }
       // if (i >= 2) {
       //   $this.css({transform: 'translateY(-' + $siteNav.find('> ul > li:first-child').height() + 'px)'});

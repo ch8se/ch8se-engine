@@ -220,6 +220,8 @@ header.site-header {
         width: 100%;
         color: @base;
         font-size: 10px;
+        border-bottom: none !important;
+        text-transform: none;
       }
 
       @media screen and (max-width: 782px) {
@@ -251,7 +253,7 @@ header.site-header {
       // padding: 0;
 
       .btn {
-        padding: 2px 12px;
+        padding: 2px 12px !important;
         min-width: initial;
         font-size: 16px;
         margin-left: 10px;
@@ -287,7 +289,7 @@ header.site-header {
       text-align: center;
 
 
-      > a {
+      > a, > span {
         font-size: 1.2em;
         padding: 12px 0 4px !important;
         text-transform: uppercase;
@@ -295,7 +297,7 @@ header.site-header {
     }
 
     &:hover {
-      > a {
+      > a, > span {
         border-bottom: 1px solid @base;
       }
 
