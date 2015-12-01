@@ -119,8 +119,8 @@ header.site-header {
 }
 
 // Navigation
-@navPadding: 28px;
-@headerHeight: @navPadding * 2 + 20;
+@navPadding: 18px;
+@headerHeight: @navPadding * 2 + 18;
 .site-nav {
   font-size: 20px;
   position: relative;
@@ -166,7 +166,7 @@ header.site-header {
 
     @media screen and (max-width: 960px) {
       width: 100px;
-      height: 72px;
+      height: 54px;
     }
     @media screen and (max-width: 720px) {
       position: absolute;
@@ -216,16 +216,15 @@ header.site-header {
 
     &:last-child {
       position: relative;
-      padding: 18px 0;
+      padding: 8px 0;
       width: 60px;
       text-align: center;
 
       span {
         position: absolute;
-        bottom: 10px;
+        bottom: 0;
         left: 0;
         width: 100%;
-        margin-top: -20px;
         color: @base;
         font-size: 10px;
       }
@@ -237,8 +236,13 @@ header.site-header {
 
     i {
       color: @base;
-      font-size: 40px;
+      font-size: 36px;
       cursor: pointer;
+
+      @media screen and (max-width: 960px) {
+        font-size: 30px;
+
+      }
     }
 
     ul {
