@@ -222,6 +222,8 @@ header.site-header {
         font-size: 10px;
         border-bottom: none !important;
         text-transform: none;
+        margin: 0;
+        padding: 0 !important;
       }
 
       @media screen and (max-width: 782px) {
@@ -391,6 +393,10 @@ header.site-header {
         @media screen and (max-width: 782px) {
           display: flex;
           justify-content: center;
+
+          li:first-child {
+            margin-right: 0;
+          }
         }
       }
 
