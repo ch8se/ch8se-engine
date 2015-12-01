@@ -237,7 +237,12 @@ ch8se.menuFix = function() {
 
 
       if ($ul.length) {
-        $ul.css({'margin-left': ($this.position().left)});
+        $this.find('> div').css({display: 'block'}); //Stupid hack, js can't calculate width of hidden element
+
+
+        $ul.css({'margin-left': ($this.position().left - (i !== 1 ? $ul.find('li:first-child').width() : 0))});
+
+        $this.find('> div').css({display: ''});
       }
     } else {
       $ul.removeAttr('style');

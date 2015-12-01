@@ -156,7 +156,7 @@ header.site-header {
   a.logo {
     background: url(img/ch8se-logo.png) no-repeat center center;
     background-size: 100% auto;
-    width: 160px;
+    width: 120px;
     height: @headerHeight;
     padding: 0;
     font-size: 0;
@@ -392,6 +392,16 @@ header.site-header {
       padding: 14px 0 0 0;
     }
   }
+
+  // @media screen and (min-width: 721px) {
+  //   > ul > li {
+  //     &:nth-child(0) {
+  //       li {
+  //         .transform(translate(-200px, 0));
+  //       }
+  //     }
+  //   }
+  // }
 }
 
 .social {
@@ -507,7 +517,7 @@ footer.site-footer {
       font-size: 16px;
       padding: 20px 0;
 
-      @media screen and (min-width: 600px) {
+      @media screen and (min-width: 601px) {
         &:nth-child(3n+1) {
           padding-top: 0;
         }
@@ -1446,6 +1456,7 @@ input[type="email"] {
       font-size: 32px;
       font-weight: 400;
       line-height: 1.366;
+      text-align: center;
 
       @media screen and (max-width: 600px) {
         font-size: 24px;
