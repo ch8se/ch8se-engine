@@ -125,22 +125,7 @@ header.site-header {
   font-size: 20px;
   position: relative;
 
-  .subscribe {
-    position: absolute;
-    height: 54px;
-    font-size: 10px;
-    color: #fff;
-    line-height: 24px;
-    text-align: center;
-    right: 20px;
-    cursor: pointer;
-
-    .btn {
-      padding: 2px 12px;
-      min-width: initial;
-      font-size: 10px;
-    }
-  }
+  
 
   @media screen and (max-width: 960px) {
     font-size: 16px;
@@ -156,7 +141,7 @@ header.site-header {
     float: left;
     cursor: pointer;
 
-    @media screen and (max-width: 720px) {
+    @media screen and (max-width: 782px) {
       display: block;
     }
   }
@@ -176,14 +161,14 @@ header.site-header {
       width: 100px;
       height: 54px;
     }
-    @media screen and (max-width: 720px) {
+    @media screen and (max-width: 782px) {
       position: absolute;
       .center-transform;
     }
   }
 
   > ul {
-    @media screen and (max-width: 720px) {
+    @media screen and (max-width: 782px) {
       background: rgb(40, 40, 40);
       width: 100%;
       position: absolute;
@@ -222,7 +207,7 @@ header.site-header {
       }
     }
 
-    &:last-child {
+    &.youtube-play {
       position: relative;
       padding: 8px 0;
       width: 60px;
@@ -237,20 +222,48 @@ header.site-header {
         font-size: 10px;
       }
 
-      @media screen and (max-width: 720px) {
+      @media screen and (max-width: 782px) {
         width: 100%;
+      }
+
+      i {
+        color: @base;
+        font-size: 36px;
+        cursor: pointer;
+
+        @media screen and (max-width: 960px) {
+          font-size: 30px;
+
+        }
       }
     }
 
-    i {
-      color: @base;
-      font-size: 36px;
+
+    &.subscribe {
+      position: absolute;
+      // height: 54px;
+      font-size: 16px;
+      color: #fff;
+      // line-height: 24px;
+      text-align: center;
+      right: 20px;
       cursor: pointer;
+      // padding: 0;
 
-      @media screen and (max-width: 960px) {
-        font-size: 30px;
-
+      .btn {
+        padding: 2px 12px;
+        min-width: initial;
+        font-size: 16px;
       }
+      
+      @media screen and (max-width: 1200px) {
+        font-size: 10px;
+
+        .btn {
+          font-size: 10px;
+        }
+      }
+
     }
 
     ul {
@@ -261,7 +274,7 @@ header.site-header {
       margin: 0 10px;
     }
 
-    @media screen and (max-width: 720px) {
+    @media screen and (max-width: 782px) {
       padding: 15px 0 0;
       margin: 0 auto;
       clear: left;
@@ -310,7 +323,7 @@ header.site-header {
         top: 72px;
       }
 
-      @media screen and (max-width: 720px) {
+      @media screen and (max-width: 782px) {
         display: block;
         position: relative;
         top: 0;
@@ -334,7 +347,7 @@ header.site-header {
           color: @base;
         }
 
-        @media screen and (max-width: 720px) {
+        @media screen and (max-width: 782px) {
           padding: 10px 0 5px 0;
           margin: 15px 0 5px 0;
           clear: both;
@@ -362,13 +375,13 @@ header.site-header {
               }
             }
           // }
-          // @media screen and (max-width: 720px) {
+          // @media screen and (max-width: 782px) {
           //   &:first-child {
           //     background-position: 10px center;
           //   }
           // }
         }
-        @media screen and (max-width: 720px) {
+        @media screen and (max-width: 782px) {
           display: flex;
           justify-content: center;
         }
@@ -388,7 +401,7 @@ header.site-header {
           font-weight: normal;
           font-size: 0.9em;
         }
-        @media screen and (max-width: 720px) {
+        @media screen and (max-width: 782px) {
           display: none;
         }
       }
@@ -400,16 +413,6 @@ header.site-header {
       padding: 14px 0 0 0;
     }
   }
-
-  // @media screen and (min-width: 721px) {
-  //   > ul > li {
-  //     &:nth-child(0) {
-  //       li {
-  //         .transform(translate(-200px, 0));
-  //       }
-  //     }
-  //   }
-  // }
 }
 
 .social {
@@ -483,7 +486,7 @@ footer.site-footer {
     clear: both;
     position: relative;
     text-align: center;
-    padding-top: 100px;
+    margin-top: 100px;
 
     @media screen and (max-width: 600px) {
       padding-top: 20px;
@@ -576,6 +579,12 @@ footer.site-footer {
 
     input[type="submit"] {
       display: none;
+    }
+
+    input[type="email"] {
+      background: transparent;
+      border: 1px solid @base;
+      color: @base;
     }
 
     @media screen and (max-width: 782px) {

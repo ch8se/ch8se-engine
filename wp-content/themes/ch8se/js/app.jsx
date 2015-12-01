@@ -39,11 +39,11 @@ ch8se.init = function() {
     }
   });
 
-  $('.site-nav .subscribe').on('click touchstart', e => {
+  $('.site-nav .subscribe').on('click', e => {
     $('.subscribe-overlay').show(500);
   });
 
-  $('.subscribe-overlay').on('click touchstart', e => {
+  $('.subscribe-overlay').on('click touchend', e => {
     var $target = $(e.target);
 
     if ($target.hasClass('subscribe-overlay') || $target.hasClass('close')) {
@@ -79,7 +79,7 @@ ch8se.youtubePopup = function() {
   </div>`
 
   ch8se.$youtubeLink = $('.fa-youtube-play');
-  ch8se.$youtubeLink.on('click touchstart', function() {
+  ch8se.$youtubeLink.on('click', function() {
     $('body').append(popup);
     ch8se.fixIframeSize();    
   });
@@ -139,7 +139,7 @@ ch8se.fixIframeSize = function() {
     }, 500);
 
 
-    $iframeHolder.on('click touchstart', function(e) {
+    $iframeHolder.on('click', function(e) {
       var $target = $(e.target);
 
       if ($target.hasClass('iframe-holder') || $target.hasClass('fa')) {
@@ -200,7 +200,7 @@ ch8se.menuToggle = function() {
   });
 
 
-  $menu.find('> li > a, > li > span').on('click touchstart', function(e) {
+  $menu.find('> li > a, > li > span').on('click', function(e) {
     var $this = $(this);
 
     if (trueWindowWidth() < 600 /*&& !$this.parent().hasClass('expand')*/ && $this.siblings().length && $this.text() !== 'Impact') {
@@ -384,7 +384,7 @@ ch8se.productView = function() {
       $enlargedImg = $preview.find('.enlarged img'),
       $thumbs = $preview.find('.thumbs a');
 
-  $thumbs.on('click touchstart', function(e) {
+  $thumbs.on('click', function(e) {
     e.preventDefault();
 
     $thumbs.removeClass('active');

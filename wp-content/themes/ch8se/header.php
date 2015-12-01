@@ -70,13 +70,13 @@
         <li>
           <a href="<?php echo esc_url( home_url( '/about-us' ) ); ?>">About us</a>
         </li>
-        <li>
+        <li class="youtube-play">
           <i class="fa fa-youtube-play"></i>
           <br>
           <span>play the video</span>
         </li>
+        <li class="subscribe">Coming soon on Indiegogo <span class="btn invert">GET NOTIFIED</span></li>
       </ul>
-      <span class="subscribe">Coming soon on Indiegogo<br><span class="btn invert">GET NOTIFIED</span></span>
     </nav>
   </header><!-- .site-header -->
 
