@@ -76,7 +76,7 @@
           <span>play the video</span>
         </li>
       </ul>
-      <span class="subscribe">Subscribe</span>
+      <span class="subscribe">Coming soon on Indiegogo<br><span class="btn invert">GET NOTIFIED</span></span>
     </nav>
   </header><!-- .site-header -->
 

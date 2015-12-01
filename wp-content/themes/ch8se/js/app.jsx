@@ -189,7 +189,7 @@ ch8se.menuToggle = function() {
   var $hamburger = $('.site-nav .fa-bars'),
       $menu = $('.site-nav > ul');
 
-  $hamburger.on('click touchstart', function() {
+  $hamburger.on('click', function() {
     $menu.toggleClass('expand');
 
     $menu.css({transition: 'all 0.5s ease'});
