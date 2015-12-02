@@ -64,6 +64,7 @@ get_header(); ?>
       <span class="price"><sup>$</sup><?php echo get_post_meta($post->ID, 'price', true); ?></span>
 
       <div class="social invert">
+        <p>Share</p>
         <a target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=<?php echo home_url(add_query_arg(array(),$wp->request)); ?>"><i class="fa fa-facebook"></i></a>
         <a target="_blank" href="https://twitter.com/home?status=<?php echo home_url(add_query_arg(array(),$wp->request)); ?>"><i class="fa fa-twitter"></i></a>
       </div>

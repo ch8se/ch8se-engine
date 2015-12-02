@@ -7,7 +7,7 @@ ch8se.init = function() {
   $('.carousel').slick({
     adaptiveHeight: true,
     autoplay: true,
-    autoplaySpeed: 10000,
+    autoplaySpeed: 4000,
     arrows: false,
     dots: true
   });
