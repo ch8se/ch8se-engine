@@ -216,7 +216,7 @@ ch8se.menuToggle = function() {
   $menu.find('> li > a, > li > span').on('click', function(e) {
     var $this = $(this);
 
-    if (trueWindowWidth() < 600 /*&& !$this.parent().hasClass('expand')*/ && $this.siblings().length && $this.text() !== 'Impact') {
+    if (trueWindowWidth() < 600 /*&& !$this.parent().hasClass('expand')*/ && $this.siblings().length) {
       e.preventDefault();
       var $cont = $this.siblings('div');
 
@@ -260,7 +260,7 @@ ch8se.menuFix = function() {
     } else {
       $ul.removeAttr('style');
 
-      if (i === 0 || i === 2 || i === 3) {
+      if (i >= 0 && i <= 3) {
         $this.find('> a, > span').addClass('has-children');
       }
       // if (i >= 2) {
