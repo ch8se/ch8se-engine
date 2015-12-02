@@ -7,10 +7,10 @@ get_header(); ?>
 
 <div class="content">
   <div class="carousel">
-    <div><img src="http://www.ch8se.com/wp-content/uploads/2015/11/homeslider1.jpg"></div>
-    <div><img src="http://www.ch8se.com/wp-content/uploads/2015/11/homeslider2.jpg"></div>
-    <div><img src="http://www.ch8se.com/wp-content/uploads/2015/11/homeslider3.jpg"></div>
     <div><img src="http://www.ch8se.com/wp-content/uploads/2015/11/homeslider4.jpg"></div>
+    <div><img src="http://www.ch8se.com/wp-content/uploads/2015/11/homeslider3.jpg"></div>
+    <div><img src="http://www.ch8se.com/wp-content/uploads/2015/11/homeslider2.jpg"></div>
+    <div><img src="http://www.ch8se.com/wp-content/uploads/2015/11/homeslider1.jpg"></div>
     <div><img src="http://www.ch8se.com/wp-content/uploads/2015/11/homeslider5.jpg"></div>
   </div>
 
