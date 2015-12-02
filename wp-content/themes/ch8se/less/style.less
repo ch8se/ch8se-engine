@@ -1597,12 +1597,27 @@ input {
     }
   }
 }
-.text-content {
+.text-content { //TODO: remove this style, integrate better styles used by editor
   text-align: center;
   padding: 160px 0 130px;
 
+  &.no-center {
+    text-align: left;
+  }
+
+  > div {
+    max-width: 1000px;
+    position: relative;
+    margin: auto;
+  }
+
   p {
     padding: 30px 80px;
+
+    .indent {
+      padding-left: 20px;
+      font-size: 0.8em;
+    }
   }
 
   @media screen and (max-width: 600px) {
