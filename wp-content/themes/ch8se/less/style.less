@@ -1427,12 +1427,40 @@ input {
     margin: auto;
     padding: 20px 0;
 
-    &.qoute {
+    &.narrow {
+      font-size: 1.7em;
+      max-width: 870px;
+    }
+
+    // &.qoute {
+    //   font-style: italic;
+    //   span {
+    //     font-style: normal;
+    //     font-weight: bold;
+    //   }
+    // }
+  }
+
+  .qoute {
+    background: #1d1d1f;
+    border-radius: 10px;
+    color: @base;
+    max-width: 930px;
+    padding: 70px 80px;
+    margin: 100px auto 0;
+    position: relative;
+    box-sizing: border-box;
+
+    p {
       font-style: italic;
-      span {
-        font-style: normal;
-        font-weight: bold;
-      }
+    }
+
+    @media screen and (max-width: 600px) {
+      margin-top: 40px;
+      padding: 20px 30px;
+    }
+    @media screen and (max-width: 400px) {
+      padding: 5px;
     }
   }
 
@@ -1578,7 +1606,7 @@ input {
     padding: 30px;
 
     p {
-      padding: 0;
+      padding: 10px;
     }
   }
 }
