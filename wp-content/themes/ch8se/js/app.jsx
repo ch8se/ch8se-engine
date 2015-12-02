@@ -41,7 +41,7 @@ ch8se.init = function() {
     }
   });
 
-  $('.site-nav .subscribe').on('click', e => {
+  $('.site-nav .subscribe, .get-notified').on('click', e => {
     $('.subscribe-overlay').show(500);
   });
 
