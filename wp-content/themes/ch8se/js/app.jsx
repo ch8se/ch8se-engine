@@ -20,6 +20,7 @@ ch8se.init = function() {
   ch8se.fixProductHeight();
   ch8se.productView();
   ch8se.youtubePopup();
+  ch8se.champSubscribe();
 
 
 
@@ -81,6 +82,48 @@ function trueWindowHeight() {
   return Math.max(document.documentElement.clientHeight, window.innerHeight || 0);
 }
 
+
+ch8se.champSubscribe = function() {
+  var $container = $('.champ-subscribe');
+
+  if (!$container.length) return;
+
+  $('.become-champ').on('click', function() {
+    if ($('.become-champ').css('display') === 'block') return;
+    $container.css({display: 'block'}).animate({
+      opacity: 1,
+      height: 2000,
+    }, 1000);
+    $('html, body').animate({
+        scrollTop: $container.offset().top
+    }, 1000);
+  })
+
+  var $form = $container.find('form');
+
+  $form.find('p').each(function() {
+    var $this = $(this);
+
+    var $spanParent = $this.find('span[placeholder]');
+
+    if ($spanParent.length) {
+      $spanParent.find('input, textarea').attr('placeholder', $spanParent.attr('placeholder'));
+    }
+  });
+
+  $('.profile-picture').on('click', function(e) {
+    $('.profile-picture + span > input').click();
+  });
+
+  $('.profile-picture + span > input').on('change', function(e) {
+    var reader = new FileReader();
+    reader.onload = function(){
+      $('.profile-picture').html(`<img src="@{reader.result}" />`)
+    };
+    reader.readAsDataURL(event.target.files[0]);
+  });
+
+}
 
 ch8se.youtubePopup = function() {
 

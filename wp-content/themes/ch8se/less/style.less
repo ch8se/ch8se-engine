@@ -688,7 +688,7 @@ footer.site-footer {
 }
 
 input {
-  &[type="email"], &[type="text"] {
+  &[type="email"], &[type="text"], &[type="url"] {
     border-radius: 10px;
     border: 1px solid #000;
   }
@@ -1654,6 +1654,142 @@ input {
     textarea {
       width: 100%;
       max-width: 600px;
+    }
+  }
+}
+
+.slide-in(@time) {
+  .transition(all @time linear);
+  opacity: 0;
+  .transform(translate(0, -50%));
+  pointer-events: none;
+}
+.slide-in-complete() {
+  opacity: 1;
+  .transform(translate(0, 0));
+}
+
+
+.champ-subscribe {
+  height: 0;
+  opacity: 0;
+  display: none;
+  position: relative;
+  .profile-example {
+    cursor: pointer;
+    color: #b6b6b6;
+    font-size: 16px;
+    text-decoration: underline;
+
+    & + img {
+      position: absolute;
+      left: 0;
+      right: 0;
+      margin: auto;
+      width: 70%;
+      z-index: 20;
+      .slide-in(0.25s);
+    }
+
+    &:hover {
+      & + img {
+        .slide-in-complete;
+      }
+    }
+  }
+
+  .profile-picture {
+    border-radius: 10px;
+    border: 1px solid #000;
+    padding: 8px;
+    display: inline-block;
+    cursor: pointer;
+
+    i {
+      font-size: 60px;
+      color: #b6b6b6;
+    }
+
+    img {
+      max-width: 500px;
+    }
+
+    & + span {
+      display: none;
+    }
+  }
+
+  p {
+    text-align: center;
+    padding: 16px;
+    position: relative;
+
+    input {
+      max-width: 330px;
+      padding: 12px;
+      text-align: center;
+    }
+
+    textarea {
+      border-radius: 10px;
+      
+    }
+
+    .helper {
+      background: #b6b6b6;
+      color: @base;
+      position: absolute;
+      border-radius: 50%;
+      width: 30px;
+      height: 30px;
+      cursor: pointer;
+      margin: 10px 0 0 30px;
+      font-size: 22px;
+      font-weight: bold;
+
+      &:after {
+        content: attr(text);
+        background: #b6b6b6;
+        color: @base;
+        position: absolute;
+        border-radius: 10px;
+        width: 220px;
+        left: 120%;
+        bottom: 0;
+        font-size: 18px;
+        text-align: left;
+        padding: 4px 8px;
+        .slide-in(0.15s);
+
+        @media screen and (max-width: 600px) {
+          left: -260px;
+        }
+      }
+
+      &:hover:after {
+        .slide-in-complete;
+      }
+    }
+    &.double {
+      input {
+        max-width: 180px;
+        margin: 5px 20px;
+      }
+    }
+  }
+
+  input[type="submit"] {
+    background: #000;
+    color: @base;
+    border-radius: 10px;
+    border: none;
+  }
+
+  input[type="checkbox"] {
+    cursor: pointer;
+    & + span {
+      color: #b6b6b6;
+      font-size: 16px;
     }
   }
 }
