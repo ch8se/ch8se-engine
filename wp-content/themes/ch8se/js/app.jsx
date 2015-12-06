@@ -101,14 +101,10 @@ ch8se.champSubscribe = function() {
 
   var $form = $container.find('form');
 
-  $form.find('p').each(function() {
+  $form.find('span[placeholder]').each(function() {
     var $this = $(this);
 
-    var $spanParent = $this.find('span[placeholder]');
-
-    if ($spanParent.length) {
-      $spanParent.find('input, textarea').attr('placeholder', $spanParent.attr('placeholder'));
-    }
+    $this.find('input, textarea').attr('placeholder', $this.attr('placeholder'));
   });
 
   $('.profile-picture').on('click', function(e) {
@@ -118,7 +114,8 @@ ch8se.champSubscribe = function() {
   $('.profile-picture + span > input').on('change', function(e) {
     var reader = new FileReader();
     reader.onload = function(){
-      $('.profile-picture').html(`<img src="@{reader.result}" />`)
+      console.log(reader.result);
+      $('.profile-picture').html('<img src="' + reader.result + '" />')
     };
     reader.readAsDataURL(event.target.files[0]);
   });

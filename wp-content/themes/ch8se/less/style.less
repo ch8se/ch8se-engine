@@ -1728,11 +1728,16 @@ input {
       max-width: 330px;
       padding: 12px;
       text-align: center;
+      box-sizing: border-box;
+      width: 100%;
     }
 
     textarea {
       border-radius: 10px;
-      
+      box-sizing: border-box;
+      width: 100%;
+      max-width: 410px;
+      height: 200px;
     }
 
     .helper {
@@ -1761,13 +1766,21 @@ input {
         padding: 4px 8px;
         .slide-in(0.15s);
 
-        @media screen and (max-width: 600px) {
-          left: -260px;
-        }
+        // @media screen and (max-width: 600px) {
+        //   left: -260px;
+        // }
       }
 
       &:hover:after {
         .slide-in-complete;
+      }
+      @media screen and (max-width: 600px) {
+        margin: 6px 0 0 -38px;
+
+        &:after {
+          left: -194px;
+          bottom: 44px;
+        }
       }
     }
     &.double {
