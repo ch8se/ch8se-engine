@@ -14,28 +14,24 @@ get_header(); ?>
     <div><img src="http://www.ch8se.com/wp-content/uploads/2015/11/homeslider5.jpg"></div>
   </div>
 
-
-  <div class="counter clearfix">
-    <span class="trees">250</span>
-    <span class="food">80</span>
-    <span class="water">117</span>
+  <div class="counter-wrap">
+    <h1>Instead of spending on ads we...</h1>
+    <div class="counter clearfix">
+      <span class="trees">Plant trees</span>
+      <span class="food">Feed children</span>
+      <span class="water">Provide water</span>
+    </div>
   </div>
 
   <div class="block">
-    <h1>Fashion Repurposed.</h1>
+    <h1>The most intuitive and transparent way of becoming an activist through your consumer choices.</h1>
 
-    <p>ch8se is the first fashion brand to say no to traditional advertising. Instead we plant trees, feed children and quench thirsts. The drive of our marketing is your good will. Today, with all the social media, it’s very simple, you help spread the word about us, and we don’t need to spend on ads. This way a single hoodie can plant as many as 93 trees, a t-shirt can provide 46 months of clean water, or feed a child for 20 days.</p>
+    <p>ch8se is the first fashion brand to say no to traditional advertising. Instead we plant trees, feed children and quench thirsts. The drive of our marketing is your good will. This way our products can do amazing things. And through our transparent impact-code system you can always track the impact you make.</p>
+    <br><br>
+    <p><a href="<?php echo esc_url( home_url( '/impact' ) ); ?>">Learn more</a></p>
   </div>
 
-  <!-- <div class="graphic-video">
-    <video src="<?php //echo get_template_directory_uri() ?>/video/ch8se-graphic.webm" autoplay loop></video>
-  </div> -->
-  
-  <div class="graphic-slideshow">
-    <img src="<?php echo get_template_directory_uri() ?>/img/trees-large.png" alt="">
-    <img src="<?php echo get_template_directory_uri() ?>/img/food-large.png" alt="">
-    <img src="<?php echo get_template_directory_uri() ?>/img/water-large.png" alt="">
-  </div>
+<img src="http://www.ch8se.com/wp-content/uploads/2015/12/ch8se-infographic.jpg">
 
 </div>
 <div id="instafeed"></div>

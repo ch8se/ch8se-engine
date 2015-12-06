@@ -884,10 +884,21 @@ input {
   width: 100%;
 }
 // Content
+.content {
+  p {
+    a {
+      text-decoration: underline;
+    }
+  }
+}
 .site-content {
   // .content {
   .site-width();
   padding-bottom: 100px;
+
+  img {
+    max-width: 100%;
+  }
 
   @media screen and (max-width: 600px) {
     padding-bottom: 40px;
@@ -930,40 +941,57 @@ input {
     }
   }
 
-
+  .counter-wrap {
+    margin: 72px auto 0;
+    padding: 20px 100px 50px;
+    max-width: 950px;
+    width: 90%;
+    box-sizing: border-box;
+    border: 1px solid #000;
+    border-radius: 10px;
+    // .center-transform();
+    h1 {
+      text-align: center;
+    }
+    @media screen and (max-width: 1200px) {
+      padding: 20px 60px 50px
+    }    
+    @media screen and (max-width: 1200px) {
+      padding: 20px 20px 50px
+    }
+  }
   .counter {
     // width: 580px;
     // .center-horizontal();
     position: relative;
-    margin: 72px auto 0;
     display: flex;
     justify-content: center;
 
     span {
       background: url(img/counter.png) no-repeat;
       text-align: center;
-      width: 124px;
-      padding-top: 134px;
+      width: 144px;
+      padding-top: 156px;
       float: left;
-      font-size: 36px;
+      font-size: 26px;
       margin: 0 52px;
 
       &.food {
-        background-position: -229px 0;
+        background-position: -276px 0;
       }
       &.water {
-        background-position: -461px 0;
+        background-position: -556px 0;
       }
 
       @media screen and (max-width: 900px) {
         margin: 0 39px;
       }
-      @media screen and (max-width: 600px) {
+      @media screen and (max-width: 750px) {
         background-size: 291px;
         width: 60px;
         padding-top: 64px;
-        margin: 0 22px;
-        font-size: 28px;
+        margin: 0 10px;
+        font-size: 18px;
         &.food {
           background-position: -116px 0;
         }
@@ -1499,6 +1527,7 @@ input {
       }
       .info {
         background: url(img/counter.png) no-repeat center;
+        background-size: 566px auto;
         position: absolute;
         width: 162px;
         height: 149px;
