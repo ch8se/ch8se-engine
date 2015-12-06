@@ -586,21 +586,22 @@ footer.site-footer {
       color: #fff;
     }
 
-    input {
-      max-width: 100%;
-      padding: 2px 8px;
-      box-sizing: border-box;
-    }
 
     input[type="submit"] {
-      display: none;
+      // display: none;
+      .btn;
+      .invert;
     }
 
     input[type="email"] {
+      box-sizing: border-box;
+      padding: 2px 8px;
       background: transparent;
       border: 1px solid @base;
       color: @base;
       text-align: center;
+      width: 180px;
+      margin-left: 10px;
     }
 
     @media screen and (max-width: 782px) {
@@ -1243,6 +1244,10 @@ input {
 
     @media screen and (max-width: 600px) {
       width: 100%;
+    }
+    @media screen and (min-width: 601px) {
+      padding-left: 60px;
+      box-sizing: border-box;
     }
 
     .enlarged {
