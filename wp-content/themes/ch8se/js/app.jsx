@@ -155,6 +155,10 @@ ch8se.youtubePopup = function() {
     ch8se.fixIframeSize();    
   });
   
+  if ($('body').hasClass('home')) {
+    $('body').append(popup);
+    ch8se.fixIframeSize();    
+  }
 
 }
 
