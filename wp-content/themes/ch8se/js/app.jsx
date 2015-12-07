@@ -37,33 +37,29 @@ ch8se.init = function() {
     type: 'GET',
     url: 'http://api.hostip.info/get_html.php',
     success: function(data) {
-      $('.subscribe-footer input[name="ip-address"]').val(data);
-      $('.subscribe-overlay input[name="ip-address"]').val(data);
+      $('input[name="ip-address"]').val(data.split('IP: ')[1]);
     }
   });
 
   $('.site-nav .subscribe, .get-notified').on('click', e => {
-    $('.subscribe-overlay').show(500);
+    $('.subscribe-overlay').show();
   });
 
   $('.subscribe-overlay').on('click touchend', e => {
     var $target = $(e.target);
 
     if ($target.hasClass('subscribe-overlay') || $target.hasClass('close')) {
-      $('.subscribe-overlay').hide(500);
+      $('.subscribe-overlay').hide();
     }
   });
 
   $('.subscribe-overlay form').on('submit', e => {
 
     setTimeout(function() {
-      if ($('.subscribe-overlay form').hasClass('sent')) $('.subscribe-overlay').hide(500);
+      if ($('.subscribe-overlay form').hasClass('sent')) $('.subscribe-overlay').hide();
     }, 2000);
 
   });
-
-
-
 
 
   $('.contact-us input[type="email"], .contact-us input[type="text"]').each(function() {
@@ -72,8 +68,20 @@ ch8se.init = function() {
     $this.attr('placeholder', $this.attr('name'));
   });
 
-}
+  $('input[name="promo-code"]').val(makeid());
 
+
+
+}
+function makeid() {
+    var text = "";
+    var possible = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
+
+    for( var i=0; i < 6; i++ )
+        text += possible.charAt(Math.floor(Math.random() * possible.length));
+
+    return text;
+}
 
 function trueWindowWidth() {
   return Math.max(document.documentElement.clientWidth, window.innerWidth || 0);
