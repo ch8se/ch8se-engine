@@ -68,8 +68,18 @@ ch8se.init = function() {
     $this.attr('placeholder', $this.attr('name'));
   });
 
-  $('input[name="promo-code"]').val(makeid());
 
+
+
+
+
+
+  $('input[name="promo-code"]').val(makeid());
+  $('.share-plant span[placeholder]').each(function() {
+    var $this = $(this);
+
+    $this.find('input, textarea').attr('placeholder', $this.attr('placeholder'));
+  });
 
 
 }
