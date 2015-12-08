@@ -244,6 +244,8 @@ header.site-header {
 
 
     &.subscribe {
+      background: url(img/tree-white.png) no-repeat center left / 40px;
+      padding-left: 60px;
       position: absolute;
       // height: 54px;
       font-size: 16px;
@@ -254,12 +256,21 @@ header.site-header {
       cursor: pointer;
       // padding: 0;
 
-      .btn {
-        padding: 2px 12px !important;
-        min-width: initial;
-        font-size: 16px;
-        margin-left: 10px;
+      // &:hover {
+        
+      // }
+
+      a {
+        text-decoration: underline;
+        border: none !important;
       }
+
+      // .btn {
+      //   padding: 2px 12px !important;
+      //   min-width: initial;
+      //   font-size: 16px;
+      //   margin-left: 10px;
+      // }
       
       @media screen and (max-width: 1200px) {
         font-size: 10px;
@@ -1590,6 +1601,56 @@ input {
 
   }
 
+  .cols-4 {
+    width: 100%;
+    max-width: 100%;
+    padding: 0;
+    margin: auto;
+
+    > div {
+      width: 25%;
+      float: left;
+      box-sizing: border-box;
+      padding: 30px;
+      position: relative;
+    }
+
+    h4 {
+      font-size: 32px;
+      font-weight: bold;
+    }
+    p {
+      padding: 20px 0;
+      max-width: 319px;
+    }
+
+    @media screen and (max-width: 1200px) {
+      h4 {
+        font-size: 26px;
+      }
+      p {
+        font-size: 16px;
+      }
+    }
+
+    @media screen and (max-width: 900px) {
+      > div {
+        width: 50%;
+
+        &:nth-child(3) {
+          clear: left;
+        }
+      }  
+    }
+
+    @media screen and (max-width: 900px) {
+      > div {
+        width: 100%;
+      }
+    }
+
+  }
+
 
   #transparency {
     position: relative;
@@ -1661,7 +1722,7 @@ input {
   }
 
   @media screen and (max-width: 600px) {
-    padding: 30px;
+    padding: 30px 0;
 
     p {
       padding: 10px;
@@ -1905,6 +1966,17 @@ input {
         border-radius: 10px;
         border: none;
       }
+    }
+  }
+}
+
+.firestarter {
+  padding-top: 0;
+
+  p {
+    a {
+      padding: 20px;
+      text-decoration: underline;
     }
   }
 }

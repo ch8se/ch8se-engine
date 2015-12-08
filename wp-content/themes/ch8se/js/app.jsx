@@ -41,7 +41,7 @@ ch8se.init = function() {
     }
   });
 
-  $('.site-nav .subscribe, .get-notified').on('click', e => {
+  $('.get-notified').on('click', e => {
     $('.subscribe-overlay').show();
   });
 
@@ -315,7 +315,7 @@ ch8se.menuFix = function() {
         $this.find('> div').css({display: 'block'}); //Stupid hack, js can't calculate width of hidden element
 
 
-        $ul.css({'margin-left': ($this.position().left - (i !== 1 ? $ul.find('li:first-child').width() : 0))});
+        $ul.css({'margin-left': ($this.position().left - (i !== 1 ? $ul.find('li:first-child').width() : 0) - (i === 3 ? 50 : 0))});
 
         $this.find('> div').css({display: ''});
       }

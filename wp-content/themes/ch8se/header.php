@@ -62,6 +62,9 @@
                 <a href="<?php echo esc_url( home_url( '/design' ) ); ?>">Design</a>
               </li>
               <li>
+                <a href="<?php echo esc_url( home_url( '/firestarter-collection' ) ); ?>">Creation</a>
+              </li>
+              <li>
                 <a href="<?php echo esc_url( home_url( '/coming-soon' ) ); ?>">Craftsmanship</a>
               </li>
             </ul>
@@ -75,7 +78,7 @@
           <br>
           <span>play the video</span>
         </li>
-        <li class="subscribe">Coming soon on Indiegogo <span class="btn invert">GET NOTIFIED</span></li>
+        <li class="subscribe"><a href="http://www.ch8se.com/share-and-plant/">Share - and plant a tree by doing so</a></li>
       </ul>
     </nav>
   </header><!-- .site-header -->
