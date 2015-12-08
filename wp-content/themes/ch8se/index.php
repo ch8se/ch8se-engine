@@ -32,6 +32,7 @@ get_header(); ?>
   </div>
 
 <img src="http://www.ch8se.com/wp-content/uploads/2015/12/ch8se-infographic.jpg">
+<div class="share-tree"><a href="http://www.ch8se.com/share-and-plant/">Share - and plant a tree by doing so</a></div>
 
 </div>
 <div id="instafeed"></div>
