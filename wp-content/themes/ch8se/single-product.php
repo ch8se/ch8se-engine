@@ -58,7 +58,8 @@ get_header(); ?>
       <?php } ?>
       <p><?php echo get_post_meta($post->ID, 'description', true); ?></p>
 
-      <a href="" class="btn">Get notified</a>
+      <span class="coming-soon">Coming soon on Indiegogo.</span><br>
+      <a href="http://www.ch8se.com/share-and-plant/" class="btn">Get notified</a>
 
       <br>
       <span class="price"><sup>$</sup><?php echo get_post_meta($post->ID, 'price', true); ?></span>

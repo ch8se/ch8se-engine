@@ -62,7 +62,7 @@
                 <a href="<?php echo esc_url( home_url( '/design' ) ); ?>">Design</a>
               </li>
               <li>
-                <a href="<?php echo esc_url( home_url( '/firestarter-collection' ) ); ?>">Creation</a>
+                <a href="<?php echo esc_url( home_url( '/firestarter-collection' ) ); ?>">The Firestarter</a>
               </li>
               <li>
                 <a href="<?php echo esc_url( home_url( '/coming-soon' ) ); ?>">Craftsmanship</a>
