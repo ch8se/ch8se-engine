@@ -85,7 +85,7 @@
           <br>
           <span>play the video</span>
         </li>
-        <li class="subscribe"><a href="http://www.ch8se.com/share-and-plant/">Share - and plant a tree for free</a></li>
+        <li class="subscribe"><a href="http://www.ch8se.com/share-and-plant/">Plant a tree for free</a></li>
       </ul>
     </nav>
   </header><!-- .site-header -->
