@@ -10,8 +10,8 @@ ch8se.init = function() {
     autoplaySpeed: 4000,
     // arrows: false,
     prevArrow: '<img class="arrow prev" src="http://www.ch8se.com/wp-content/themes/ch8se/img/carousel-arrow.png">',
-    nextArrow: '<img class="arrow next" src="http://www.ch8se.com/wp-content/themes/ch8se/img/carousel-arrow.png">',
-    dots: true
+    nextArrow: '<img class="arrow next" src="http://www.ch8se.com/wp-content/themes/ch8se/img/carousel-arrow.png">'
+    // dots: true
   });
 
 
@@ -44,6 +44,7 @@ ch8se.init = function() {
   });
 
   $('.get-notified').on('click', e => {
+    e.preventDefault();
     $('.subscribe-overlay').show();
   });
 
