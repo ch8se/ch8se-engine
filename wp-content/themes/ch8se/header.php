@@ -5,7 +5,10 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="google-site-verification" content="0k-HeggUi-spa2FX7NThY70NTH_9S2cRcgNFHT9ZUpI" />
 
-  <meta property="og:image" content="http://www.ch8se.com/wp-content/uploads/2015/12/ch8se.com_.jpg" />
+  <meta property="og:title" content="The most intuitive and transparent way of becoming an activist through your consumer choices." >
+  <meta property="og:site_name" content="ch8se">
+  <meta property="og:image" content="http://www.ch8se.com/wp-content/uploads/2015/12/ch8se.com_.jpg" >
+  <meta property="og:type" content="website" >
 
   <link rel="profile" href="http://gmpg.org/xfn/11">
   <link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>">
