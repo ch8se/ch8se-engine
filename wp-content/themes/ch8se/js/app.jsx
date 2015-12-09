@@ -47,7 +47,7 @@ ch8se.init = function() {
     e.preventDefault();
 
     if ($(e.target).hasClass('reports')) {
-      $('.subscribe-overlay').find('p').hide();
+      $('.subscribe-overlay').find('.float-block > p').hide();
       $('.subscribe-overlay').find('p.reports').show();
     }
     $('.subscribe-overlay').show();
