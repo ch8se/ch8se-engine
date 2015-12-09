@@ -936,8 +936,10 @@ input {
     .arrow {
       position: absolute;
       top: 0;
-      left: 0;
-      height: 100%;
+      left: 10px;
+      bottom: 0;
+      margin: auto;
+      height: auto;
       width: auto;
       z-index: 50;
       cursor: pointer;
@@ -952,7 +954,7 @@ input {
       }
       &.next {
         left: auto;
-        right: 0;
+        right: 10px;
         .transform(rotate(180deg));
       }
     }
