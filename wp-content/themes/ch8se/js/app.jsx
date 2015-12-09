@@ -145,7 +145,7 @@ ch8se.youtubePopup = function() {
   var popup = `<div class="iframe-holder">
     <div class="underlay">
       <i class="fa fa-times-circle"></i>
-      <iframe src="https://www.youtube.com/embed/bAlx_pRYmwg" frameborder="0" allowfullscreen></iframe>
+      <iframe src="https://www.youtube.com/embed/S35ikoNnjKM" frameborder="0" allowfullscreen></iframe>
     </div>
   </div>`
 
