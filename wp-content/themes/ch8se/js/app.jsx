@@ -45,6 +45,11 @@ ch8se.init = function() {
 
   $('.get-notified').on('click', e => {
     e.preventDefault();
+
+    if ($(e.target).hasClass('reports')) {
+      $('.subscribe-overlay').find('p').hide();
+      $('.subscribe-overlay').find('p.reports').show();
+    }
     $('.subscribe-overlay').show();
   });
 
