@@ -933,16 +933,33 @@ input {
       width: 100%;
     }
 
-    .slick-arrow {
+    .arrow {
       position: absolute;
       top: 0;
       left: 0;
+      height: 100%;
+      width: auto;
+      z-index: 50;
+      cursor: pointer;
+      opacity: 0;
 
-      &.slick-prev {
+      &:hover {
+        opacity: 1 !important;
+      }
+
+      &.prev {
 
       }
-      &.slick-next {
+      &.next {
+        left: auto;
+        right: 0;
+        .transform(rotate(180deg));
+      }
+    }
 
+    &:hover {
+      .arrow {
+        opacity: 0.75;
       }
     }
 
