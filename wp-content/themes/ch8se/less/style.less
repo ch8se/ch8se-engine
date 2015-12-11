@@ -1688,8 +1688,9 @@ input {
   .cols-4 {
     width: 100%;
     max-width: 100%;
-    padding: 0;
+    padding: 0 20px;
     margin: auto;
+    box-sizing: border-box;
 
     > div {
       width: 25%;
@@ -1708,6 +1709,12 @@ input {
       padding: 20px 0;
       max-width: 319px;
       text-align: justify;
+    }
+
+    @media screen and (max-width: 1500px) {
+      p {
+        font-size: 18px;
+      }
     }
 
     @media screen and (max-width: 1200px) {
