@@ -65,7 +65,7 @@ ch8se.init = function() {
 
     setTimeout(function() {
       if ($('.subscribe-overlay form').hasClass('sent')) $('.subscribe-overlay').hide();
-    }, 2000);
+    }, 4000);
 
   });
 
