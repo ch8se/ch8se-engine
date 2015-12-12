@@ -23,6 +23,8 @@ get_header(); ?>
     </div>
   </div>
 
+  <div class="fb-video" data-allowfullscreen="1" data-href="https://www.facebook.com/ch8seofficial/videos/1097606930251137/"><div class="fb-xfbml-parse-ignore"><blockquote cite="https://www.facebook.com/ch8seofficial/videos/1097606930251137/"><a href="https://www.facebook.com/ch8seofficial/videos/1097606930251137/">How can a t-shirt plant 51 trees?</a><p>How can a t-shirt plant 51 trees?</p>Posted by <a href="https://www.facebook.com/ch8seofficial/">ch8se</a> on Saturday, December 12, 2015</blockquote></div></div>
+
   <div class="block">
     <h1>The most intuitive and transparent way of becoming an activist through your consumer choices.</h1>
 

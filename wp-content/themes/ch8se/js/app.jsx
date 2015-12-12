@@ -140,7 +140,7 @@ ch8se.champSubscribe = function() {
   $('.profile-picture + span > input').on('change', function(e) {
     var reader = new FileReader();
     reader.onload = function(){
-      console.log(reader.result);
+      // console.log(reader.result);
       $('.profile-picture').html('<img src="' + reader.result + '" />')
     };
     reader.readAsDataURL(event.target.files[0]);
@@ -163,10 +163,10 @@ ch8se.youtubePopup = function() {
     ch8se.fixIframeSize();    
   });
   
-  if ($('body').hasClass('home')) {
-    $('body').append(popup);
-    ch8se.fixIframeSize();    
-  }
+  // if ($('body').hasClass('home')) {
+  //   $('body').append(popup);
+  //   ch8se.fixIframeSize();    
+  // }
 
 }
 
@@ -223,7 +223,7 @@ ch8se.fixIframeSize = function() {
 
 
     $iframeHolder.on('click', function(e) {
-      console.log('click');
+      // console.log('click');
       var $target = $(e.target);
 
       if ($target.hasClass('iframe-holder') || $target.hasClass('fa')) {
