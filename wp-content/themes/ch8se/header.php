@@ -31,7 +31,7 @@
           <div>
             <ul class="man-woman">
               <li><a href="<?php echo esc_url( home_url( '/products-men' ) ); ?>">Men</a></li>
-              <li><a href="<?php echo esc_url( home_url( '/products-woman' ) ); ?>">Woman</a></li>
+              <li><a href="<?php echo esc_url( home_url( '/products-women' ) ); ?>">Women</a></li>
             </ul>
           </div>
         </li>
