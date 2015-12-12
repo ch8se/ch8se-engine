@@ -223,6 +223,7 @@ ch8se.fixIframeSize = function() {
 
 
     $iframeHolder.on('click', function(e) {
+      console.log('click');
       var $target = $(e.target);
 
       if ($target.hasClass('iframe-holder') || $target.hasClass('fa')) {
@@ -248,9 +249,10 @@ ch8se.fixIframeSize = function() {
       }
     });
 
-  $(window).on('resize', function() {
-    $iframeHolder.remove();
-  });
+  // $(window).on('resize', function() {
+  //   console.log('resize');
+  //   $iframeHolder.remove();
+  // });
   
   // $iframe.height($iframe.width()*9/16);
   // 
