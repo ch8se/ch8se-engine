@@ -21,7 +21,7 @@ ch8se.init = function() {
   ch8se.opacitySlider();
   ch8se.fixProductHeight();
   ch8se.productView();
-  ch8se.youtubePopup();
+  // ch8se.youtubePopup();
   ch8se.champSubscribe();
 
 
