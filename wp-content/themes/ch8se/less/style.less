@@ -930,6 +930,17 @@ input {
     margin: 72px auto;
     display: block;
     position: relative;
+
+    span {
+      width: 100% !important;
+
+      iframe {
+        margin: auto;
+    position: absolute;
+    left: 0;
+    right: 0;
+      }
+    }
   }
 }
 .site-content {
@@ -1077,6 +1088,9 @@ input {
 
       @media screen and (max-width: 900px) {
         margin: 0 39px;
+      }
+      @media screen and (max-width: 782px) {
+        margin: 0 30px;
       }
       @media screen and (max-width: 750px) {
         background-size: 291px;

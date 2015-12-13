@@ -288,7 +288,7 @@ ch8se.menuToggle = function() {
   $menu.find('> li > a, > li > span').on('click', function(e) {
     var $this = $(this);
 
-    if (trueWindowWidth() < 600 /*&& !$this.parent().hasClass('expand')*/ && $this.siblings().length) {
+    if (trueWindowWidth() < 782 /*&& !$this.parent().hasClass('expand')*/ && $this.siblings().length) {
       e.preventDefault();
       var $cont = $this.siblings('div');
 
@@ -317,7 +317,7 @@ ch8se.menuFix = function() {
     var $this = $(this),
         $ul = $(this).find('> div > ul');
 
-    if (trueWindowWidth() > 762) {
+    if (trueWindowWidth() >= 783) {
       $this.find('> a, > span').removeClass('has-children');
 
 
