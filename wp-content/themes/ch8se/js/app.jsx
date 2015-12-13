@@ -290,6 +290,7 @@ ch8se.menuToggle = function() {
 
     if (trueWindowWidth() < 782 /*&& !$this.parent().hasClass('expand')*/ && $this.siblings().length) {
       e.preventDefault();
+      e.stopPropagation();
       var $cont = $this.siblings('div');
 
       if (!$this.parent().hasClass('expand')) {
