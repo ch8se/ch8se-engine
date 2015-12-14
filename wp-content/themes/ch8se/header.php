@@ -12,6 +12,7 @@
 
   <link rel="profile" href="http://gmpg.org/xfn/11">
   <link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>">
+  <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
   <title><?php bloginfo('name'); ?></title>
   <?php wp_head(); ?>
   <script type="text/javascript" async defer src="//assets.pinterest.com/js/pinit.js"></script>
