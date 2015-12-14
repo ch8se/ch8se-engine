@@ -2039,8 +2039,13 @@ input {
 
 .share-plant {
   h2 {
-    background: url(img/popup-tree.png) no-repeat center top;
-    padding-top: 130px;
+    max-width: 1300px;
+    margin: auto;
+  }
+  h2.tree {
+    padding-top: 70px;
+    padding-bottom: 130px;
+    background: url(img/popup-tree.png) no-repeat center bottom;
   }
 
   .steps {
@@ -2093,6 +2098,17 @@ input {
         border-radius: 10px;
         border: none;
       }
+    }
+  }
+
+  .description {
+    p, a {
+      color: #6d6d6d;
+      font-size: 18px;
+    }
+
+    a {
+      text-decoration: underline;
     }
   }
 }

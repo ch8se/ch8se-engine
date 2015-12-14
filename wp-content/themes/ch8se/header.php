@@ -14,6 +14,7 @@
   <link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>">
   <title><?php bloginfo('name'); ?></title>
   <?php wp_head(); ?>
+  <script type="text/javascript" async defer src="//assets.pinterest.com/js/pinit.js"></script>
 </head>
 
 <body <?php body_class(); ?>>
