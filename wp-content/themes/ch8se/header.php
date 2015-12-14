@@ -7,7 +7,7 @@
 
   <meta property="og:title" content="The most intuitive and transparent way of becoming an activist through your consumer choices." >
   <meta property="og:site_name" content="ch8se">
-  <meta property="og:image" content="http://www.ch8se.com/wp-content/uploads/2015/12/ch8se.com_.jpg" >
+  <meta property="og:image" content="http://www.ch8se.com/wp-content/uploads/2015/12/just-a-matter-of-choise.jpg" >
   <meta property="og:type" content="website" >
 
   <link rel="profile" href="http://gmpg.org/xfn/11">
