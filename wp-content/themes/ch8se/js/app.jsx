@@ -90,6 +90,31 @@ ch8se.init = function() {
   });
 
 
+
+
+  $('.mail-copy').on('click', function(e) {
+    e.preventDefault();
+
+    $('.mail-copy').addClass('show-popup');
+     $("body")
+        .append($('<input type="text" name="fname" class="textToCopyInput"/>' )
+        .val('http://www.ch8se.com'))
+        .find(".textToCopyInput")
+        .select();
+
+    try {
+      var successful = document.execCommand('copy');
+      var msg = successful ? 'successful' : 'unsuccessful';
+    } catch (err) {}
+
+    $('.textToCopyInput').remove();
+
+    setTimeout(function() {
+      $('.mail-copy').removeClass('show-popup');
+    }, 5000);
+  });
+
+
 }
 function makeid() {
     var text = "";

@@ -249,25 +249,23 @@ header.site-header {
 
 
     &.subscribe {
-      background: url(img/tree-white.png) no-repeat center left / 40px;
-      padding-left: 60px;
+      padding: 0;
       position: absolute;
-      // height: 54px;
+      height: 54px;
       font-size: 16px;
       color: #fff;
-      // line-height: 24px;
       text-align: center;
       right: 20px;
+      bottom: 0;
       cursor: pointer;
-      // padding: 0;
 
-      // &:hover {
-        
-      // }
 
       a {
+        background: url(img/tree-white.png) no-repeat center left / 40px;
+        padding: 18px 20px 18px 60px;
         text-decoration: underline;
         border: none !important;
+        float: left;
       }
 
       // .btn {
@@ -282,12 +280,19 @@ header.site-header {
       }
 
       @media screen and (max-width: 782px) { 
-        background-position: bottom center;
         position: relative;
-        padding-left: 0;
-        width: 100%;
         right: 0;
-        height: 60px;
+        width: 100%;
+        a {
+          background-position: center 26px;
+          padding-left: 0;
+          height: 60px;
+          margin: auto;
+          left: 0;
+          right: 0;
+          position: absolute;
+          float: none;
+        }
       }
 
     }
@@ -459,7 +464,7 @@ header.site-header {
   }
 
   .share-plant & {
-    width: 242px;
+    width: 310px;
   }
 
   a {
@@ -469,13 +474,43 @@ header.site-header {
     width: 36px;
     height: 36px;
     line-height: 39px;
-    font-size: 24px;
+    font-size: 22px;
     float: left;
     border-radius: 50%;
     margin: 12px;
+    position: relative;
 
     &:hover {
       background-color: rgba(251, 251, 251, 0.5);
+    }
+
+    &.mail-copy {
+      span {
+        display: none;
+      }
+      &:after {
+        content: 'copied to clipboard, now you can paste it in your email';
+        position: absolute;
+        padding: 2px;
+        background: rgba(255, 255, 255, 0.75);
+        border: 1px solid #ccc;
+        color: #000;
+        font-size: 12px;
+        display: block;
+        width: 200px;
+        line-height: 16px;
+        top: 120%;
+        left: 50%;
+        z-index: 5;
+        opacity: 0;
+        .transition(1s all ease);
+        .transform(translate(-50%, 0));
+        // .center-transform();
+      }
+
+      &.show-popup:after {
+        opacity: 1;
+      }
     }
   }
 
@@ -486,7 +521,9 @@ header.site-header {
     }
   }
 }
-
+.textToCopyInput {
+  // display: none;
+}
 
 // Footer
 li.widget {
