@@ -23,12 +23,14 @@ ch8se.init = function() {
   ch8se.productView();
   // ch8se.youtubePopup();
   ch8se.champSubscribe();
+  ch8se.fixIframeSizePage();
 
 
 
   $(window).on('resize', function() {
     ch8se.menuFix();
     ch8se.fixProductHeight();
+    ch8se.fixIframeSizePage();
     // ch8se.fixIframeSize();
   });
 
@@ -195,6 +197,10 @@ ch8se.youtubePopup = function() {
 
 }
 
+ch8se.fixIframeSizePage = function() {
+  var $videoWrapper = $('.videoWrapper');
+  $videoWrapper.css({height: ($videoWrapper.width() * 9 / 16)});
+}
 
 ch8se.fixIframeSize = function() {
   var $iframeHolder = $('.iframe-holder');
