@@ -58,7 +58,7 @@
                 <a href="<?php echo esc_url( home_url( '/ch8sers' ) ); ?>">Ch8sers</a>
                 <ul>
                   <li><a href="<?php echo esc_url( home_url( '/ch8sers/#firestarters' ) ); ?>">Firestarters</a></li>
-                  <li><a href="<?php echo esc_url( home_url( '/ch8sers/#champs' ) ); ?>">Champs</a></li>
+                  <li><a href="<?php echo esc_url( home_url( '/ch8sers/#heroes' ) ); ?>">Heroes</a></li>
                 </ul>
               </li>
               <li><a href="<?php echo esc_url( home_url( '/coming-soon' ) ); ?>">Blog</a></li>
