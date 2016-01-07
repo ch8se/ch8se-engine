@@ -2275,40 +2275,98 @@ input {
 }
 
 // Single Ambassador page
-.bio {
+.ambassadors {
+
+  .biography {
   position: relative;
   height: 500px;
-}
-.pic {
+  @media screen and (max-width:880px) {
+    height: 380px;
+  }
+  }
+
+  .profile-picture {
   width: 25%;
   position: absolute;
   margin: -150px 0 0 30px;
-}
-.sing {
+  @media screen and (max-width:660px) {
+        margin: -92px 0 0 30px;
+      }
+    img {
+      min-width: 100%;
+    }
+  }
+
+  .sing {
   width: 240px;
   margin: auto;
   height: 60px;
-}
-.info {
+  @media screen and (max-width:900px) {
+        width: 85%;
+      }
+  @media screen and (max-width:730px) {
+        width: 95%;
+      }
+  @media screen and (max-width:570px) {
+        width: 100%;
+      }
+      a {
+        @media screen and (max-width:900px) {
+        margin: 5px;
+      }
+      @media screen and (max-width:880px) {
+        margin: 20px;
+      }
+      @media screen and (max-width:730px) {
+        margin: 15px;
+      }
+      @media screen and (max-width:570px) {
+        margin: 10px;
+      }
+      }
+  }
+
+  .info {
   width: 69%;
   margin-top: 41px;
   display: inline-block;
   text-align: center;
   float: right;
+  @media screen and (max-width:485px) {
+        margin-top: 10px;
+      }
   h2 {
     font-size: 30px;
+    @media screen and (max-width:485px) {
+        font-size: 25px;
+      }
   }
   p {
     font-size: 17px;
-    &.detail {
-    display: block;
-    font-weight: bold;
-    margin: 60px auto 0 auto;
-    width: 80%;
-    font-size: 29px;
+    @media screen and (max-width:485px) {
+        font-size: 14px;
+      }
+      &.details {
+      display: block;
+      font-weight: bold;
+      margin: 60px auto 0 auto;
+      width: 80%;
+      font-size: 29px;
+      @media screen and (max-width:880px) {
+        font-size: 20px;
+      }
+      @media screen and (max-width:660px) {
+        font-size: 17px;
+      }
+      @media screen and (max-width:485px) {
+        font-size: 15px;
+        margin: 25px auto 0 auto;
+      }
+    }
   }
   }
 }
+
 
 // Plugin overrides
 
