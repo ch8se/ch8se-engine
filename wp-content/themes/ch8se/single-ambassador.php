@@ -6,13 +6,13 @@ get_header(); ?>
 <div class="content">
   <div class="ambassadors banner">
   	<div class="ambassador image">
-  		<img src="wp-content/themes/ch8se/img/demo/singambanner.jpg">
+  		<img src="wp-content/themes/ch8se/img/demo/ambanner.jpg">
   	</div>
   </div>
   <div class="bio">
   	<div class="pic">
   		<img src="wp-content/themes/ch8se/img/demo/ambassador.jpg">
-  		<div class="social sing">
+  		<div class="social invert sing">
   			<a href="">
   				<i class="fa fa-facebook"></i>
   			</a>
@@ -21,6 +21,9 @@ get_header(); ?>
   			</a>
   			<a href="">
   				<i class="fa fa-twitter"></i>
+  			</a>
+  			<a href="">
+  				<i class="fa fa-globe"></i>
   			</a>
   		</div>
   	</div>
