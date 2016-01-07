@@ -2209,7 +2209,7 @@ input {
 
 // Ambassadors page
 
-.ambassador {
+.ambassadors {
   width: 100%;
   box-sizing: border-box;
   img {
@@ -2228,29 +2228,43 @@ input {
 .list-holder {
   width: 100%;
   padding-bottom: 70px;
+  text-align: center;
   p {
     text-align: center;
+    display: inline-block;
+    padding: 0 10px 0 10px;
+    z-index: 5;
+    background: #fff;
+    font-weight: bold;
   }
 }
 .listup {
   width: 95%;
-  margin: auto;
+  margin: -10px auto;
   border-top: 1px solid #AAA;
 }
 .amb-holder {
-  width: 90%;
+  width: 99%;
   margin: auto;
   padding-top: 40px;
   text-align: center;
 }
 .amb-indiv {
-  width: 22.7%;
   position: relative;
   margin: 10px;
   display: inline-block;
+  @media screen and (max-width:592px) {
+    width: 44%;
+  }
+  @media screen and (max-width:400px) {
+    width: 40%;
+  }
   a {
     height: 250px;
     display: block;
+    @media screen and (max-width:592px) {
+      height: inherit;
+    }
   }
   p {
     padding-top: 15px;

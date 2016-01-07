@@ -6,10 +6,11 @@
 get_header(); ?>
 
 <div class="ambassadors">
-  <div class="ambassador banner">
+  <div class="ambassadors banner">
   	<div class="ambassador image">
   		<img src="wp-content/themes/ch8se/img/demo/ambanner.jpg">
   	</div>
+  </div>	
   	<div class="list-climb">
   		<h2>Patagonia Ambassadors</h2>
   		<div class="list-holder">
@@ -296,12 +297,176 @@ get_header(); ?>
   			<p>SURFING</p>
   			<div class="listup">
   				<div class="amb-holder">
-  					
+  					<div class="amb-indiv">
+  						<a href=""><img src="wp-content/themes/ch8se/img/demo/ambassador.jpg"></a>
+  						<p>Steve House</p>
+  					</div>
+  					<div class="amb-indiv">
+  						<a href=""><img src="wp-content/themes/ch8se/img/demo/ambassador.jpg"></a>
+  						<p>Steve House</p>
+  					</div>
+  					<div class="amb-indiv">
+  						<a href=""><img src="wp-content/themes/ch8se/img/demo/ambassador.jpg"></a>
+  						<p>Steve House</p>
+  					</div>
+  					<div class="amb-indiv">
+  						<a href=""><img src="wp-content/themes/ch8se/img/demo/ambassador.jpg"></a>
+  						<p>Steve House</p>
+  					</div>
+  					<div class="amb-indiv">
+  						<a href=""><img src="wp-content/themes/ch8se/img/demo/ambassador.jpg"></a>
+  						<p>Steve House</p>
+  					</div>
+  					<div class="amb-indiv">
+  						<a href=""><img src="wp-content/themes/ch8se/img/demo/ambassador.jpg"></a>
+  						<p>Steve House</p>
+  					</div>
+  					<div class="amb-indiv">
+  						<a href=""><img src="wp-content/themes/ch8se/img/demo/ambassador.jpg"></a>
+  						<p>Steve House</p>
+  					</div>
+  					<div class="amb-indiv">
+  						<a href=""><img src="wp-content/themes/ch8se/img/demo/ambassador.jpg"></a>
+  						<p>Steve House</p>
+  					</div>
+  					<div class="amb-indiv">
+  						<a href=""><img src="wp-content/themes/ch8se/img/demo/ambassador.jpg"></a>
+  						<p>Steve House</p>
+  					</div>
+  					<div class="amb-indiv">
+  						<a href=""><img src="wp-content/themes/ch8se/img/demo/ambassador.jpg"></a>
+  						<p>Steve House</p>
+  					</div>
+  					<div class="amb-indiv">
+  						<a href=""><img src="wp-content/themes/ch8se/img/demo/ambassador.jpg"></a>
+  						<p>Steve House</p>
+  					</div>
+  					<div class="amb-indiv">
+  						<a href=""><img src="wp-content/themes/ch8se/img/demo/ambassador.jpg"></a>
+  						<p>Steve House</p>
+  					</div>
+  					<div class="amb-indiv">
+  						<a href=""><img src="wp-content/themes/ch8se/img/demo/ambassador.jpg"></a>
+  						<p>Steve House</p>
+  					</div>
+  					<div class="amb-indiv">
+  						<a href=""><img src="wp-content/themes/ch8se/img/demo/ambassador.jpg"></a>
+  						<p>Steve House</p>
+  					</div>
+  					<div class="amb-indiv">
+  						<a href=""><img src="wp-content/themes/ch8se/img/demo/ambassador.jpg"></a>
+  						<p>Steve House</p>
+  					</div>
+  					<div class="amb-indiv">
+  						<a href=""><img src="wp-content/themes/ch8se/img/demo/ambassador.jpg"></a>
+  						<p>Steve House</p>
+  					</div>
+  					<div class="amb-indiv">
+  						<a href=""><img src="wp-content/themes/ch8se/img/demo/ambassador.jpg"></a>
+  						<p>Steve House</p>
+  					</div>
+  					<div class="amb-indiv">
+  						<a href=""><img src="wp-content/themes/ch8se/img/demo/ambassador.jpg"></a>
+  						<p>Steve House</p>
+  					</div>
+  					<div class="amb-indiv">
+  						<a href=""><img src="wp-content/themes/ch8se/img/demo/ambassador.jpg"></a>
+  						<p>Steve House</p>
+  					</div>
+  					<div class="amb-indiv">
+  						<a href=""><img src="wp-content/themes/ch8se/img/demo/ambassador.jpg"></a>
+  						<p>Steve House</p>
+  					</div>
+  					<div class="amb-indiv">
+  						<a href=""><img src="wp-content/themes/ch8se/img/demo/ambassador.jpg"></a>
+  						<p>Steve House</p>
+  					</div>
+  					<div class="amb-indiv">
+  						<a href=""><img src="wp-content/themes/ch8se/img/demo/ambassador.jpg"></a>
+  						<p>Steve House</p>
+  					</div>
+  					<div class="amb-indiv">
+  						<a href=""><img src="wp-content/themes/ch8se/img/demo/ambassador.jpg"></a>
+  						<p>Steve House</p>
+  					</div>
+  					<div class="amb-indiv">
+  						<a href=""><img src="wp-content/themes/ch8se/img/demo/ambassador.jpg"></a>
+  						<p>Steve House</p>
+  					</div>
+  					<div class="amb-indiv">
+  						<a href=""><img src="wp-content/themes/ch8se/img/demo/ambassador.jpg"></a>
+  						<p>Steve House</p>
+  					</div>
+  					<div class="amb-indiv">
+  						<a href=""><img src="wp-content/themes/ch8se/img/demo/ambassador.jpg"></a>
+  						<p>Steve House</p>
+  					</div>
+  					<div class="amb-indiv">
+  						<a href=""><img src="wp-content/themes/ch8se/img/demo/ambassador.jpg"></a>
+  						<p>Steve House</p>
+  					</div>
+  					<div class="amb-indiv">
+  						<a href=""><img src="wp-content/themes/ch8se/img/demo/ambassador.jpg"></a>
+  						<p>Steve House</p>
+  					</div>
+  					<div class="amb-indiv">
+  						<a href=""><img src="wp-content/themes/ch8se/img/demo/ambassador.jpg"></a>
+  						<p>Steve House</p>
+  					</div>
+  					<div class="amb-indiv">
+  						<a href=""><img src="wp-content/themes/ch8se/img/demo/ambassador.jpg"></a>
+  						<p>Steve House</p>
+  					</div>
   				</div>
   			</div>
   		</div>
   	</div>
-  </div>
+  	<div class="trail">
+  		<div class="list-holder">
+  			<p>TRAIL RUNNING</p>
+  			<div class="listup">
+  				<div class="amb-holder">
+  					<div class="amb-indiv">
+  						<a href=""><img src="wp-content/themes/ch8se/img/demo/ambassador.jpg"></a>
+  						<p>Steve House</p>
+  					</div>
+  					<div class="amb-indiv">
+  						<a href=""><img src="wp-content/themes/ch8se/img/demo/ambassador.jpg"></a>
+  						<p>Steve House</p>
+  					</div>
+  					<div class="amb-indiv">
+  						<a href=""><img src="wp-content/themes/ch8se/img/demo/ambassador.jpg"></a>
+  						<p>Steve House</p>
+  					</div>
+  					<div class="amb-indiv">
+  						<a href=""><img src="wp-content/themes/ch8se/img/demo/ambassador.jpg"></a>
+  						<p>Steve House</p>
+  					</div>
+  					<div class="amb-indiv">
+  						<a href=""><img src="wp-content/themes/ch8se/img/demo/ambassador.jpg"></a>
+  						<p>Steve House</p>
+  					</div>
+  					<div class="amb-indiv">
+  						<a href=""><img src="wp-content/themes/ch8se/img/demo/ambassador.jpg"></a>
+  						<p>Steve House</p>
+  					</div>
+  					<div class="amb-indiv">
+  						<a href=""><img src="wp-content/themes/ch8se/img/demo/ambassador.jpg"></a>
+  						<p>Steve House</p>
+  					</div>
+  					<div class="amb-indiv">
+  						<a href=""><img src="wp-content/themes/ch8se/img/demo/ambassador.jpg"></a>
+  						<p>Steve House</p>
+  					</div>
+  					<div class="amb-indiv">
+  						<a href=""><img src="wp-content/themes/ch8se/img/demo/ambassador.jpg"></a>
+  						<p>Steve House</p>
+  					</div>
+  				</div>
+  			</div>
+  		</div>
+  	</div>
+  
   
 </div>
 
