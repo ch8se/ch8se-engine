@@ -2248,63 +2248,73 @@ input {
     min-width: 100%;
     max-height: 100%;
   }
-}
-.list-climb {
-  width: 100%;
-  h2 {
-    text-align: center;
-    font-size: 37px;
-    font-weight: bold;
   }
-}
-.list-holder {
-  width: 100%;
-  padding-bottom: 70px;
-  text-align: center;
-  p {
-    text-align: center;
-    display: inline-block;
-    padding: 0 10px 0 10px;
-    z-index: 5;
-    background: #fff;
-    font-weight: bold;
-  }
-}
-.listup {
-  width: 95%;
-  margin: -10px auto;
-  border-top: 1px solid #AAA;
-}
-.amb-holder {
-  width: 99%;
-  margin: auto;
-  padding-top: 40px;
-  text-align: center;
-}
-.amb-indiv {
-  position: relative;
-  margin: 10px;
-  display: inline-block;
-  @media screen and (max-width:592px) {
-    width: 44%;
-  }
-  @media screen and (max-width:400px) {
-    width: 40%;
-  }
-  a {
-    height: 250px;
-    display: block;
-    @media screen and (max-width:592px) {
-      height: inherit;
+  .list-climb {
+    width: 100%;
+    h2 {
+      text-align: center;
+      font-size: 37px;
+      font-weight: bold;
     }
   }
-  p {
-    padding-top: 15px;
+  .list-holder {
+    width: 100%;
+    padding-bottom: 70px;
+    text-align: center;
+    p {
+      text-align: center;
+      display: inline-block;
+      padding: 0 80px 0 80px;
+      z-index: 5;
+      background: #fff;
+      font-weight: bold;
+    }
   }
-}
-.list-fishing {
-  width: 100%;
-}
+  .listup {
+    width: 100%;
+    margin: -10px auto;
+    border-top: 1px solid #AAA;
+  }
+  .amb-holder {
+    width: 100%;
+    margin: auto;
+    padding-top: 40px;
+    text-align: center;
+  }
+  .amb-indiv {
+    position: relative;
+    margin: 10px;
+    display: inline-block;
+    width: 22%;
+
+    @media screen and (max-width:782px) {
+      width: 31%;
+    }
+    @media screen and (max-width:600px) {
+      width: 21%;
+    }
+    @media screen and (max-width:450px) {
+      width: 31%;
+    }
+
+    a {
+      height: 225px;
+      display: block;
+      @media screen and (max-width:900px) {
+        height: 40%;
+      }
+      @media screen and (max-width:600px) {
+        height: inherit;
+      }
+    }
+    p {
+      padding: 5px 0 0 0;
+      font-size: 14px;
+    }
+  }
+    .list-fishing {
+      width: 100%;
+    }
 
 // Single Ambassador page
 .ambassadors {
@@ -2363,44 +2373,50 @@ input {
   }
 
   .info {
-  width: 69%;
-  margin-top: 41px;
-  display: inline-block;
-  text-align: center;
-  float: right;
-  @media screen and (max-width:485px) {
-        margin-top: 10px;
-      }
-  h2 {
-    font-size: 30px;
+    width: 69%;
+    margin-top: 41px;
+    display: inline-block;
+    text-align: center;
+    float: right;
+
     @media screen and (max-width:485px) {
-        font-size: 25px;
-      }
-  }
-  p {
-    font-size: 17px;
-    @media screen and (max-width:485px) {
-        font-size: 14px;
-      }
-      &.details {
-      display: block;
-      font-weight: bold;
-      margin: 60px auto 0 auto;
-      width: 80%;
-      font-size: 29px;
-      @media screen and (max-width:880px) {
-        font-size: 20px;
-      }
-      @media screen and (max-width:660px) {
-        font-size: 17px;
-      }
+          margin-top: 10px;
+    }
+
+    h2 {
+      font-size: 30px;
+
       @media screen and (max-width:485px) {
-        font-size: 15px;
-        margin: 25px auto 0 auto;
+          font-size: 25px;
       }
     }
-  }
-  }
+
+    p {
+      font-size: 17px;
+
+      @media screen and (max-width:485px) {
+          font-size: 14px;
+      }
+        &.details {
+        display: block;
+        font-weight: bold;
+        margin: 60px auto 0 auto;
+        width: 80%;
+        font-size: 29px;
+
+        @media screen and (max-width:880px) {
+          font-size: 20px;
+        }
+        @media screen and (max-width:660px) {
+          font-size: 17px;
+        }
+        @media screen and (max-width:485px) {
+          font-size: 15px;
+          margin: 25px auto 0 auto;
+        }
+      }
+    }
+    }
 }
 
 

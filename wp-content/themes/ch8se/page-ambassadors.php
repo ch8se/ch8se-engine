@@ -21,6 +21,34 @@ endwhile; endif; ?>
             <a href=""><img src="<?php echo esc_url( home_url( '/' ) ); ?>wp-content/themes/ch8se/img/demo/ambassador.jpg"></a>
             <p>Steve House</p>
           </div>
+           <div class="amb-indiv">
+            <a href=""><img src="<?php echo esc_url( home_url( '/' ) ); ?>wp-content/themes/ch8se/img/demo/ambassador.jpg"></a>
+            <p>Steve House</p>
+          </div>
+           <div class="amb-indiv">
+            <a href=""><img src="<?php echo esc_url( home_url( '/' ) ); ?>wp-content/themes/ch8se/img/demo/ambassador.jpg"></a>
+            <p>Steve House</p>
+          </div>
+           <div class="amb-indiv">
+            <a href=""><img src="<?php echo esc_url( home_url( '/' ) ); ?>wp-content/themes/ch8se/img/demo/ambassador.jpg"></a>
+            <p>Steve House</p>
+          </div>
+           <div class="amb-indiv">
+            <a href=""><img src="<?php echo esc_url( home_url( '/' ) ); ?>wp-content/themes/ch8se/img/demo/ambassador.jpg"></a>
+            <p>Steve House</p>
+          </div>
+           <div class="amb-indiv">
+            <a href=""><img src="<?php echo esc_url( home_url( '/' ) ); ?>wp-content/themes/ch8se/img/demo/ambassador.jpg"></a>
+            <p>Steve House</p>
+          </div>
+           <div class="amb-indiv">
+            <a href=""><img src="<?php echo esc_url( home_url( '/' ) ); ?>wp-content/themes/ch8se/img/demo/ambassador.jpg"></a>
+            <p>Steve House</p>
+          </div>
+           <div class="amb-indiv">
+            <a href=""><img src="<?php echo esc_url( home_url( '/' ) ); ?>wp-content/themes/ch8se/img/demo/ambassador.jpg"></a>
+            <p>Steve House</p>
+          </div>
         </div>
       </div>
     </div>
