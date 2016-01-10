@@ -16,10 +16,12 @@ endwhile; endif; ?>
     <div class="list-holder">
       <p>Even the greatest movements had their humble beginnings. The firestarters are the early adopters, the crazy ones, the dreamers. Those who believe, even when everyone else is being doubtful. </p>
       <div class="listup">
-        <div class="amb-holder">
+        <div class="amb-holder clearfix">
           <div class="amb-indiv">
-            <a href=""><img src="<?php echo esc_url( home_url( '/' ) ); ?>wp-content/themes/ch8se/img/demo/ambassador.jpg"></a>
-            <p>Steve House</p>
+            <a href="">
+              <img src="<?php echo esc_url( home_url( '/' ) ); ?>wp-content/themes/ch8se/img/demo/ambassador.jpg">
+              <p>Steve House</p>
+            </a>
           </div>
            <div class="amb-indiv">
             <a href=""><img src="<?php echo esc_url( home_url( '/' ) ); ?>wp-content/themes/ch8se/img/demo/ambassador.jpg"></a>
