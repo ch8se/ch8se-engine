@@ -17,40 +17,36 @@ endwhile; endif; ?>
       <p>Even the greatest movements had their humble beginnings. The firestarters are the early adopters, the crazy ones, the dreamers. Those who believe, even when everyone else is being doubtful. </p>
       <div class="listup">
         <div class="amb-holder clearfix">
+
+        
+
+        <?php $args = array( 'post_type' => 'ambassador', 'posts_per_page'=>'-1');
+          $loop = new WP_Query( $args );
+          while ( $loop->have_posts() ) : $loop->the_post(); ?>
+          <div class="amb-indiv" class="amb-indiv">
+            <a href="<?php the_permalink(); ?>">
+              <?php echo get_the_post_thumbnail( $post->ID, 'medium' ); ?>
+              <p><?php the_title(); ?></p>
+            </a>
+          </div>
+        <?php endwhile; ?>
+
+
+
+
+
+
+
+
           <div class="amb-indiv">
             <a href="">
               <img src="<?php echo esc_url( home_url( '/' ) ); ?>wp-content/themes/ch8se/img/demo/ambassador.jpg">
               <p>Steve House</p>
             </a>
           </div>
-           <div class="amb-indiv">
-            <a href=""><img src="<?php echo esc_url( home_url( '/' ) ); ?>wp-content/themes/ch8se/img/demo/ambassador.jpg"></a>
-            <p>Steve House</p>
-          </div>
-           <div class="amb-indiv">
-            <a href=""><img src="<?php echo esc_url( home_url( '/' ) ); ?>wp-content/themes/ch8se/img/demo/ambassador.jpg"></a>
-            <p>Steve House</p>
-          </div>
-           <div class="amb-indiv">
-            <a href=""><img src="<?php echo esc_url( home_url( '/' ) ); ?>wp-content/themes/ch8se/img/demo/ambassador.jpg"></a>
-            <p>Steve House</p>
-          </div>
-           <div class="amb-indiv">
-            <a href=""><img src="<?php echo esc_url( home_url( '/' ) ); ?>wp-content/themes/ch8se/img/demo/ambassador.jpg"></a>
-            <p>Steve House</p>
-          </div>
-           <div class="amb-indiv">
-            <a href=""><img src="<?php echo esc_url( home_url( '/' ) ); ?>wp-content/themes/ch8se/img/demo/ambassador.jpg"></a>
-            <p>Steve House</p>
-          </div>
-           <div class="amb-indiv">
-            <a href=""><img src="<?php echo esc_url( home_url( '/' ) ); ?>wp-content/themes/ch8se/img/demo/ambassador.jpg"></a>
-            <p>Steve House</p>
-          </div>
-           <div class="amb-indiv">
-            <a href=""><img src="<?php echo esc_url( home_url( '/' ) ); ?>wp-content/themes/ch8se/img/demo/ambassador.jpg"></a>
-            <p>Steve House</p>
-          </div>
+          
+
+
         </div>
       </div>
     </div>
