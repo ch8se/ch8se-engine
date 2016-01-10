@@ -33,20 +33,6 @@ endwhile; endif; ?>
 
 
 
-
-
-
-
-
-          <div class="amb-indiv">
-            <a href="">
-              <img src="<?php echo esc_url( home_url( '/' ) ); ?>wp-content/themes/ch8se/img/demo/ambassador.jpg">
-              <p>Steve House</p>
-            </a>
-          </div>
-          
-
-
         </div>
       </div>
     </div>
