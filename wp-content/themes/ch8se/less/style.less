@@ -116,6 +116,7 @@ a {
 header.site-header {
   background: #1d1d1f;
   .site-width();
+  z-index: 1;
 }
 
 // Navigation
@@ -1891,7 +1892,7 @@ input {
 }
 .text-content { //TODO: remove this style, integrate better styles used by editor
   text-align: center;
-  padding: 160px 0 130px;
+  padding: 60px 0 130px;
 
   &.no-center {
     text-align: left;
@@ -1906,9 +1907,15 @@ input {
   p {
     padding: 30px 80px;
 
+    br { //Override to clear br's from editor
+      display: none;
+    }
+
     .indent {
       padding-left: 20px;
       font-size: 0.8em;
+      display: list-item; //Change span to li
+      margin: 10px 0;
     }
   }
 
@@ -1917,6 +1924,32 @@ input {
 
     p {
       padding: 10px;
+    }
+  }
+
+  &.heroes {
+    > div {
+      background: url(img/champs.jpg) no-repeat right top;
+      max-width: 1300px;
+      box-sizing: border-box;
+      padding-right: 610px;
+
+      @media screen and (max-width: 1200px) {
+        background-size: 579px;
+        padding-right: 430px;
+      }
+      @media screen and (max-width: 900px) {
+        background-size: 386px;
+        padding-right: 286px;
+      }
+      @media screen and (max-width: 782px) {
+        background-position: center top;
+        padding-right: 0px;
+        padding-top: 470px;
+      }
+      @media screen and (max-width: 450px) {
+        background-size: 300px;
+      }
     }
   }
 }
@@ -2207,8 +2240,197 @@ input {
 }
 
 
+// Ambassadors page
+
+.ambassadors {
+  width: 100%;
+  box-sizing: border-box;
+  img {
+    width: 100%;
+    height: auto;
+  }
+
+  .list-climb {
+    width: 100%;
+    h2 {
+      text-align: center;
+      font-size: 37px;
+      font-weight: bold;
+    }
+  }
+
+  .list-holder {
+    width: 100%;
+    padding-bottom: 70px;
+    text-align: center;
+    p {
+      text-align: center;
+      display: inline-block;
+      padding: 0 80px 0 80px;
+      z-index: 5;
+      background: #fff;
+      font-weight: bold;
+    }
+  }
+
+  .listup {
+    width: 100%;
+    margin: -10px auto;
+    border-top: 1px solid #AAA;
+  }
+
+  .ambassador-holder {
+    width: 100%;
+    margin: auto;
+    padding-top: 40px;
+    text-align: center;
+  }
+
+  .ambassador-single {
+    position: relative;
+    padding: 10px;
+    width: 25%;
+    float: left;
+    box-sizing: border-box;
+    display: block;
+
+    @media screen and (max-width:782px) {
+      width: 33.33%;
+    }
+    @media screen and (max-width:600px) {
+      width: 50%;
+    }
+    @media screen and (max-width:450px) {
+      width: 100%;
+    }
+
+    p {
+      padding: 5px 0 0 0;
+      font-size: 14px;
+    }
+  }
+  
+  .list-fishing {
+    width: 100%;
+  }
+}
+
+// Single Ambassador page
+.ambassador {
+  background: #fff;
+  // overflow: hidden;
+  // margin-top: 150px;
+  position: relative;
+  z-index: 0;
 
 
+  .banner {
+    position: relative; //fixed
+    top: 0;
+    z-index: 0;
+  }
+
+  .biography {
+    background: #fff;
+    position: relative;
+    overflow: visible;
+    z-index: 1;
+
+    // min-height: 1000px;
+  }
+
+  .profile-picture {
+    width: 25%;
+    position: absolute;
+    margin: -150px 0 0 30px;
+
+    @media screen and (max-width:600px) {
+        margin: -92px 0 0 30px;
+      }
+    img {
+      min-width: 100%;
+    }
+
+    .social a {
+      display: inline-block;
+      float: none;
+    }
+  }
+
+  .sing {
+    width: 240px;
+    margin: auto;
+    height: 60px;
+
+    @media screen and (max-width:900px) {
+      width: 85%;
+    }
+    @media screen and (max-width:782px) {
+      width: 95%;
+    }
+    @media screen and (max-width:600px) {
+      width: 100%;
+    }
+
+    a {
+      @media screen and (max-width:900px) {
+        margin: 20px;
+      }
+      @media screen and (max-width:782px) {
+        margin: 15px;
+      }
+      @media screen and (max-width:600px) {
+        margin: 10px;
+      }
+    }
+  }
+
+  .info {
+    width: 69%;
+    margin-top: 41px;
+    display: inline-block;
+    text-align: center;
+    float: right;
+
+    @media screen and (max-width:485px) {
+          margin-top: 10px;
+    }
+
+    h2 {
+      font-size: 30px;
+
+      @media screen and (max-width:485px) {
+          font-size: 25px;
+      }
+    }
+
+    p {
+      font-size: 17px;
+
+      @media screen and (max-width:485px) {
+          font-size: 14px;
+      }
+        &.details {
+        display: block;
+        font-weight: bold;
+        margin: 60px auto 0 auto;
+        width: 80%;
+        font-size: 29px;
+
+        @media screen and (max-width:900px) {
+          font-size: 20px;
+        }
+        @media screen and (max-width:600px) {
+          font-size: 17px;
+        }
+        @media screen and (max-width:485px) {
+          font-size: 15px;
+          margin: 25px auto 0 auto;
+        }
+      }
+    }
+    }
+}
 
 
 // Plugin overrides
