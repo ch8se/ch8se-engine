@@ -16,14 +16,14 @@ endwhile; endif; ?>
     <div class="list-holder">
       <p>Even the greatest movements had their humble beginnings. The firestarters are the early adopters, the crazy ones, the dreamers. Those who believe, even when everyone else is being doubtful. </p>
       <div class="listup">
-        <div class="amb-holder clearfix">
+        <div class="ambassador-holder clearfix">
 
         
 
         <?php $args = array( 'post_type' => 'ambassador', 'posts_per_page'=>'-1');
           $loop = new WP_Query( $args );
           while ( $loop->have_posts() ) : $loop->the_post(); ?>
-          <div class="amb-indiv" class="amb-indiv">
+          <div class="ambassador-single" class="ambassador-single">
             <a href="<?php the_permalink(); ?>">
               <?php echo get_the_post_thumbnail( $post->ID, 'medium' ); ?>
               <p><?php the_title(); ?></p>
