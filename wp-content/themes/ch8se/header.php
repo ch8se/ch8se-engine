@@ -55,10 +55,11 @@
             <ul>
               <li><a href="<?php echo esc_url( home_url( '/ch8seday' ) ); ?>">ch8seday Tuesday<br><span>The critical mass of fashion.</span></a></li>
               <li>
-                <a href="<?php echo esc_url( home_url( '/ch8sers' ) ); ?>">Ch8sers</a>
+                <a href="<?php echo esc_url( home_url( '/ch8sers' ) ); ?>">ch8sers</a>
                 <ul>
                   <li><a href="<?php echo esc_url( home_url( '/ch8sers/#firestarters' ) ); ?>">Firestarters</a></li>
                   <li><a href="<?php echo esc_url( home_url( '/ch8sers/#heroes' ) ); ?>">Heroes</a></li>
+                  <li><a href="<?php echo esc_url( home_url( '/ch8sers/#ambassadors' ) ); ?>">Ambassadors</a></li>
                 </ul>
               </li>
               <li><a href="<?php echo esc_url( home_url( '/coming-soon' ) ); ?>">Blog</a></li>
