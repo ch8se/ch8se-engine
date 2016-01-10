@@ -3,39 +3,50 @@
 get_header(); ?>
 
 
-<div class="content ambassadors">
-  <div class="ambassadors banner">
-  	<div class="ambassador image">
-  		<img src="wp-content/themes/ch8se/img/demo/ambanner.jpg">
-  	</div>
-  </div>
-  <div class="biography">
+<div class="content ambassador">
+  <div class="banner">
+  <img src="<?php echo wp_get_attachment_image_src(get_post_meta($post->ID, 'cover_image', true),'', true)[0]; ?>">
+</div>
+
+  <div class="biography clearfix">
   	<div class="profile-picture">
-  		<img src="wp-content/themes/ch8se/img/demo/ambassador.jpg">
+  		<img src="<?php echo wp_get_attachment_image_src(get_post_thumbnail_id(),'medium', true)[0]; ?>" alt="<?php the_title(); ?>">
   		<div class="social invert sing">
-  			<a href="">
+  			
+
+        <?php if (get_post_meta($post->ID, 'facebook_link', true)) { ?>
+        <a href="http://<?php echo get_post_meta($post->ID, 'facebook_link', true); ?>">
   				<i class="fa fa-facebook"></i>
   			</a>
-  			<a href="">
+        <?php } ?>
+  			
+
+        <?php if (get_post_meta($post->ID, 'instagram_link', true)) { ?>
+        <a href="http://<?php echo get_post_meta($post->ID, 'instagram_link', true); ?>">
   				<i class="fa fa-instagram"></i>
   			</a>
-  			<a href="">
+        <?php } ?>
+  			
+
+        <?php if (get_post_meta($post->ID, 'twitter_link', true)) { ?>
+        <a href="http://<?php echo get_post_meta($post->ID, 'twitter_link', true); ?>">
   				<i class="fa fa-twitter"></i>
   			</a>
-  			<a href="">
+        <?php } ?>
+  			
+
+        <?php if (get_post_meta($post->ID, 'website', true)) { ?>
+        <a href="http://<?php echo get_post_meta($post->ID, 'website', true); ?>">
   				<i class="fa fa-globe"></i>
   			</a>
+        <?php } ?>
   		</div>
   	</div>
   	<div class="info">
-  		<h2>Steve House</h2>
+  		<h2><?php the_title(); ?></h2>
   		<p>HOMETOWN</p>
-  		<p>Beograd, Srbija</p>
-  		<p class="details">Reinhold Messner called Steve House “the best high-altitude climber in the 
-  		 world today.” But for Steve, climbing is about process, not achievement. He says, “The moment
-  		 your mind wanders from the climbing at hand will be the moment you fall.” Steve has earned
-  		 Messner’s praise by leading the charge to climb bigger routes, from the Himalaya's to the 
-  		 Canadian Rockies, faster and with less equipment than anyone before.</p>
+  		<p><?php echo get_post_meta($post->ID, 'location', true); ?></p>
+  		<p class="details"><?php echo get_post_meta($post->ID, 'bio', true); ?></p>
   	</div>
   </div>
 </div>

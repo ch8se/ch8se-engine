@@ -117,7 +117,20 @@ ch8se.init = function() {
   });
 
 
+  //ambassador page fix
+  // $('.ambassador .banner').on('load', function() {
+  //   $('.ambassador').css('margin-top', $('.ambassador .banner').height() - 100);
+  //   $('.ambassador .biography').height($('.ambassador .banner').height());
+  // }).each(function() {
+  //   $('.ambassador').css('margin-top', $('.ambassador .banner').height() - 100);
+  //   $('.ambassador .biography').height($('.ambassador .banner').height());
+  // });
+
+
 }
+
+
+
 function makeid() {
     var text = "";
     var possible = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";

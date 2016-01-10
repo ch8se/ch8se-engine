@@ -116,6 +116,7 @@ a {
 header.site-header {
   background: #1d1d1f;
   .site-width();
+  z-index: 1;
 }
 
 // Navigation
@@ -2315,11 +2316,27 @@ input {
 }
 
 // Single Ambassador page
-.ambassadors {
+.ambassador {
+  background: #fff;
+  // overflow: hidden;
+  // margin-top: 150px;
+  position: relative;
+  z-index: 0;
 
-  .biography {//
+
+  .banner {
+    position: relative; //fixed
+    top: 0;
+    z-index: 0;
+  }
+
+  .biography {
+    background: #fff;
     position: relative;
-    display: inline-block;
+    overflow: visible;
+    z-index: 1;
+
+    // min-height: 1000px;
   }
 
   .profile-picture {
@@ -2332,6 +2349,11 @@ input {
       }
     img {
       min-width: 100%;
+    }
+
+    .social a {
+      display: inline-block;
+      float: none;
     }
   }
 
