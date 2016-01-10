@@ -1891,7 +1891,7 @@ input {
 }
 .text-content { //TODO: remove this style, integrate better styles used by editor
   text-align: center;
-  padding: 160px 0 130px;
+  padding: 60px 0 130px;
 
   &.no-center {
     text-align: left;
@@ -2277,19 +2277,21 @@ input {
 // Single Ambassador page
 .ambassadors {
 
-  .biography {
-  position: relative;
-  height: 500px;
-  @media screen and (max-width:880px) {
-    height: 380px;
-  }
+  .biography {//
+    position: relative;
+    height: 500px;
+
+    @media screen and (max-width:880px) {
+      height: 380px;
+    }
   }
 
   .profile-picture {
-  width: 25%;
-  position: absolute;
-  margin: -150px 0 0 30px;
-  @media screen and (max-width:660px) {
+    width: 25%;
+    position: absolute;
+    margin: -150px 0 0 30px;
+
+    @media screen and (max-width:660px) {
         margin: -92px 0 0 30px;
       }
     img {
@@ -2298,20 +2300,22 @@ input {
   }
 
   .sing {
-  width: 240px;
-  margin: auto;
-  height: 60px;
-  @media screen and (max-width:900px) {
-        width: 85%;
-      }
-  @media screen and (max-width:730px) {
-        width: 95%;
-      }
-  @media screen and (max-width:570px) {
-        width: 100%;
-      }
-      a {
-        @media screen and (max-width:900px) {
+    width: 240px;
+    margin: auto;
+    height: 60px;
+
+    @media screen and (max-width:900px) {
+      width: 85%;
+    }
+    @media screen and (max-width:730px) {
+      width: 95%;
+    }
+    @media screen and (max-width:570px) {
+      width: 100%;
+    }
+
+    a {
+      @media screen and (max-width:900px) {
         margin: 5px;
       }
       @media screen and (max-width:880px) {
@@ -2323,7 +2327,7 @@ input {
       @media screen and (max-width:570px) {
         margin: 10px;
       }
-      }
+    }
   }
 
   .info {
