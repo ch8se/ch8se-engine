@@ -1912,10 +1912,10 @@ input {
     }
 
     .indent {
-      padding-left: 20px;
+      // padding-left: 20px;
       font-size: 0.8em;
       display: list-item; //Change span to li
-      margin: 10px 0;
+      margin: 10px 0 10px 40px;
     }
   }
 
@@ -1934,21 +1934,27 @@ input {
       box-sizing: border-box;
       padding-right: 610px;
 
-      @media screen and (max-width: 1200px) {
-        background-size: 579px;
+      @media screen and (max-width: 1500px) {
+        background-size: 600px;
+        max-width: 1100px;
         padding-right: 430px;
       }
       @media screen and (max-width: 900px) {
-        background-size: 386px;
+        background-size: 400px;
         padding-right: 286px;
       }
       @media screen and (max-width: 782px) {
         background-position: center top;
         padding-right: 0px;
-        padding-top: 470px;
+        > h2 {
+          padding-bottom: 430px;
+        }
       }
       @media screen and (max-width: 450px) {
         background-size: 300px;
+        > h2 {
+          padding-bottom: 310px;
+        }
       }
     }
   }

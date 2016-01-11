@@ -10,7 +10,7 @@ get_header(); ?>
      the_content();
 endwhile; endif; ?>
 
-<div class="ambassadors text-content white">
+<div class="ambassadors text-content white" id="ambassadors">
   <div class="list-climb">
     <h2>Ambassadors</h2>
     <div class="list-holder">
