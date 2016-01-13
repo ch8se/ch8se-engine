@@ -2,11 +2,15 @@
 
 get_header(); ?>
 
-
+<?php if (get_post_meta($post->ID, 'cover_image', true)) { ?>
 <div class="content ambassador">
   <div class="banner">
-  <img src="<?php echo wp_get_attachment_image_src(get_post_meta($post->ID, 'cover_image', true),'', true)[0]; ?>">
-</div>
+    <img src="<?php echo wp_get_attachment_image_src(get_post_meta($post->ID, 'cover_image', true),'', true)[0]; ?>">
+  </div>
+
+<?php } else { ?>
+<div class="content ambassador no-banner">
+<?php } ?>
 
   <div class="biography clearfix">
   	<div class="profile-picture">
@@ -15,28 +19,28 @@ get_header(); ?>
   			
 
         <?php if (get_post_meta($post->ID, 'facebook_link', true)) { ?>
-        <a href="http://<?php echo get_post_meta($post->ID, 'facebook_link', true); ?>">
+        <a href="http://<?php echo get_post_meta($post->ID, 'facebook_link', true); ?>" target="_blank">
   				<i class="fa fa-facebook"></i>
   			</a>
         <?php } ?>
   			
 
         <?php if (get_post_meta($post->ID, 'instagram_link', true)) { ?>
-        <a href="http://<?php echo get_post_meta($post->ID, 'instagram_link', true); ?>">
+        <a href="http://<?php echo get_post_meta($post->ID, 'instagram_link', true); ?>" target="_blank">
   				<i class="fa fa-instagram"></i>
   			</a>
         <?php } ?>
   			
 
         <?php if (get_post_meta($post->ID, 'twitter_link', true)) { ?>
-        <a href="http://<?php echo get_post_meta($post->ID, 'twitter_link', true); ?>">
+        <a href="http://<?php echo get_post_meta($post->ID, 'twitter_link', true); ?>" target="_blank">
   				<i class="fa fa-twitter"></i>
   			</a>
         <?php } ?>
   			
 
         <?php if (get_post_meta($post->ID, 'website', true)) { ?>
-        <a href="http://<?php echo get_post_meta($post->ID, 'website', true); ?>">
+        <a href="http://<?php echo get_post_meta($post->ID, 'website', true); ?>" target="_blank">
   				<i class="fa fa-globe"></i>
   			</a>
         <?php } ?>

@@ -2348,6 +2348,7 @@ input {
 
   .banner {
     position: relative; //fixed
+    text-align: center;
     top: 0;
     z-index: 0;
   }
@@ -2357,18 +2358,16 @@ input {
     position: relative;
     overflow: visible;
     z-index: 1;
-
+    
     // min-height: 1000px;
   }
 
   .profile-picture {
     width: 25%;
-    position: absolute;
+    position: relative;
+    float: left;
     margin: -150px 0 0 30px;
 
-    @media screen and (max-width:600px) {
-        margin: -92px 0 0 30px;
-      }
     img {
       min-width: 100%;
     }
@@ -2377,6 +2376,17 @@ input {
       display: inline-block;
       float: none;
     }
+
+    @media screen and (max-width:600px) {
+      margin: -92px 0 0 30px;
+    }
+    @media screen and (max-width:400px) {
+      margin: -40px 0 0 30px;
+    }
+  }
+
+  &.no-banner .profile-picture {
+    margin-top: 20px;
   }
 
   .sing {
@@ -2415,7 +2425,7 @@ input {
     float: right;
 
     @media screen and (max-width:450px) {
-          margin-top: 10px;
+      margin-top: 10px;
     }
 
     h2 {
@@ -2432,9 +2442,9 @@ input {
       @media screen and (max-width:450px) {
           font-size: 14px;
       }
-        &.details {
+
+      &.details {
         display: block;
-        font-weight: bold;
         margin: 60px auto 0 auto;
         width: 80%;
         font-size: 29px;
@@ -2451,7 +2461,7 @@ input {
         }
       }
     }
-    }
+  }
 }
 
 
