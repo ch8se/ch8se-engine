@@ -32,7 +32,7 @@
       </ul>
     </nav>
 
-    <p class="copyright">&copy; ch8se 2015</p>
+    <p class="copyright">&copy; ch8se 2016</p>
   </footer><!-- .site-footer -->
 
 </div><!-- .site -->
