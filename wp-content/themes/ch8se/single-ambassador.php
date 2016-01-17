@@ -2,10 +2,20 @@
 
 get_header(); ?>
 
-<?php if (get_post_meta($post->ID, 'cover_image', true)) { ?>
+
+<?php if( have_rows('slideshow') ) { ?>
 <div class="content ambassador">
   <div class="banner">
-    <img src="<?php echo wp_get_attachment_image_src(get_post_meta($post->ID, 'cover_image', true),'', true)[0]; ?>">
+    <div class="carousel">
+      <?php while( have_rows('slideshow') ): the_row(); 
+
+        $image = get_sub_field('image'); ?>
+
+
+        <img src="<?php echo $image['url']; ?>" alt="<?php echo $image['alt'] ?>" />
+
+      <?php endwhile; ?>
+    </div>
   </div>
 
 <?php } else { ?>
