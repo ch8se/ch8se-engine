@@ -58,12 +58,11 @@ get_header(); ?>
   	</div>
   	<div class="info">
   		<h2><?php the_title(); ?></h2>
-  		<p>HOMETOWN</p>
   		<p><?php echo get_post_meta($post->ID, 'location', true); ?></p>
   		<p class="details"><?php echo get_post_meta($post->ID, 'bio', true); ?></p>
   	</div>
   </div>
-  
+
   <?php if (get_post_meta($post->ID, 'instagram_link', true)) { ?>
   <div class="instafeed tag-feed" data-user-name="<?php echo get_post_meta($post->ID, 'instagram_link', true); ?>" data-limit="10"></div>
   <?php } ?>
