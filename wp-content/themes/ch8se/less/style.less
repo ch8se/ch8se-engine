@@ -918,47 +918,7 @@ input {
   }
 }
 
-.tag-feed {
-  .clearfix;
-  a {
-    width: ~"calc(8.33% - 5px)";
-    padding: 0 5px 5px 0;
-    position: relative;
-    float: left;
 
-    img {
-      width: 100%;
-    }
-  }
-
-  > div {
-    background-color: #1d1d1f;
-    width: ~"calc(16.66% - 5px)";
-    position: relative;
-    float: left;
-    color: #fff;
-    text-align: center;
-  }
-
-  @media screen and (max-width: 1200px) {
-    a {
-      width: ~"calc(16.66% - 5px)";
-    }
-
-    > div {
-      width: ~"calc(33.32% - 5px)";
-    }
-  }
-  @media screen and (max-width: 600px) {
-    a {
-      width: ~"calc(33.33% - 5px)";
-    }
-
-    > div {
-      width: ~"calc(66.66% - 5px)";
-    }
-  }
-}
 // PAGES
 
 
@@ -1235,7 +1195,7 @@ input {
     height: 230px;
   }
 }
-#instafeed {
+.instafeed {
   width: 100%;
 
   a {
@@ -1243,6 +1203,51 @@ input {
   }
   img {
     width: 100%;
+  }
+  &.tag-feed {
+    .clearfix;
+    > a {
+      width: ~"calc(8.33% - 5px)";
+      padding: 0 5px 5px 0;
+      position: relative;
+      float: left;
+
+      img {
+        width: 100%;
+      }
+    }
+
+    > div {
+      background-color: #1d1d1f;
+      width: ~"calc(16.66% - 5px)";
+      position: relative;
+      float: left;
+      color: #fff;
+      text-align: center;
+
+      a {
+        color: #fff;
+      }
+    }
+
+    @media screen and (max-width: 1300px) {
+      > a {
+        width: ~"calc(16.66% - 5px)";
+      }
+
+      > div {
+        width: ~"calc(33.32% - 5px)";
+      }
+    }
+    @media screen and (max-width: 750px) {
+      > a {
+        width: ~"calc(33.33% - 5px)";
+      }
+
+      > div {
+        width: ~"calc(66.66% - 5px)";
+      }
+    }
   }
 }
 
@@ -2464,6 +2469,10 @@ input {
         // }
       }
     }
+  }
+
+  .instafeed {
+    margin: 80px 0;
   }
 }
 

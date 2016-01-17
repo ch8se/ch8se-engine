@@ -38,7 +38,7 @@ get_header(); ?>
 <div class="share-tree"><a href="http://www.ch8se.com/share-and-plant/">Share - and plant a tree by doing so</a></div>
 
 </div>
-<div id="instafeed"></div>
+<div class="instafeed" data-user-id="1643007057" data-slideshow="true"></div>
 
 <?php /*get_sidebar(); */?>
 <?php get_footer(); ?>

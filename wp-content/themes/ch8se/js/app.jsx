@@ -388,14 +388,26 @@ ch8se.menuFix = function() {
 }
 
 ch8se.instafeedInit = function() {
-  if ($('#instafeed').length) {
-    var feed = new Instafeed({
-      get: 'user',
-      userId: '1643007057',
+  $('.instafeed').each(function() {
+
+    var feedParent = this,
+        $feedParent = $(this);
+
+
+    var dataOptions = $feedParent.data(); //TODO: remove this
+
+
+    var instaOptions = $.extend({
+      target: feedParent,
       clientId: 'e6c9243435d84aeabf438796399d841c',
       resolution: 'standard_resolution',
-      after: function() {
-        $('#instafeed').slick({
+    }, dataOptions);
+
+
+
+    if (dataOptions.slideshow) {
+      instaOptions.after = function() {
+        $feedParent.slick({
           adaptiveHeight: true,
           slidesToShow: 8,
           arrows: false,
@@ -424,69 +436,59 @@ ch8se.instafeedInit = function() {
           ]
         });
       }
-    });
-    feed.run();
-  }
+    } else {
+      instaOptions.after = function() {
+        if (dataOptions.userName) {
+          $feedParent.append(`<div><a href="http://www.instagram.com/${dataOptions.userName}" target="_blank">${dataOptions.userName}</a></div>`);
+        } else if (dataOptions.tagName) {
+          $feedParent.append(`<div>#${dataOptions.tagName}</div>`);
+        }
 
-
-
-  //TODO: optimise this!!!!!!!!
-  if ($('#ch8sedayFeed').length) {
-    var $ch8sedayFeed = $('#ch8sedayFeed');
-    $ch8sedayFeed.addClass('tag-feed');
-
-
-    var ch8sedayFeed = new Instafeed({
-      target: 'ch8sedayFeed',
-      get: 'tagged',
-      tagName : 'ch8se', //change to ch8seday
-      clientId: 'e6c9243435d84aeabf438796399d841c',
-      resolution: 'standard_resolution',
-      limit: 10,
-      after: function() {
-        $ch8sedayFeed.append('<div>#ch8seday</div>');
-        $ch8sedayFeed.find('img').on('load', function() {
-          var height = $ch8sedayFeed.find('img').height();
-          $ch8sedayFeed.find('div').css({height: height, lineHeight: height + 'px', fontSize: height/10*3});
+        $feedParent.find('img').on('load', function() {
+          var height = $feedParent.find('img').height();
+          $feedParent.find('div').css({height: height, lineHeight: height + 'px', fontSize: height/10*3});
         });
 
         $(window).on('resize', function() {
-          var height = $ch8sedayFeed.find('img').height();
-          $ch8sedayFeed.find('div').css({height: height, lineHeight: height + 'px', fontSize: height/10*3});
+          var height = $feedParent.find('img').height();
+          $feedParent.find('div').css({height: height, lineHeight: height + 'px', fontSize: height/10*3});
         });
       }
-    });
+    }
 
-    ch8sedayFeed.run();
-  }
+    // console.log('data', instaOptions);
 
-  if ($('#ch8serFeed').length) {
-    var $ch8serFeed = $('#ch8serFeed');
-    $ch8serFeed.addClass('tag-feed');
+    if (dataOptions.tagName) instaOptions.get = 'tagged';
+    if (dataOptions.userId) instaOptions.get = 'user';
+    if (dataOptions.userName) {
+      instaOptions.get = 'user';
 
-    var ch8ser = new Instafeed({
-      target: 'ch8serFeed',
-      get: 'tagged',
-      tagName : 'ch8ser',
-      clientId: 'e6c9243435d84aeabf438796399d841c',
-      resolution: 'standard_resolution',
-      limit: 46,
-      after: function() {
-        $ch8serFeed.append('<div>#ch8ser</div>');
-        $ch8serFeed.find('img').on('load', function() {
-          var height = $ch8serFeed.find('img').height();
-          $ch8serFeed.find('div').css({height: height, lineHeight: height + 'px', fontSize: height/10*3});
+        $.ajax({
+          type: 'GET',
+          url: 'https://api.instagram.com/v1/users/search?q=' + dataOptions.userName + '&client_id=e6c9243435d84aeabf438796399d841c',
+          crossDomain: true,
+          dataType: "jsonp",
+          success: function(data) {
+            // console.log('data',data);
+
+            for (var i = 0; i < data.data.length; i++) {
+              if (data.data[i].username === dataOptions.userName) {
+                instaOptions.userId = data.data[i].id;
+                break;
+              }
+            };
+
+            var feed = new Instafeed(instaOptions);
+            feed.run();
+          }
         });
 
-        $(window).on('resize', function() {
-          var height = $ch8serFeed.find('img').height();
-          $ch8serFeed.find('div').css({height: height, lineHeight: height + 'px', fontSize: height/10*3});
-        });
-      }
-    });
+    } else {
 
-    ch8ser.run();
-  }
+      var feed = new Instafeed(instaOptions);
+      feed.run();
+    }
+  });
 }
 
 ch8se.opacitySlider = function() {

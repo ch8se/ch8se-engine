@@ -36,7 +36,7 @@ get_header(); ?>
   			
 
         <?php if (get_post_meta($post->ID, 'instagram_link', true)) { ?>
-        <a href="http://<?php echo get_post_meta($post->ID, 'instagram_link', true); ?>" target="_blank">
+        <a href="http://www.instagram.com/<?php echo get_post_meta($post->ID, 'instagram_link', true); ?>" target="_blank">
   				<i class="fa fa-instagram"></i>
   			</a>
         <?php } ?>
@@ -63,6 +63,10 @@ get_header(); ?>
   		<p class="details"><?php echo get_post_meta($post->ID, 'bio', true); ?></p>
   	</div>
   </div>
+  
+  <?php if (get_post_meta($post->ID, 'instagram_link', true)) { ?>
+  <div class="instafeed tag-feed" data-user-name="<?php echo get_post_meta($post->ID, 'instagram_link', true); ?>" data-limit="10"></div>
+  <?php } ?>
 </div>
 
 
