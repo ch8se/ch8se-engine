@@ -6,7 +6,7 @@ get_header(); ?>
 <?php if( have_rows('slideshow') ) { ?>
 <div class="content ambassador">
   <div class="banner">
-    <div class="carousel">
+    <div class="carousel no-indiegogo">
       <?php while( have_rows('slideshow') ): the_row(); 
 
         $image = get_sub_field('image'); ?>
