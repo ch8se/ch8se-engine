@@ -51,9 +51,33 @@ get_header(); ?>
 
         <?php if (get_post_meta($post->ID, 'website', true)) { ?>
         <a href="http://<?php echo get_post_meta($post->ID, 'website', true); ?>" target="_blank">
-  				<i class="fa fa-globe"></i>
+          <i class="fa fa-globe"></i>
+        </a>
+        <?php } ?>
+
+
+        <?php if (get_post_meta($post->ID, 'tumblr_link', true)) { ?>
+        <a href="http://<?php echo get_post_meta($post->ID, 'tumblr_link', true); ?>" target="_blank">
+          <i class="fa fa-tumblr"></i>
+        </a>
+        <?php } ?>
+
+
+        <?php if (get_post_meta($post->ID, 'youtube_link', true)) { ?>
+        <a href="http://<?php echo get_post_meta($post->ID, 'youtube_link', true); ?>" target="_blank">
+          <i class="fa fa-youtube"></i>
+        </a>
+        <?php } ?>
+
+
+        <?php if (get_post_meta($post->ID, 'snapchat_link', true)) { ?>
+        <a class="snapchat" href="http://<?php echo get_post_meta($post->ID, 'snapchat_link', true); ?>" target="_blank">
+  				<i></i>
   			</a>
         <?php } ?>
+
+
+
   		</div>
   	</div>
   	<div class="info">

@@ -11,7 +11,7 @@ get_header(); ?>
 endwhile; endif; ?>
 
 <div class="ambassadors text-content white" id="ambassadors">
-  <div class="list-climb">
+  <div>
     <h2>Ambassadors</h2>
     <div class="list-holder">
       <p>Even the greatest movements had their humble beginnings. The firestarters are the early adopters, the crazy ones, the dreamers. Those who believe, even when everyone else is being doubtful. </p>
