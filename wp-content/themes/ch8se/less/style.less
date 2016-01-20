@@ -1252,12 +1252,21 @@ input {
     @media screen and (max-width: 600px) {
       > a {
         width: ~"calc(33.33% - 5px)";
+
+        &:nth-child(n+8) {
+          display: none;
+        }
       }
 
       > div {
         width: ~"calc(66.66% - 5px)";
       }
     }
+  }
+}
+.page-template-page-ambassadors {
+  .instafeed.tag-feed > a {
+    display: block !important;
   }
 }
 
