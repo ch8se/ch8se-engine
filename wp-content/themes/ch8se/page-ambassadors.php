@@ -14,7 +14,7 @@ endwhile; endif; ?>
   <div>
     <h2>Ambassadors</h2>
     <div class="list-holder">
-      <p>Even the greatest movements had their humble beginnings. The firestarters are the early adopters, the crazy ones, the dreamers. Those who believe, even when everyone else is being doubtful. </p>
+      <p>Artists, creators, thought leaders, advocates of change, proponents of the ch8se philosophy.</p>
       <div class="listup">
         <div class="ambassador-holder clearfix">
 
