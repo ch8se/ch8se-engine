@@ -382,7 +382,7 @@ ch8se.instafeedInit = function() {
   if (ch8se.instafeedStarted) return;
   ch8se.instafeedStarted = true;
 
-  
+
   $('.instafeed').each(function() {
 
     var feedParent = this,
@@ -433,18 +433,26 @@ ch8se.instafeedInit = function() {
 
         var $imageLink = $feedParent.find('a');
 
-        // function fixSizes() {
+        function fixSizes() {
 
-        var height = $imageLink.width();
-        $imageLink.height(height);
+          var height = $imageLink.width();
+          $imageLink.height(height);
 
-        $feedParent.find('img').one('load', function() {
-          var $this = $(this);
+          $feedParent.find('img').on('load', function() {
+            var $this = $(this);
 
-          if ($this.height() < $this.width()) {
-            $this.css({height: '100%', width: 'auto'});
-          }
-        });
+            if ($this.height() < $this.width()) {
+              $this.css({height: '100%', width: 'auto'});
+            } else {
+              $this.css({height: 'auto', width: '100%'});
+            }
+          });
+        }
+        fixSizes();
+
+        $(window).on('resize', fixSizes);
+
+
         // }
       }
     } else {
@@ -565,7 +573,11 @@ ch8se.initCarosuel = function() {
     $('.carousel').each(function() {
     var $this = $(this);
     var $1stImage;
+    var carouselInitiated = false;
     function initCarousel() {
+      if (carouselInitiated) return;
+      carouselInitiated = true;
+
       $this.slick({
         adaptiveHeight: true,
         autoplay: true,
@@ -597,10 +609,8 @@ ch8se.initCarosuel = function() {
         }
       });
 
-      try { //Slick throws some error for lazyloaded images - TODO: find better solution
-        ch8se.instafeedInit();
-        initCarousel();
-      } catch (err) {}
+      ch8se.instafeedInit();
+      initCarousel();
     }
 
     $1stImage.one('load', function() {
