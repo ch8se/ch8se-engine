@@ -1210,17 +1210,27 @@ input {
 
   a {
     width: 100% / 8;
+    &:not(.tag) {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
   }
   img {
     width: 100%;
+    max-width: initial;
   }
   &.tag-feed {
     .clearfix;
     > a {
       width: ~"calc(8.33% - 5px)";
-      padding: 0 5px 5px 0;
+      margin: 0 5px 5px 0;
       position: relative;
       float: left;
+      height: 0;
+      overflow: hidden;
+
 
       img {
         width: 100%;
@@ -2410,10 +2420,9 @@ input {
   //   margin-top: 20px;
   // }
 
-  .sing {
+  .social {
     width: 240px;
     margin: auto;
-    height: 60px;
 
     @media screen and (max-width:900px) {
       width: 85%;

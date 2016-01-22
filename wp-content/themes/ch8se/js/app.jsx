@@ -435,23 +435,59 @@ ch8se.instafeedInit = function() {
             }
           ]
         });
+
+        var $imageLink = $feedParent.find('a');
+
+        // function fixSizes() {
+
+        var height = $imageLink.width();
+        $imageLink.height(height);
+
+        $feedParent.find('img').one('load', function() {
+          var $this = $(this);
+
+          if ($this.height() < $this.width()) {
+            $this.css({height: '100%', width: 'auto'});
+          }
+        });
+        // }
       }
     } else {
       instaOptions.after = function() {
         if (dataOptions.userName) {
-          $feedParent.append(`<div><a href="http://www.instagram.com/${dataOptions.userName}" target="_blank">${dataOptions.userName}</a></div>`);
+          $feedParent.append(`<div><a class="tag" href="http://www.instagram.com/${dataOptions.userName}" target="_blank">${dataOptions.userName}</a></div>`);
         } else if (dataOptions.tagName) {
           $feedParent.append(`<div>#${dataOptions.tagName}</div>`);
         }
 
-        $feedParent.find('img').on('load', function() {
-          var height = $feedParent.find('img').height();
-          $feedParent.find('div').css({height: height, lineHeight: height + 'px', fontSize: height/10*3});
+        var fontSizeFix = 1; //Used for tags and usernames that are larger than the box
+        var $text = $feedParent.find('div');
+        var $imageLink = $feedParent.find('> a');
+
+        function fixSizes() {
+
+          var height = $imageLink.width();
+          $imageLink.height(height);
+          $text.css({height: height, lineHeight: height + 'px', fontSize: height*fontSizeFix/10*3});
+
+          if ($text.width() < $text.find('a').width()) {
+            fontSizeFix = fontSizeFix*0.9;
+            fixSizes();
+          }
+        }
+
+        $feedParent.find('img').one('load', function() {
+          fixSizes();
+
+          var $this = $(this);
+
+          if ($this.height() < $this.width()) {
+            $this.css({height: '100%', width: 'auto'});
+          }
         });
 
         $(window).on('resize', function() {
-          var height = $feedParent.find('img').height();
-          $feedParent.find('div').css({height: height, lineHeight: height + 'px', fontSize: height/10*3});
+          fixSizes();
         });
       }
     }
@@ -478,8 +514,10 @@ ch8se.instafeedInit = function() {
               }
             };
 
-            var feed = new Instafeed(instaOptions);
-            feed.run();
+            if (instaOptions.userId && instaOptions.userId.length) {
+              var feed = new Instafeed(instaOptions);
+              feed.run();
+            }
           }
         });
 
