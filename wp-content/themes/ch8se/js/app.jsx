@@ -4,20 +4,9 @@ var ch8se = window.ch8se || {};
 jQuery( document ).ready(function( $ ) {
 ch8se.init = function() {
 
-  $('.carousel').slick({
-    adaptiveHeight: true,
-    autoplay: true,
-    autoplaySpeed: 4000,
-    // arrows: false,
-    prevArrow: '<img class="arrow prev" src="http://www.ch8se.com/wp-content/themes/ch8se/img/carousel-arrow.png">',
-    nextArrow: '<img class="arrow next" src="http://www.ch8se.com/wp-content/themes/ch8se/img/carousel-arrow.png">'
-    // dots: true
-  });
-
-
+  ch8se.initCarosuel();
   ch8se.menuToggle();
   ch8se.menuFix();
-  ch8se.instafeedInit();
   ch8se.opacitySlider();
   ch8se.fixProductHeight();
   ch8se.productView();
@@ -25,6 +14,8 @@ ch8se.init = function() {
   ch8se.champSubscribe();
   ch8se.fixIframeSizePage();
 
+  if (!$('.carousel').length) ch8se.instafeedInit(); //If there is no carousel load instafeed, if there is instafeed is loaded from ch8se.initCarosuel()
+  
 
 
   $(window).on('resize', function() {
@@ -499,7 +490,7 @@ ch8se.instafeedInit = function() {
     if (dataOptions.userName) {
       instaOptions.get = 'user';
 
-        $.ajax({
+        $.ajax({ //TODO: find better way to find userId, in some case this query doesn't return good results
           type: 'GET',
           url: 'https://api.instagram.com/v1/users/search?q=' + dataOptions.userName + '&client_id=e6c9243435d84aeabf438796399d841c',
           crossDomain: true,
@@ -563,6 +554,58 @@ ch8se.productView = function() {
     $enlargedImg.attr('src', $this.attr('href'));
 
     $this.addClass('active');
+  });
+}
+
+ch8se.initCarosuel = function() {
+    $('.carousel').each(function() {
+    var $this = $(this);
+    var $1stImage;
+    function initCarousel() {
+      $this.slick({
+        adaptiveHeight: true,
+        autoplay: true,
+        autoplaySpeed: 4000,
+        // arrows: false,
+        prevArrow: '<img class="arrow prev" src="http://www.ch8se.com/wp-content/themes/ch8se/img/carousel-arrow.png">',
+        nextArrow: '<img class="arrow next" src="http://www.ch8se.com/wp-content/themes/ch8se/img/carousel-arrow.png">'
+        // dots: true
+      });
+    }
+
+
+    $this.find('img').each(function(i, img) {
+      var $img = $(img);
+      if (!i) {
+        $1stImage = $img;
+      } else {
+        $img.attr('data-src', $img.attr('src'));
+        $img.removeAttr('src').css({display: 'none'});
+      }
+    });
+
+    function reloadImages() {
+      $this.find('img').each(function(i, img) {
+        var $img = $(img);
+        if (i) {
+          $img.attr('src', $img.attr('data-src'));
+          $img.removeAttr('data-src').css({display: 'block'});
+        }
+      });
+
+      try { //Slick throws some error for lazyloaded images - TODO: find better solution
+        ch8se.instafeedInit();
+        initCarousel();
+      } catch (err) {}
+    }
+
+    $1stImage.one('load', function() {
+      // console.log('load');
+      reloadImages();
+    }).each(function() {
+      // console.log('cache');
+      reloadImages();
+    });
   });
 }
 
