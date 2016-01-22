@@ -377,8 +377,12 @@ ch8se.menuFix = function() {
     }
   });
 }
-
+ch8se.instafeedStarted = false;
 ch8se.instafeedInit = function() {
+  if (ch8se.instafeedStarted) return;
+  ch8se.instafeedStarted = true;
+
+  
   $('.instafeed').each(function() {
 
     var feedParent = this,
