@@ -2401,11 +2401,6 @@ input {
       min-width: 100%;
     }
 
-    .social a {
-      display: inline-block;
-      float: none;
-    }
-
     @media screen and (max-width:600px) {
       width: 80%;
       margin: 40px auto 0;
@@ -2423,25 +2418,37 @@ input {
   .social {
     width: 240px;
     margin: auto;
+    a {
+      display: inline-block;
+      float: none;
+    }
+
+    @media screen and (max-width:1500px) {
+      a {
+        margin: 12px 6px;
+      }
+    }
 
     @media screen and (max-width:900px) {
       width: 85%;
-    }
-    @media screen and (max-width:782px) {
-      width: 95%;
-    }
-    @media screen and (max-width:600px) {
-      width: 100%;
-    }
 
-    a {
-      @media screen and (max-width:900px) {
+      a {
         margin: 20px;
       }
-      @media screen and (max-width:782px) {
+    }
+
+    @media screen and (max-width:782px) {
+      width: 95%;
+
+      a {
         margin: 15px;
       }
-      @media screen and (max-width:600px) {
+    }
+
+    @media screen and (max-width:600px) {
+      width: 100%;
+
+      a {
         margin: 10px;
       }
     }
