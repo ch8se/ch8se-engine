@@ -71,9 +71,10 @@ get_header(); ?>
 
 
         <?php if (get_post_meta($post->ID, 'snapchat_link', true)) { ?>
-        <span class="snapchat" href="http://<?php echo get_post_meta($post->ID, 'snapchat_link', true); ?>">
-  		    
-        </span>
+        <a class="snapchat">
+  		    <i></i>
+          <div><span><?php echo get_post_meta($post->ID, 'snapchat_link', true); ?></span><br><strong>click to copy</strong></div>
+        </a>
         <?php } ?>
 
 

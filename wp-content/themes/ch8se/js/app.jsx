@@ -88,19 +88,7 @@ ch8se.init = function() {
   $('.mail-copy').on('click', function(e) {
     e.preventDefault();
 
-    $('.mail-copy').addClass('show-popup');
-     $("body")
-        .append($('<input type="text" name="fname" class="textToCopyInput"/>' )
-        .val('http://www.ch8se.com'))
-        .find(".textToCopyInput")
-        .select();
-
-    try {
-      var successful = document.execCommand('copy');
-      var msg = successful ? 'successful' : 'unsuccessful';
-    } catch (err) {}
-
-    $('.textToCopyInput').remove();
+    copyToClipboard('http://www.ch8se.com');
 
     setTimeout(function() {
       $('.mail-copy').removeClass('show-popup');
@@ -118,8 +106,33 @@ ch8se.init = function() {
   // });
 
 
+  $('.snapchat').on('click', function(e) {
+    e.preventDefault();
+    $('.snapchat div').toggleClass('show');
+  });
+
+  $('.snapchat div').on('click', function(e) {
+    copyToClipboard($(this).find('span').text());
+  });
+
+
 }
 
+function copyToClipboard(textToCopy) {
+  $('.mail-copy').addClass('show-popup');
+  $("body")
+    .append($('<input type="text" name="fname" class="textToCopyInput"/>' ).val(textToCopy))
+    .find(".textToCopyInput")
+    .select();
+
+  try {
+    var successful = document.execCommand('copy');
+    var msg = successful ? 'successful' : 'unsuccessful';
+    console.log('copy to clipboard', msg);
+  } catch (err) {}
+
+  $('.textToCopyInput').remove();
+}
 
 
 function makeid() {

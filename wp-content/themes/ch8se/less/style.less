@@ -121,11 +121,41 @@ header.site-header {
 
 .snapchat {
   top: 9px;
+  cursor: pointer;
   i {
     background: url(img/snapchat.png) ~"no-repeat center center / 36px 36px";
     width: 36px;
     height: 36px;
     display: inline-block;
+  }
+
+  div {
+    background: #b6b6b6;
+    color: #fcfbfb;
+    position: absolute;
+    border-radius: 10px;
+    left: 120%;
+    bottom: 0;
+    font-size: 16px;
+    line-height: 1.2;
+    text-align: left;
+    padding: 6px 10px;
+    text-align: center;
+    cursor: pointer;
+    pointer-events: none;
+    opacity: 0;
+    .transform(translate(0, -50%));
+    .transition(0.25s all ease);
+
+    &.show {
+      pointer-events: all;
+      opacity: 1;
+      .transform(translate(0, 0));
+    }
+
+    strong {
+      font-size: 12px;
+    }
   }
 }
 
