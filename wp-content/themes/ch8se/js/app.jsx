@@ -13,6 +13,7 @@ ch8se.init = function() {
   // ch8se.youtubePopup();
   ch8se.champSubscribe();
   ch8se.fixIframeSizePage();
+  ch8se.menuAnimation();
 
   if (!$('.carousel').length) ch8se.instafeedInit(); //If there is no carousel load instafeed, if there is instafeed is loaded from ch8se.initCarosuel()
   
@@ -152,6 +153,30 @@ function trueWindowHeight() {
   return Math.max(document.documentElement.clientHeight, window.innerHeight || 0);
 }
 
+ch8se.menuAnimation = function() {
+  var $blocks = $('.site-nav > ul > li');
+  var $animationBlock = $('.animation-block');
+  function resetMenuAnimation() {
+    $animationBlock.css({height: 0});
+  }
+
+  $blocks.on('mouseenter', function(e) {
+    if (trueWindowWidth() >= 783 && $(this).find('> div').length) {
+      $animationBlock.css({height: $(this).find('> div').height()});
+    } else {
+      resetMenuAnimation();
+    }
+  });
+
+  $('header.site-header nav').on('mouseleave', function() {
+    resetMenuAnimation();
+  });
+
+  $('.site-nav .logo').on('mouseenter', function() {
+    resetMenuAnimation();
+  })
+
+}
 
 ch8se.champSubscribe = function() {
   var $container = $('.champ-subscribe');

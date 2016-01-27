@@ -25,6 +25,7 @@
 
   <header id="masthead" class="site-header" role="banner">
     <nav class="site-nav clearfix">
+      <div class="animation-block"></div>
       <i class="fa fa-bars"></i>
       <a href="<?php echo esc_url( home_url( '/' ) ); ?>" class="logo">Home</a>
 
