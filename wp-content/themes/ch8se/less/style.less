@@ -846,14 +846,12 @@ input {
   width: 100%;
   .transition(all 1s linear);
   z-index: 5000;
-  // display: none;
 
   iframe {
     width: 100%;
     height: 100%;
     position: absolute;
     display: none;
-    // .center-all;
     .transition(all 0.5s linear);
   }
 
@@ -874,53 +872,43 @@ input {
 @-webkit-keyframes swing {
   20% {
     -webkit-transform: rotate3d(0, 0, 1, 15deg);
-    transform: rotate3d(0, 0, 1, 15deg);
   }
 
   40% {
     -webkit-transform: rotate3d(0, 0, 1, -10deg);
-    transform: rotate3d(0, 0, 1, -10deg);
   }
 
   60% {
     -webkit-transform: rotate3d(0, 0, 1, 5deg);
-    transform: rotate3d(0, 0, 1, 5deg);
   }
 
   80% {
     -webkit-transform: rotate3d(0, 0, 1, -5deg);
-    transform: rotate3d(0, 0, 1, -5deg);
   }
 
   to {
     -webkit-transform: rotate3d(0, 0, 1, 0deg);
-    transform: rotate3d(0, 0, 1, 0deg);
   }
 }
 
 @keyframes swing {
   20% {
-    -webkit-transform: rotate3d(0, 0, 1, 15deg);
     transform: rotate3d(0, 0, 1, 15deg);
   }
 
   40% {
-    -webkit-transform: rotate3d(0, 0, 1, -10deg);
     transform: rotate3d(0, 0, 1, -10deg);
   }
 
   60% {
-    -webkit-transform: rotate3d(0, 0, 1, 5deg);
     transform: rotate3d(0, 0, 1, 5deg);
   }
 
   80% {
-    -webkit-transform: rotate3d(0, 0, 1, -5deg);
     transform: rotate3d(0, 0, 1, -5deg);
   }
 
   to {
-    -webkit-transform: rotate3d(0, 0, 1, 0deg);
     transform: rotate3d(0, 0, 1, 0deg);
   }
 }
