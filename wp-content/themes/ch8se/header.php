@@ -86,13 +86,6 @@
         <li>
           <a href="<?php echo esc_url( home_url( '/about-us' ) ); ?>">About us</a>
         </li>
-        <li class="youtube-play">
-          <a href="<?php echo esc_url( home_url( '/#ch8se-video' ) ); ?>">
-            <i class="fa fa-youtube-play"></i>
-            <br>
-            <span>play the video</span>
-          </a>
-        </li>
         <li class="subscribe"><a href="http://www.ch8se.com/share-and-plant/">Plant a tree for free</a></li>
       </ul>
     </nav>
