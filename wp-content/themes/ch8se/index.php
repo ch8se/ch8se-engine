@@ -5,7 +5,6 @@
 
 get_header(); ?>
 
-
 <div class="content">
   <div class="carousel">
     <div><img src="http://www.ch8se.com/wp-content/uploads/2015/11/homeslider4.jpg"></div>
