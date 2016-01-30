@@ -17,7 +17,7 @@
 	/***
 	***	@dynamic profile page title
 	***/
-	add_filter('wp_title', 'um_dynamic_user_profile_pagetitle', 100000, 2 );
+	add_filter('pre_get_document_title', 'um_dynamic_user_profile_pagetitle', 100000, 2 );
 	function um_dynamic_user_profile_pagetitle( $title, $sep = '' ) {
 		global $paged, $page, $ultimatemember;
 
@@ -27,7 +27,7 @@
 			
 			um_fetch_user( um_get_requested_user() );
 			
-			$profile_title = $ultimatemember->mail->convert_tags( $profile_title );
+			$profile_title = um_convert_tags( $profile_title );
 			
 			$title = $profile_title;
 			

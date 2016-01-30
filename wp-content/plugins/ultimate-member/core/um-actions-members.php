@@ -94,7 +94,15 @@
 		global $ultimatemember;
 		extract( $args );
 		
-		if ( um_members('header') && isset($_REQUEST['um_search']) && um_members('users_per_page') ) { ?>
+		if ( isset($_REQUEST['um_search']) ) {
+			$is_filtering = 1;
+		} else if ( $ultimatemember->is_filtering == 1 ) {
+			$is_filtering = 1;
+		} else {
+			$is_filtering = 0;
+		}
+		
+		if ( um_members('header') && $is_filtering && um_members('users_per_page') ) { ?>
 		
 			<div class="um-members-intro">
 				
@@ -214,22 +222,24 @@
 				
 				<?php $i = 0; foreach( um_members('users_per_page') as $member) { $i++; um_fetch_user( $member ); ?>
 			
-				<div class="um-member <?php echo um_user('account_status'); ?> <?php if ($cover_photos) { echo 'with-cover'; } ?>">
+				<div class="um-member um-role-<?php echo um_user('role'); ?> <?php echo um_user('account_status'); ?> <?php if ($cover_photos) { echo 'with-cover'; } ?>">
 				
 					<span class="um-member-status <?php echo um_user('account_status'); ?>"><?php echo um_user('account_status_name'); ?></span>
 					
 					<?php if ($cover_photos) { 
 						
+						$sizes = um_get_option('cover_thumb_sizes');
+						
 						if ( $ultimatemember->mobile->isTablet() ) {
-							$cover_size = 600;
+							$cover_size = $sizes[1];
 						} else {
-							$cover_size = 300;
+							$cover_size = $sizes[0];
 						}
 						
 					?>
 					
 					<div class="um-member-cover" data-ratio="<?php echo um_get_option('profile_cover_ratio'); ?>">
-						<div class="um-member-cover-e"><?php echo um_user('cover_photo', $cover_size); ?></div>
+						<div class="um-member-cover-e"><a href="<?php echo um_user_profile_url(); ?>" title="<?php echo um_user('display_name'); ?>"><?php echo um_user('cover_photo', $cover_size); ?></a></div>
 					</div>
 					
 					<?php } ?>
