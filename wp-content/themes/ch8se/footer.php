@@ -8,7 +8,7 @@
         <p>If you share our vision,<br>follow us</p>
         <a targe="_blank" href="https://www.facebook.com/ch8seofficial/"><i class="fa fa-facebook"></i></a>
         <a targe="_blank" href="https://www.instagram.com/ch8se/"><i class="fa fa-instagram"></i></a>
-        <a targe="_blank" href="https://twitter.com/ch8sedotcom"><i class="fa fa-twitter"></i></a>
+        <a targe="_blank" href="https://twitter.com/ch8seofficial"><i class="fa fa-twitter"></i></a>
     </div>
     
 
