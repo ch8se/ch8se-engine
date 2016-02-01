@@ -327,7 +327,11 @@ class UM_Admin_Metabox {
 		delete_post_meta( $post_id, '_um_reveal_fields' );
 		delete_post_meta( $post_id, '_um_search_fields' );
 		delete_post_meta( $post_id, '_um_roles_can_search' );
+		delete_post_meta( $post_id, '_um_show_these_users' );
 		foreach( $_POST as $k => $v ) {
+			if ( $k == '_um_show_these_users' && trim( $_POST[ $k ] ) ) {
+				$v = preg_split('/[\r\n]+/', $v, -1, PREG_SPLIT_NO_EMPTY);
+			}
 			if (strstr($k, '_um_')){
 				update_post_meta( $post_id, $k, $v);
 			}
@@ -1243,6 +1247,26 @@ class UM_Admin_Metabox {
 				<?php
 				break;
 				
+			case '_min':
+				?>
+				
+					<p><label for="_min">Minimum Number <?php $this->tooltip( __('Minimum number that can be entered in this field','ultimatemember') ); ?></label>
+						<input type="text" name="_min" id="_min" value="<?php echo $this->edit_mode_value; ?>" />
+					</p>
+				
+				<?php
+				break;
+				
+			case '_max':
+				?>
+				
+					<p><label for="_max">Maximum Number <?php $this->tooltip( __('Maximum number that can be entered in this field','ultimatemember') ); ?></label>
+						<input type="text" name="_max" id="_max" value="<?php echo $this->edit_mode_value; ?>" />
+					</p>
+				
+				<?php
+				break;
+				
 			case '_min_chars':
 				?>
 				
@@ -1396,10 +1420,11 @@ class UM_Admin_Metabox {
 				?>
 				
 					<p><label for="_public">Privacy <?php $this->tooltip('Field privacy allows you to select who can view this field on the front-end. The site admin can view all fields regardless of the option set here.'); ?></label>
-						<select name="_public" id="_public" class="umaf-selectjs um-adm-conditional" data-cond1='-2' data-cond1-show='_roles' style="width: 100%">
+						<select name="_public" id="_public" class="umaf-selectjs um-adm-conditional" data-cond1='-2' data-cond1-show='_roles' data-cond2='-3' data-cond2-show='_roles'  style="width: 100%">
 							<option value="1" <?php selected( 1, $this->edit_mode_value ); ?>>Everyone</option>
 							<option value="2" <?php selected( 2, $this->edit_mode_value ); ?>>Members</option>
 							<option value="-1" <?php selected( -1, $this->edit_mode_value ); ?>>Only visible to profile owner and admins</option>
+							<option value="-3" <?php selected( -3, $this->edit_mode_value ); ?>>Only visible to profile owner and specific roles</option>
 							<option value="-2" <?php selected( -2, $this->edit_mode_value ); ?>>Only specific member roles</option>
 						</select>
 					</p>

@@ -2,7 +2,13 @@
 
 class UM_API {
 
+	public $is_filtering;
+	
+	public $addons = null;
+	
 	function __construct() {
+	
+		$this->is_filtering = 0;
 
 		require_once um_path . 'core/um-short-functions.php';
 		
@@ -11,7 +17,7 @@ class UM_API {
 		}
 
 		add_action('init',  array(&$this, 'init'), 0);
-		
+
 		add_action('init',  array(&$this, 'load_addons') );
 
 		$this->honeypot = 'request';
@@ -32,6 +38,7 @@ class UM_API {
 			'pl_PL' => 'Polski',
 			'cs_CZ' => 'Czech',
 			'el'	=> 'Greek',
+			'zh_CN'	=> 'Simplified Chinese',
 			'ru_RU' => 'Русский',
 			'tr_TR' => 'Türkçe',
 			'fa_IR' => 'Farsi',
@@ -51,9 +58,11 @@ class UM_API {
 	***/
 	function load_addons() {
 		global $ultimatemember;
-		foreach( $ultimatemember->addons as $addon => $name ) {
-			if ( um_get_option('addon_' . $addon ) == 1 ) {
-				include_once um_path . 'addons/'.$addon.'.php';
+		if ( isset( $ultimatemember->addons ) && is_array( $ultimatemember->addons ) ) {
+			foreach( $ultimatemember->addons as $addon => $name ) {
+				if ( um_get_option('addon_' . $addon ) == 1 ) {
+					include_once um_path . 'addons/'.$addon.'.php';
+				}
 			}
 		}
 	}

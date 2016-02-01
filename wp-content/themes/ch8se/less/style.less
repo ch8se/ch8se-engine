@@ -111,6 +111,10 @@ a {
 .hide {
   display: none;
 }
+.full-width {
+  width: 100% !important;
+  max-width: 100% !important;
+}
 
 // Header
 header.site-header {
@@ -381,8 +385,8 @@ header.site-header {
         > div {
           pointer-events: all;
           opacity: 1;
-          -webkit-transition-delay: 0.5s;
-          transition-delay: 0.5s;
+          -webkit-transition-delay: 0.4s;
+          transition-delay: 0.4s;
           
         }
       }
@@ -409,7 +413,7 @@ header.site-header {
       @media screen and (min-width: 783px) {
         opacity: 0;
         pointer-events: none;
-        .transition(0.5s all ease);
+        .transition(0.1s all ease);
 
         &:hover {
           pointer-events: all;
@@ -2565,4 +2569,9 @@ div.wpcf7-validation-errors {
 }
 div.wpcf7-mail-sent-ok {
   border: 2px solid #769f82;
+}
+
+
+div.um {
+opacity: 1 !important;
 }

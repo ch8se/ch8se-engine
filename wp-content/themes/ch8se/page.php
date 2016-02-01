@@ -12,7 +12,20 @@ get_header(); ?>
 
 
 <div class="page-content">
-<?php if ( have_posts() ) : while( have_posts() ) : the_post();
+<?php if ( have_posts() ) : while( have_posts() ) : the_post(); ?>
+<?php if( have_rows('slideshow') ) { ?>
+    <div class="carousel no-indiegogo">
+      <?php while( have_rows('slideshow') ): the_row(); 
+
+        $image = get_sub_field('image'); ?>
+
+
+        <img src="<?php echo $image['url']; ?>" alt="<?php echo $image['alt'] ?>" />
+
+      <?php endwhile; ?>
+    </div>
+
+    <?php }
      the_content();
 endwhile; endif; ?>
 

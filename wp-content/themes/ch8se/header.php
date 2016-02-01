@@ -43,7 +43,7 @@
         <li>
           <span>Impact</span>
           <div>
-            <ul class="stack">
+            <ul>
               <li><a href="<?php echo esc_url( home_url( '/impact' ) ); ?>">How it works</a></li>
               <li><a href="<?php echo esc_url( home_url( '/impact/#causes' ) ); ?>">Causes</a></li>
               <li><a href="<?php echo esc_url( home_url( '/impact/#transparency' ) ); ?>">Transparency</a></li>
@@ -54,15 +54,8 @@
           <span>Community</span>
           <div>
             <ul>
-              <li><a href="<?php echo esc_url( home_url( '/ch8seday' ) ); ?>">ch8seday Tuesday<br><span>The critical mass of fashion.</span></a></li>
-              <li>
-                <a href="<?php echo esc_url( home_url( '/ch8sers' ) ); ?>">ch8sers</a>
-                <ul>
-                  <li><a href="<?php echo esc_url( home_url( '/ch8sers/#firestarters' ) ); ?>">Firestarters</a></li>
-                  <li><a href="<?php echo esc_url( home_url( '/ch8sers/#heroes' ) ); ?>">Heroes</a></li>
-                  <li><a href="<?php echo esc_url( home_url( '/ch8sers/#ambassadors' ) ); ?>">Ambassadors</a></li>
-                </ul>
-              </li>
+              <li><a href="<?php echo esc_url( home_url( '/ch8sers' ) ); ?>">ch8sers</a></li>
+              <li><a href="<?php echo esc_url( home_url( '/ch8seday' ) ); ?>">ch8seday</a></li>
               <li><a href="<?php echo esc_url( home_url( '/coming-soon' ) ); ?>">Blog</a></li>
             </ul>
           </div>
@@ -86,14 +79,6 @@
         <li>
           <a href="<?php echo esc_url( home_url( '/about-us' ) ); ?>">About us</a>
         </li>
-        <li class="youtube-play">
-          <a href="<?php echo esc_url( home_url( '/#ch8se-video' ) ); ?>">
-            <i class="fa fa-youtube-play"></i>
-            <br>
-            <span>play the video</span>
-          </a>
-        </li>
-        <li class="subscribe"><a href="http://www.ch8se.com/share-and-plant/">Plant a tree for free</a></li>
       </ul>
     </nav>
   </header><!-- .site-header -->
