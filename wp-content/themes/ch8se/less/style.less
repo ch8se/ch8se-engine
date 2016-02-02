@@ -385,8 +385,8 @@ header.site-header {
         > div {
           pointer-events: all;
           opacity: 1;
-          -webkit-transition-delay: 0.4s;
-          transition-delay: 0.4s;
+          // -webkit-transition-delay: 0.4s;
+          // transition-delay: 0.4s;
           
         }
       }
@@ -418,8 +418,6 @@ header.site-header {
         &:hover {
           pointer-events: all;
           opacity: 1;
-          -webkit-transition-delay: 0.5s;
-          transition-delay: 0.5s;
         }
       }
 
@@ -442,7 +440,7 @@ header.site-header {
         float: left;
         > a {
           padding: 0;
-          font-weight: bold;
+          // font-weight: bold;
           color: @base;
           // color: rgba(252, 251, 251, 0);
           // .transition(0.5s all ease);
@@ -519,6 +517,10 @@ header.site-header {
     li {
       padding: 14px 0 0 0;
     }
+  }
+  &.delay > ul > li > div {
+    -webkit-transition-delay: 0.5s;
+    transition-delay: 0.5s;
   }
 }
 

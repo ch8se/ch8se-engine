@@ -158,11 +158,13 @@ ch8se.menuAnimation = function() {
   var $animationBlock = $('.animation-block');
   function resetMenuAnimation() {
     $animationBlock.css({height: 0});
+    $('.site-nav').addClass('delay');
   }
 
   $blocks.on('mouseenter', function(e) {
     if (trueWindowWidth() >= 783 && $(this).find('> div').length) {
       $animationBlock.css({height: $(this).find('> div').height()});
+      $('.site-nav').removeClass('delay');
     } else {
       resetMenuAnimation();
     }
