@@ -189,10 +189,10 @@ ch8se.champSubscribe = function() {
     if ($('.become-champ').css('display') === 'block') return;
     $container.css({display: 'block'}).animate({
       opacity: 1,
-      height: 2000,
+      height: 650,
     }, 1000);
     $('html, body').animate({
-        scrollTop: $container.offset().top
+        scrollTop: $container.offset().top - 80
     }, 1000);
   })
 
@@ -369,6 +369,8 @@ ch8se.menuToggle = function() {
       var $cont = $this.siblings('div');
 
       if (!$this.parent().hasClass('expand')) {
+        $this.parent().siblings().removeClass('expand');
+        $this.parent().siblings().find('div').css({transition: 'all 0.5s ease', height: 0});
         $this.parent().addClass('expand');
         $cont.css({transition: 'all 0.5s ease', height: $cont.find('ul').height() + 20});
       } else {
@@ -377,6 +379,7 @@ ch8se.menuToggle = function() {
       }
 
       setTimeout(function() {
+        $this.parent().siblings().find('div').css({transition: ''});
         $cont.css({transition: ''});
       }, 500);
 
@@ -401,7 +404,7 @@ ch8se.menuFix = function() {
         $this.find('> div').css({display: 'block'}); //Stupid hack, js can't calculate width of hidden element
 
 
-        $ul.css({'margin-left': ($this.position().left - (i !== 1 ? $ul.find('li:first-child').width() : 0) - (i === 3 ? 50 : 0))});
+        $ul.css({'margin-left': ($this.position().left - $ul.find('li:first-child').width() - 55)});
 
         $this.find('> div').css({display: ''});
       }

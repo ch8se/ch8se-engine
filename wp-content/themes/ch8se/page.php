@@ -14,7 +14,11 @@ get_header(); ?>
 <div class="page-content clearfix">
 <?php if ( have_posts() ) : while( have_posts() ) : the_post(); ?>
 <?php if( have_rows('slideshow') ) { ?>
-    <div class="carousel no-indiegogo">
+    <div class="cta">
+        <h3>Choose to be an activist</h3>
+        <a href="http://www.ch8se.com/ch8sers/">Join us</a>
+    </div>
+    <div class="carousel<?php if (!get_field('indiegogo_logo')) { ?> no-indiegogo<?php } ?>">
       <?php while( have_rows('slideshow') ): the_row(); 
 
         $image = get_sub_field('image'); ?>
