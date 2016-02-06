@@ -2632,10 +2632,11 @@ input {
 
   .blog-post {
     display: inline-block;
-    width: 30%;
+    width: 32%;
     height: 100%;
-    padding: 0 1% 0 1%;
     margin-top: 60px;
+    padding: 0 10px 0 10px;
+    box-sizing: border-box;
 
     @media screen and (max-width:600px) {
       width: 47%;
@@ -2646,15 +2647,7 @@ input {
     }
 
       img {
-        height: 200px;
-
-        @media screen and (max-width:900px) {
-          height: 170px;
-        }
-
-        @media screen and (max-width:450px) {
-          height: 150px;
-        }
+        width: 100%;
       }
 
       h3 {
