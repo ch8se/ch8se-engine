@@ -29,13 +29,13 @@ ch8se.init = function() {
 
 
   //TODO add these into seperate functions
-  $.ajax({
-    type: 'GET',
-    url: 'http://api.hostip.info/get_html.php',
-    success: function(data) {
-      $('input[name="ip-address"]').val(data.split('IP: ')[1]);
-    }
-  });
+  // $.ajax({
+  //   type: 'GET',
+  //   url: 'http://api.hostip.info/get_html.php',
+  //   success: function(data) {
+  //     $('input[name="ip-address"]').val(data.split('IP: ')[1]);
+  //   }
+  // });
 
   $('.get-notified').on('click', e => {
     e.preventDefault();
