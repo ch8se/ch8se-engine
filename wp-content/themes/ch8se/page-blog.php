@@ -6,7 +6,7 @@
 get_header(); ?>
 
 	<div class="blog-wrapper">
-		<div class="blogs">
+		<div class="clearfix">
 			<div class="blog-post">
 				<img src="http://www.ch8se.com/wp-content/uploads/2015/11/homeslider4.jpg">
 				<h3>Lorem ipsum dolor sit amet</h3>
