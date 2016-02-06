@@ -54,9 +54,9 @@
           <span>Community</span>
           <div>
             <ul>
-              <li><a href="<?php echo esc_url( home_url( '/ch8sers' ) ); ?>">ch8sers</a></li>
-              <li><a href="<?php echo esc_url( home_url( '/ch8seday' ) ); ?>">ch8seday</a></li>
-              <li><a href="<?php echo esc_url( home_url( '/coming-soon' ) ); ?>">Blog</a></li>
+              <li><a href="<?php echo esc_url( home_url( '/ch8ser' ) ); ?>">#ch8ser</a></li>
+              <li><a href="<?php echo esc_url( home_url( '/ch8seday' ) ); ?>">#ch8seday</a></li>
+              <li><a href="<?php echo esc_url( home_url( '/ch8ser/#ambassadors' ) ); ?>">ambassadors</a></li>
             </ul>
           </div>
         </li>
@@ -76,6 +76,7 @@
             </ul>
           </div>
         </li>
+        <li><a href="<?php echo esc_url( home_url( '/coming-soon' ) ); ?>">Blog</a></li>
         <li>
           <a href="<?php echo esc_url( home_url( '/about-us' ) ); ?>">About us</a>
         </li>

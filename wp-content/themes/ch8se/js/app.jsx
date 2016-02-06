@@ -7,13 +7,13 @@ ch8se.init = function() {
   ch8se.initCarosuel();
   ch8se.menuToggle();
   ch8se.menuFix();
+  ch8se.menuAnimation();
   ch8se.opacitySlider();
   ch8se.fixProductHeight();
   ch8se.productView();
   // ch8se.youtubePopup();
   ch8se.champSubscribe();
   ch8se.fixIframeSizePage();
-  ch8se.menuAnimation();
 
   if (!$('.carousel').length) ch8se.instafeedInit(); //If there is no carousel load instafeed, if there is instafeed is loaded from ch8se.initCarosuel()
   
@@ -401,10 +401,9 @@ ch8se.menuFix = function() {
 
 
       if ($ul.length) {
-        $this.find('> div').css({display: 'block'}); //Stupid hack, js can't calculate width of hidden element
+        $this.find('> div').css({display: 'block'}); //js can't calculate width of hidden element
 
-
-        $ul.css({'margin-left': ($this.position().left - $ul.find('li:first-child').width() - 55)});
+        $ul.css({'margin-left': ($this.position().left - $ul.find('li:first-child').width() - ($ul.hasClass('man-woman') ? 0 : 50))});
 
         $this.find('> div').css({display: ''});
       }
