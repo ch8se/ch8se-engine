@@ -2654,11 +2654,8 @@ input {
     }
 
     @media screen and (max-width:600px) {
-      height: 200px;
-    }
-
-    @media screen and (max-width:450px) {
-      height: 175px;
+      height: 460px;
+      width: 100%;
     }
 
     &:hover .overflow {
@@ -2668,20 +2665,8 @@ input {
     &:first-child {
       width: 64%;
 
-      p {
-        font-size: 12px;
-
-        @media screen and (max-width:600px) {
-          font-size: 9px;
-        }
-      }
-
-      a {
-        font-size: 27px;
-
-        @media screen and (max-width:600px) {
-          font-size: 23px;
-        }
+      @media screen and (max-width:600px) {
+        width: 100%;
       }
     }
   }
@@ -2718,7 +2703,9 @@ input {
       }
 
       @media screen and (max-width:600px) {
-        font-size: 7px;
+        padding: 0 20px 0 20px;
+        margin-bottom: 16px;
+        font-size: 12px;
       }
     }
 
@@ -2738,14 +2725,27 @@ input {
       }
 
       @media screen and (max-width:600px) {
-        font-size: 12px;
+        padding: 0 20px 0 20px;
+        margin-bottom: 21px;
+        font-size: 27px;
       }
     }
   }
 }
 
 
+
+
+
 // Plugin overrides
+
+// Ultimate member pages
+
+.um-page-login { //body class
+  .page-content {
+    padding: 20px;
+  }
+}
 
 // Contact form
 

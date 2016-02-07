@@ -6,3 +6,5 @@ wp-content/themes/ch8se/js/app.js.map
 node_modules
 wp-config.php
 /nbproject
+.ntvs_analysis.dat
+NodejsApp1.njsproj
