@@ -7,65 +7,229 @@ get_header(); ?>
 
 	<div class="blog-wrapper">
 		<div class="clearfix">
-			<div class="blog-post">
-				<img src="http://www.ch8se.com/wp-content/uploads/2015/11/homeslider4.jpg">
-				<h3>Lorem ipsum dolor sit amet</h3>
-				<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
-				 incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
-				  exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. 
-				  Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore
-				  eu fugiat nulla pariatur.</p>
-				  <a href="">Lorem - posted an hour ago</a>
+			<div class="single-article">
+				<div class="overflow"></div>
+				<div class="article-detail">
+					<p>Lorem ipsum dolor sit amet</p>
+					<h3><a href="">Lorem ipsum dolor sit amet, consectetur adipiscing</a></h3>
+				</div>
 			</div>
-			<div class="blog-post">
-				<img src="http://www.ch8se.com/wp-content/uploads/2015/11/homeslider4.jpg">
-				<h3>Lorem ipsum dolor sit amet</h3>
-				<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
-				 incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
-				  exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. 
-				  Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore
-				  eu fugiat nulla pariatur.</p>
-				  <a href="">Lorem - posted an hour ago</a>
+			<div class="single-article">
+				<div class="overflow"></div>
+				<div class="article-detail">
+					<p>Lorem ipsum dolor sit amet</p>
+					<h3><a href="">Lorem ipsum dolor sit amet, consectetur adipiscing</a></h3>
+				</div>
 			</div>
-			<div class="blog-post">
-				<img src="http://www.ch8se.com/wp-content/uploads/2015/11/homeslider4.jpg">
-				<h3>Lorem ipsum dolor sit amet</h3>
-				<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
-				 incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
-				  exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. 
-				  Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore
-				  eu fugiat nulla pariatur.</p>
-				  <a href="">Lorem - posted an hour ago</a>
+			<div class="single-article">
+				<div class="overflow"></div>
+				<div class="article-detail">
+					<p>Lorem ipsum dolor sit amet</p>
+					<h3><a href="">Lorem ipsum dolor sit amet, consectetur adipiscing</a></h3>
+				</div>
 			</div>
-			<div class="blog-post">
-				<img src="http://www.ch8se.com/wp-content/uploads/2015/11/homeslider4.jpg">
-				<h3>Lorem ipsum dolor sit amet</h3>
-				<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
-				 incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
-				  exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. 
-				  Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore
-				  eu fugiat nulla pariatur.</p>
-				  <a href="">Lorem - posted an hour ago</a>
+			<div class="single-article">
+				<div class="overflow"></div>
+				<div class="article-detail">
+					<p>Lorem ipsum dolor sit amet</p>
+					<h3><a href="">Lorem ipsum dolor sit amet, consectetur adipiscing</a></h3>
+				</div>
 			</div>
-			<div class="blog-post">
-				<img src="http://www.ch8se.com/wp-content/uploads/2015/11/homeslider4.jpg">
-				<h3>Lorem ipsum dolor sit amet</h3>
-				<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
-				 incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
-				  exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. 
-				  Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore
-				  eu fugiat nulla pariatur.</p>
-				  <a href="">Lorem - posted an hour ago</a>
+			<div class="single-article">
+				<div class="overflow"></div>
+				<div class="article-detail">
+					<p>Lorem ipsum dolor sit amet</p>
+					<h3><a href="">Lorem ipsum dolor sit amet, consectetur adipiscing</a></h3>
+				</div>
 			</div>
-			<div class="blog-post">
-				<img src="http://www.ch8se.com/wp-content/uploads/2015/11/homeslider4.jpg">
-				<h3>Lorem ipsum dolor sit amet</h3>
-				<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
-				 incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
-				  exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. 
-				  Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore
-				  eu fugiat nulla pariatur.</p>
-				  <a href="">Lorem - posted an hour ago</a>
+			<div class="single-article">
+				<div class="overflow"></div>
+				<div class="article-detail">
+					<p>Lorem ipsum dolor sit amet</p>
+					<h3><a href="">Lorem ipsum dolor sit amet, consectetur adipiscing</a></h3>
+				</div>
+			</div>
+			<div class="single-article">
+				<div class="overflow"></div>
+				<div class="article-detail">
+					<p>Lorem ipsum dolor sit amet</p>
+					<h3><a href="">Lorem ipsum dolor sit amet, consectetur adipiscing</a></h3>
+				</div>
+			</div>
+			<div class="single-article">
+				<div class="overflow"></div>
+				<div class="article-detail">
+					<p>Lorem ipsum dolor sit amet</p>
+					<h3><a href="">Lorem ipsum dolor sit amet, consectetur adipiscing</a></h3>
+				</div>
+			</div>
+			<div class="single-article">
+				<div class="overflow"></div>
+				<div class="article-detail">
+					<p>Lorem ipsum dolor sit amet</p>
+					<h3><a href="">Lorem ipsum dolor sit amet, consectetur adipiscing</a></h3>
+				</div>
+			</div>
+			<div class="single-article">
+				<div class="overflow"></div>
+				<div class="article-detail">
+					<p>Lorem ipsum dolor sit amet</p>
+					<h3><a href="">Lorem ipsum dolor sit amet, consectetur adipiscing</a></h3>
+				</div>
+			</div>
+			<div class="single-article">
+				<div class="overflow"></div>
+				<div class="article-detail">
+					<p>Lorem ipsum dolor sit amet</p>
+					<h3><a href="">Lorem ipsum dolor sit amet, consectetur adipiscing</a></h3>
+				</div>
+			</div>
+			<div class="single-article">
+				<div class="overflow"></div>
+				<div class="article-detail">
+					<p>Lorem ipsum dolor sit amet</p>
+					<h3><a href="">Lorem ipsum dolor sit amet, consectetur adipiscing</a></h3>
+				</div>
+			</div>
+			<div class="single-article">
+				<div class="overflow"></div>
+				<div class="article-detail">
+					<p>Lorem ipsum dolor sit amet</p>
+					<h3><a href="">Lorem ipsum dolor sit amet, consectetur adipiscing</a></h3>
+				</div>
+			</div>
+			<div class="single-article">
+				<div class="overflow"></div>
+				<div class="article-detail">
+					<p>Lorem ipsum dolor sit amet</p>
+					<h3><a href="">Lorem ipsum dolor sit amet, consectetur adipiscing</a></h3>
+				</div>
+			</div>
+			<div class="single-article">
+				<div class="overflow"></div>
+				<div class="article-detail">
+					<p>Lorem ipsum dolor sit amet</p>
+					<h3><a href="">Lorem ipsum dolor sit amet, consectetur adipiscing</a></h3>
+				</div>
+			</div>
+			<div class="single-article">
+				<div class="overflow"></div>
+				<div class="article-detail">
+					<p>Lorem ipsum dolor sit amet</p>
+					<h3><a href="">Lorem ipsum dolor sit amet, consectetur adipiscing</a></h3>
+				</div>
+			</div>
+			<div class="single-article">
+				<div class="overflow"></div>
+				<div class="article-detail">
+					<p>Lorem ipsum dolor sit amet</p>
+					<h3><a href="">Lorem ipsum dolor sit amet, consectetur adipiscing</a></h3>
+				</div>
+			</div>
+			<div class="single-article">
+				<div class="overflow"></div>
+				<div class="article-detail">
+					<p>Lorem ipsum dolor sit amet</p>
+					<h3><a href="">Lorem ipsum dolor sit amet, consectetur adipiscing</a></h3>
+				</div>
+			</div>
+			<div class="single-article">
+				<div class="overflow"></div>
+				<div class="article-detail">
+					<p>Lorem ipsum dolor sit amet</p>
+					<h3><a href="">Lorem ipsum dolor sit amet, consectetur adipiscing</a></h3>
+				</div>
+			</div>
+			<div class="single-article">
+				<div class="overflow"></div>
+				<div class="article-detail">
+					<p>Lorem ipsum dolor sit amet</p>
+					<h3><a href="">Lorem ipsum dolor sit amet, consectetur adipiscing</a></h3>
+				</div>
+			</div>
+			<div class="single-article">
+				<div class="overflow"></div>
+				<div class="article-detail">
+					<p>Lorem ipsum dolor sit amet</p>
+					<h3><a href="">Lorem ipsum dolor sit amet, consectetur adipiscing</a></h3>
+				</div>
+			</div>
+			<div class="single-article">
+				<div class="overflow"></div>
+				<div class="article-detail">
+					<p>Lorem ipsum dolor sit amet</p>
+					<h3><a href="">Lorem ipsum dolor sit amet, consectetur adipiscing</a></h3>
+				</div>
+			</div>
+			<div class="single-article">
+				<div class="overflow"></div>
+				<div class="article-detail">
+					<p>Lorem ipsum dolor sit amet</p>
+					<h3><a href="">Lorem ipsum dolor sit amet, consectetur adipiscing</a></h3>
+				</div>
+			</div>
+			<div class="single-article">
+				<div class="overflow"></div>
+				<div class="article-detail">
+					<p>Lorem ipsum dolor sit amet</p>
+					<h3><a href="">Lorem ipsum dolor sit amet, consectetur adipiscing</a></h3>
+				</div>
+			</div>
+			<div class="single-article">
+				<div class="overflow"></div>
+				<div class="article-detail">
+					<p>Lorem ipsum dolor sit amet</p>
+					<h3><a href="">Lorem ipsum dolor sit amet, consectetur adipiscing</a></h3>
+				</div>
+			</div>
+			<div class="single-article">
+				<div class="overflow"></div>
+				<div class="article-detail">
+					<p>Lorem ipsum dolor sit amet</p>
+					<h3><a href="">Lorem ipsum dolor sit amet, consectetur adipiscing</a></h3>
+				</div>
+			</div>
+			<div class="single-article">
+				<div class="overflow"></div>
+				<div class="article-detail">
+					<p>Lorem ipsum dolor sit amet</p>
+					<h3><a href="">Lorem ipsum dolor sit amet, consectetur adipiscing</a></h3>
+				</div>
+			</div>
+			<div class="single-article">
+				<div class="overflow"></div>
+				<div class="article-detail">
+					<p>Lorem ipsum dolor sit amet</p>
+					<h3><a href="">Lorem ipsum dolor sit amet, consectetur adipiscing</a></h3>
+				</div>
+			</div>
+			<div class="single-article">
+				<div class="overflow"></div>
+				<div class="article-detail">
+					<p>Lorem ipsum dolor sit amet</p>
+					<h3><a href="">Lorem ipsum dolor sit amet, consectetur adipiscing</a></h3>
+				</div>
+			</div>
+			<div class="single-article">
+				<div class="overflow"></div>
+				<div class="article-detail">
+					<p>Lorem ipsum dolor sit amet</p>
+					<h3><a href="">Lorem ipsum dolor sit amet, consectetur adipiscing</a></h3>
+				</div>
+			</div>
+			<div class="single-article">
+				<div class="overflow"></div>
+				<div class="article-detail">
+					<p>Lorem ipsum dolor sit amet</p>
+					<h3><a href="">Lorem ipsum dolor sit amet, consectetur adipiscing</a></h3>
+				</div>
+			</div>
+			<div class="single-article">
+				<div class="overflow"></div>
+				<div class="article-detail">
+					<p>Lorem ipsum dolor sit amet</p>
+					<h3><a href="">Lorem ipsum dolor sit amet, consectetur adipiscing</a></h3>
+				</div>
 			</div>
 		</div>
 	</div>
