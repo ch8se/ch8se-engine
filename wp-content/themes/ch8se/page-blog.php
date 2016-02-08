@@ -6,6 +6,9 @@
 get_header(); ?>
 
 	<div class="blog-wrapper">
+		<?php while (have_posts()) : the_post(); ?>
+		<?php the_content(); ?>
+		<?php endwhile; ?>
 		<div class="clearfix">
 			<?php $args = array('posts_per_page'=>'-1');
         $loop = new WP_Query( $args );
@@ -19,6 +22,7 @@ get_header(); ?>
 					</div>
 			<?php endwhile; ?>
 		</div>
+
 	</div>
 
 
