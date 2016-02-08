@@ -226,7 +226,7 @@ ch8se.champSubscribe = function() {
     // if ($('.become-champ').css('display') === 'block') return;
     $container.css({display: 'block'}).animate({
       opacity: 1,
-      height: 450,
+      height: 250,
     }, 1000);
     $('html, body').animate({
         scrollTop: $container.offset().top - 80
