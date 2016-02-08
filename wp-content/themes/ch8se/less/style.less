@@ -1089,30 +1089,26 @@ input {
 
   // }
 
+  a.indiegogo {
+    background: url(img/Indiegogo_logo.png) no-repeat bottom right / 100% auto;
+    content: '';
+    position: absolute;
+    display: block;
+    width: 250px;
+    height: 268px;
+    bottom: 10px;
+    right: 10px;
+    max-width: 20%;
+    z-index: 5;
+    font-size: 0;
+    @media screen and (max-width: 600px) {
+      background-image: url(img/Indiegogo_logo-mobile.png);
+    }
+  }
   .carousel {
     width: 100%;
     position: relative;
 
-    &:not(.no-indiegogo) {
-      &:after {
-        background: url(img/Indiegogo_logo.png) no-repeat bottom right / 100% auto;
-        content: '';
-        position: absolute;
-        display: block;
-        width: 250px;
-        height: 268px;
-        bottom: 10px;
-        right: 10px;
-        max-width: 20%;
-        pointer-events: none;
-      }
-
-      @media screen and (max-width: 600px) {
-        &:after {
-          background-image: url(img/Indiegogo_logo-mobile.png);
-        }
-      }
-    }
 
     img {
       width: 100%;

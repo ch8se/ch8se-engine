@@ -18,7 +18,9 @@ get_header(); ?>
         <h3>Choose to be an activist.</h3>
         <a href="http://www.ch8se.com/ch8sers/">Join us</a>
     </div>
-    <div class="carousel<?php if (!get_field('indiegogo_logo')) { ?> no-indiegogo<?php } ?>">
+    <div>
+    <?php if (get_field('indiegogo_logo')) { ?> <a class="indiegogo" href="https://www.indiegogo.com/project/ch8se" target="_blank">Ch8se on indiegogo</a> <?php } ?>
+    <div class="carousel">
       <?php while( have_rows('slideshow') ): the_row(); 
 
         $image = get_sub_field('image'); ?>
@@ -27,6 +29,7 @@ get_header(); ?>
         <img src="<?php echo $image['url']; ?>" alt="<?php echo $image['alt'] ?>" />
 
       <?php endwhile; ?>
+    </div>
     </div>
 
     <?php }
