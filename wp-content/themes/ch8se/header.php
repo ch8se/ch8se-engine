@@ -76,7 +76,7 @@
             </ul>
           </div>
         </li>
-        <li><a href="<?php echo esc_url( home_url( '/coming-soon' ) ); ?>">Blog</a></li>
+        <li><a href="<?php echo esc_url( home_url( '/blog' ) ); ?>">Blog</a></li>
         <li>
           <a href="<?php echo esc_url( home_url( '/about-us' ) ); ?>">About us</a>
         </li>
