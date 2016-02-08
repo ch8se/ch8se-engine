@@ -14,7 +14,7 @@ get_header(); ?>
 						<div class="overflow"></div>
 						<div class="article-detail">
 							<!-- <p>Lorem ipsum dolor sit amet</p> -->
-							<h3><a href=""><?php the_title(); ?></a></h3>
+							<h3><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h3>
 						</div>
 					</div>
 			<?php endwhile; ?>
