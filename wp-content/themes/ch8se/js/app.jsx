@@ -224,6 +224,7 @@ ch8se.champSubscribe = function() {
   $('.become-champ').on('click', function(e) {
     e.preventDefault();
     // if ($('.become-champ').css('display') === 'block') return;
+    $container.find('input[type="email"').attr('placeholder', 'email');
     $container.css({display: 'block'}).animate({
       opacity: 1,
       height: 250,
