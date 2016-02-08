@@ -19,7 +19,7 @@ get_header(); ?>
         <a href="http://www.ch8se.com/ch8sers/">Join us</a>
     </div>
     <div>
-    <?php if (get_field('indiegogo_logo')) { ?> <a class="indiegogo" href="https://www.indiegogo.com/project/ch8se" target="_blank">Ch8se on indiegogo</a> <?php } ?>
+    <?php if (get_field('indiegogo_logo')) { ?> <a class="indiegogo" href="https://www.indiegogo.com/projects/ch8se" target="_blank">Ch8se on indiegogo</a> <?php } ?>
     <div class="carousel">
       <?php while( have_rows('slideshow') ): the_row(); 
 
