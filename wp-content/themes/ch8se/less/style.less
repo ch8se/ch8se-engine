@@ -103,6 +103,10 @@ body {
   // background: @base;
   background: @night url(img/stars.jpg) no-repeat fixed center bottom;
   font-family: 'MyriadProLight', arial;
+
+  &.no-scroll {
+    overflow: hidden;
+  }
 }
 a {
   text-decoration: none;
@@ -1035,6 +1039,33 @@ input {
     height: 100%;
   }
 }
+@-webkit-keyframes loader {
+  from {
+    opacity: 1;
+  }
+
+  50% {
+    opacity: 0.5;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes loader {
+  from {
+    opacity: 1;
+  }
+
+  50% {
+    opacity: 0.5;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
 .site-content {
   // .content {
   .site-width();
@@ -1047,6 +1078,12 @@ input {
 
   @media screen and (max-width: 600px) {
     padding-bottom: 40px;
+  }
+
+  &.animate-loader {
+    background: url(img/ch8ser-loading.png) no-repeat center ~"150px / 87px 142px";
+    -webkit-animation: loader 2s infinite;
+    animation: loader 2s infinite;
   }
 
   // }
@@ -1783,7 +1820,7 @@ input {
 
     h3 {
       text-transform: uppercase;
-      margin-bottom: 30px;
+      margin-bottom: 24px;
     }
 
     a {

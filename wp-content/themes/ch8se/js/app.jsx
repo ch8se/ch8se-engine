@@ -14,6 +14,7 @@ ch8se.init = function() {
   // ch8se.youtubePopup();
   ch8se.champSubscribe();
   ch8se.fixIframeSizePage();
+  ch8se.homePageLoader();
 
   if (!$('.carousel').length) ch8se.instafeedInit(); //If there is no carousel load instafeed, if there is instafeed is loaded from ch8se.initCarosuel()
   
@@ -151,6 +152,37 @@ function trueWindowWidth() {
 }
 function trueWindowHeight() {
   return Math.max(document.documentElement.clientHeight, window.innerHeight || 0);
+}
+
+ch8se.homePageLoader = function () {
+  var $pageContent = $('body.home .page-content');
+
+  var $homeImages = $pageContent.find('img');
+
+
+  $pageContent.css({opacity: 0});
+  $('body').addClass('no-scroll');
+  $pageContent.parent().addClass('animate-loader');
+
+  var imgCount = 0;
+  $homeImages.on('load', function() {
+    // console.log('load', this);
+    hideOverlay();
+  }).each(function() {
+    // console.log('cache', this.complete);
+    if (this.complete) hideOverlay(); //this.complete checks if image really is cached
+  });
+
+  function hideOverlay (img) {
+    imgCount++;
+
+    if (imgCount === $homeImages.length) {
+      $pageContent.css({opacity: 1});
+      $('body').removeClass('no-scroll');
+      $pageContent.parent().removeClass('animate-loader');
+
+    }
+  }
 }
 
 ch8se.menuAnimation = function() {
@@ -660,7 +692,7 @@ ch8se.initCarosuel = function() {
       reloadImages();
     }).each(function() {
       // console.log('cache');
-      reloadImages();
+      if (this.complete) reloadImages();
     });
   });
 }
