@@ -10,7 +10,7 @@ get_header(); ?>
 			<?php $args = array('posts_per_page'=>'-1');
         $loop = new WP_Query( $args );
         while ( $loop->have_posts() ) : $loop->the_post(); ?>
-					<div class="single-article">
+					<div class="single-article" style="background-image: url(<?php echo wp_get_attachment_image_src(get_post_thumbnail_id(),'medium', true)[0] ?>)">
 						<div class="overflow"></div>
 						<div class="article-detail">
 							<!-- <p>Lorem ipsum dolor sit amet</p> -->
