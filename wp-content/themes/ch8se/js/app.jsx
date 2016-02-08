@@ -177,9 +177,12 @@ ch8se.homePageLoader = function () {
     imgCount++;
 
     if (imgCount === $homeImages.length) {
-      $pageContent.css({opacity: 1});
-      $('body').removeClass('no-scroll');
-      $pageContent.parent().removeClass('animate-loader');
+      setTimeout(function() {
+
+        $pageContent.css({transition: 'all 0.5s ease', opacity: 1});
+        $('body').removeClass('no-scroll');
+        $pageContent.parent().removeClass('animate-loader');
+      }, 500);
 
     }
   }
