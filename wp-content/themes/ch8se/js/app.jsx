@@ -221,8 +221,9 @@ ch8se.champSubscribe = function() {
 
   if (!$container.length) return;
 
-  $('.become-champ').on('click', function() {
-    if ($('.become-champ').css('display') === 'block') return;
+  $('.become-champ').on('click', function(e) {
+    e.preventDefault();
+    // if ($('.become-champ').css('display') === 'block') return;
     $container.css({display: 'block'}).animate({
       opacity: 1,
       height: 650,
