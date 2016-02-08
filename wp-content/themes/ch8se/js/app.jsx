@@ -155,6 +155,7 @@ function trueWindowHeight() {
 }
 
 ch8se.homePageLoader = function () {
+  if (!$('body').hasClass('home')) return;
   var $pageContent = $('body.home .page-content');
 
   var $homeImages = $pageContent.find('img');
