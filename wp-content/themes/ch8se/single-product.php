@@ -60,7 +60,7 @@ get_header(); ?>
 
       <div class="collection <?php echo get_post_meta($post->ID, 'kolekcija', true); ?>"></div>
 
-      <a href="www.igg.me/at/ch8se" class="btn get-notified">Pre-order on Indiegogo</a>
+      <a href="http://www.igg.me/at/ch8se" class="btn" target="_blank">Pre-order on Indiegogo</a>
 
       <br>
       <span class="price"><sup>$</sup><?php echo get_post_meta($post->ID, 'price', true); ?></span>
