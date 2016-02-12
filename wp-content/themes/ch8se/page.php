@@ -16,7 +16,7 @@ get_header(); ?>
 <?php if( have_rows('slideshow') ) { ?>
     <div class="cta">
         <h3>Choose to be an activist.</h3>
-        <a href="http://www.ch8se.com/spread-the-word/">Join us</a>
+        <a href="http://www.ch8se.com/ch8ser/">Join us</a>
     </div>
     <div>
     <?php if (get_field('indiegogo_logo')) { ?> <a class="indiegogo" href="https://www.indiegogo.com/projects/ch8se" target="_blank">Ch8se on indiegogo</a> <?php } ?>
