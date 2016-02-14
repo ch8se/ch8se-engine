@@ -57,6 +57,7 @@ get_header(); ?>
 
       <?php } ?>
       <p><?php echo get_post_meta($post->ID, 'description', true); ?></p>
+      <p class="size-chart"><a href="<?php echo esc_url( home_url( '/size-chart' ) ); ?>">Size chart</a></p>
 
       <div class="collection <?php echo get_post_meta($post->ID, 'kolekcija', true); ?>"></div>
 
