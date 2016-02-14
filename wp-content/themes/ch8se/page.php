@@ -5,7 +5,7 @@
  * This is the template that displays all pages by default.
  * Please note that this is the WordPress construct of pages and that
  * other "pages" on your WordPress site will use a different template.
- *
+ *gif_animation
  */
 
 get_header(); ?>
@@ -16,7 +16,7 @@ get_header(); ?>
 <?php if( have_rows('slideshow') ) { ?>
     <div>
         <?php if (get_field('indiegogo_logo')) { ?> <a class="indiegogo" href="https://www.indiegogo.com/projects/ch8se" target="_blank">Ch8se on indiegogo</a> <?php } ?>
-        <div class="carousel">
+        <div class="carousel" <?php if (get_field('indiegogo_logo')) { ?>data-autoplay-speed="800" data-speed="0" <?php } ?>>
           <?php while( have_rows('slideshow') ): the_row(); 
 
             $image = get_sub_field('image'); ?>

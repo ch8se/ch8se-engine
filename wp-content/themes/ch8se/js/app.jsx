@@ -656,7 +656,7 @@ ch8se.initCarosuel = function() {
       if (carouselInitiated) return;
       carouselInitiated = true;
 
-      $this.slick({
+      $this.slick($.extend({
         adaptiveHeight: true,
         autoplay: true,
         autoplaySpeed: 4000,
@@ -664,7 +664,7 @@ ch8se.initCarosuel = function() {
         prevArrow: '<img class="arrow prev" src="http://www.ch8se.com/wp-content/themes/ch8se/img/carousel-arrow.png">',
         nextArrow: '<img class="arrow next" src="http://www.ch8se.com/wp-content/themes/ch8se/img/carousel-arrow.png">'
         // dots: true
-      });
+      }, $this.data()));
     }
 
 
