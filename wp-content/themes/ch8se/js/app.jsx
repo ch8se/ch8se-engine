@@ -15,6 +15,7 @@ ch8se.init = function() {
   ch8se.champSubscribe();
   ch8se.fixIframeSizePage();
   ch8se.homePageLoader();
+  ch8se.initParallax();
 
   if (!$('.carousel').length) ch8se.instafeedInit(); //If there is no carousel load instafeed, if there is instafeed is loaded from ch8se.initCarosuel()
   
@@ -145,6 +146,12 @@ function makeid() {
         text += possible.charAt(Math.floor(Math.random() * possible.length));
 
     return text;
+}
+
+function isMobileOs() {
+  var userAgent = navigator.userAgent || navigator.vendor || window.opera;
+
+  return userAgent.match( /iPad/i ) || userAgent.match( /iPhone/i ) || userAgent.match( /iPod/i ) || userAgent.match( /Android/i );
 }
 
 function trueWindowWidth() {
@@ -644,6 +651,26 @@ ch8se.productView = function() {
     $enlargedImg.attr('src', $this.attr('href'));
 
     $this.addClass('active');
+  });
+}
+ch8se.initParallax = function() {
+  if (isMobileOs()) return; //TODO: find a good parallax for mobile devices
+
+  $('.parallax').each(function() {
+    var $this = $(this);
+    var $bg = $this.find('.bg');
+
+    var $images = $this.find('.scroll');
+
+    function moveElements() {
+      $images.css({'transform': 'translateY(' + ($(window).scrollTop() / 2) + 'px)'});
+    }
+    moveElements();
+
+    $(document).on('scroll', function() {
+      moveElements();
+    });
+
   });
 }
 

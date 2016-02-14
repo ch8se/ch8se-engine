@@ -1114,6 +1114,22 @@ input {
       background-image: url(img/Indiegogo_logo-mobile.png);
     }
   }
+  .parallax {
+    width: 100%;
+    position: relative;
+    overflow: hidden;
+
+    img {
+      position: absolute;
+      top: 0;
+      left: 0;
+
+      &.bg {
+        position: relative;
+        float: left;
+      }
+    }
+  }
   .carousel {
     width: 100%;
     position: relative;
@@ -2155,6 +2171,86 @@ input {
         }
       }
     }
+  }
+
+  //walker page
+  &.dark-green {
+    background: #2b554f;
+    padding: 120px 0;
+
+    p {
+      color: #fff;
+      font-size: 58px;
+    }
+
+    @media screen and (max-width: 900px) {
+      padding: 60px 0;
+      p {
+        font-size: 28px;
+      }
+    }
+  }
+  &.walker-count {
+    background: #a5caab;
+
+    table {
+      margin: auto;
+      font-size: 44px;
+      color: #2b554f;
+      width: 96%;
+
+      td {
+        vertical-align: middle;
+        width: 25%;
+
+        &:nth-child(2) {
+          text-align: left;
+        }
+
+        &:nth-child(3) {
+          text-align: right;
+        }
+      }
+
+      strong {
+        font-size: 150px;
+      }
+
+      tr {
+        height: 220px;
+      }
+
+
+      @media screen and (max-width: 900px) {
+        font-size: 30px;
+
+        strong {
+          font-size: 76px;
+        }
+        tr {
+          height: 160px;
+        }
+      }
+      @media screen and (max-width: 600px) {
+        font-size: 20px;
+
+        strong {
+          font-size: 46px;
+        }
+        tr {
+          height: 100px;
+        }
+      }
+    }
+
+    .inactive {
+      color: #80a386;
+    }
+
+
+    // img {
+    //   vertical-align: middle;
+    // }
   }
 }
 
