@@ -2188,6 +2188,13 @@ input {
       font-size: 58px;
     }
 
+    @media screen and (max-width: 1500px) {
+      padding: 90px 0;
+      p {
+        font-size: 38px;
+      }
+    }
+
     @media screen and (max-width: 900px) {
       padding: 60px 0;
       p {
@@ -2203,6 +2210,7 @@ input {
       font-size: 44px;
       color: #2b554f;
       width: 96%;
+      max-width: 1500px;
 
       td {
         vertical-align: middle;
@@ -2226,8 +2234,9 @@ input {
       }
 
 
-      @media screen and (max-width: 900px) {
+      @media screen and (max-width: 1500px) {
         font-size: 30px;
+        max-width: 1000px;
 
         strong {
           font-size: 76px;
@@ -2235,7 +2244,17 @@ input {
         tr {
           height: 160px;
         }
-      }
+      }      
+      // @media screen and (max-width: 900px) {
+      //   font-size: 30px;
+
+      //   strong {
+      //     font-size: 76px;
+      //   }
+      //   tr {
+      //     height: 160px;
+      //   }
+      // }
       @media screen and (max-width: 600px) {
         font-size: 20px;
 
