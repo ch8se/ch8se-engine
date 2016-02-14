@@ -32,7 +32,7 @@
 
       <ul>
         <li>
-          <span>Shop</span>
+          <a href="<?php echo esc_url( home_url( '/shop' ) ); ?>">Shop</a>
           <div>
             <ul class="man-woman">
               <li><a href="<?php echo esc_url( home_url( '/products-men' ) ); ?>">Men</a></li>
@@ -77,6 +77,7 @@
         <li>
           <a href="<?php echo esc_url( home_url( '/about-us' ) ); ?>">About us</a>
         </li>
+        <li style="float: right;"><a href="<?php echo esc_url( home_url( '/ch8ser' ) ); ?>">be a #ch8ser</a></li>
       </ul>
     </nav>
   </header><!-- .site-header -->
