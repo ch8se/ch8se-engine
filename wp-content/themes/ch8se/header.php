@@ -41,7 +41,7 @@
           </div>
         </li>
         <li>
-          <span>Impact</span>
+          <a href="<?php echo esc_url( home_url( '/impact' ) ); ?>">Impact</a>
           <div>
             <ul>
               <li><a href="<?php echo esc_url( home_url( '/impact' ) ); ?>">How it works</a></li>
@@ -51,7 +51,7 @@
           </div>
         </li>
         <li>
-          <span>Community</span>
+          <a href="<?php echo esc_url( home_url( '/ch8ser' ) ); ?>">Community</a>
           <div>
             <ul>
               <li><a href="<?php echo esc_url( home_url( '/ch8ser' ) ); ?>">#ch8ser</a></li>
@@ -61,14 +61,11 @@
           </div>
         </li>
         <li>
-          <span>Creation</span>
+          <a href="<?php echo esc_url( home_url( '/craftsmanship' ) ); ?>">Creation</a>
           <div>
             <ul>
               <li>
                 <a href="<?php echo esc_url( home_url( '/design' ) ); ?>">Design</a>
-              </li>
-              <li>
-                <a href="<?php echo esc_url( home_url( '/firestarter-collection' ) ); ?>">The Firestarter</a>
               </li>
               <li>
                 <a href="<?php echo esc_url( home_url( '/craftsmanship' ) ); ?>">Craftsmanship</a>

@@ -471,13 +471,11 @@ ch8se.instafeedInit = function() {
 
     var dataOptions = $feedParent.data(); //TODO: remove this
 
-
     var instaOptions = $.extend({
       target: feedParent,
       clientId: 'e6c9243435d84aeabf438796399d841c',
-      resolution: 'standard_resolution',
+      resolution: trueWindowWidth() > 782 ? 'standard_resolution' : 'low_resolution',
     }, dataOptions);
-
 
 
     if (dataOptions.slideshow) {
