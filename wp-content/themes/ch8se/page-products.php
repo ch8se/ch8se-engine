@@ -5,15 +5,6 @@
 
 get_header(); ?>
 
-<div class="carousel">
-  <div><img src="http://www.ch8se.com/wp-content/uploads/2015/11/shopslider1.jpg"></div>
-  <div><img src="http://www.ch8se.com/wp-content/uploads/2015/11/shopslider2.jpg"></div>
-  <div><img src="http://www.ch8se.com/wp-content/uploads/2015/11/shopslider3.jpg"></div>
-  <div><img src="http://www.ch8se.com/wp-content/uploads/2015/11/shopslider4.jpg"></div>
-  <div><img src="http://www.ch8se.com/wp-content/uploads/2015/11/shopslider5.jpg"></div>
-</div>
-
-
 <div class="products clearfix">
 <h1>the firestarter collection</h1>
 <br>

@@ -18,7 +18,7 @@ ch8se.init = function() {
   ch8se.initParallax();
 
   if (!$('.carousel').length) ch8se.instafeedInit(); //If there is no carousel load instafeed, if there is instafeed is loaded from ch8se.initCarosuel()
-  
+
 
 
   $(window).on('resize', function() {
@@ -276,12 +276,12 @@ ch8se.youtubePopup = function() {
   ch8se.$youtubeLink = $('.fa-youtube-play');
   $('.youtube-play').on('click', function() {
     $('body').append(popup);
-    ch8se.fixIframeSize();    
+    ch8se.fixIframeSize();
   });
-  
+
   // if ($('body').hasClass('home')) {
   //   $('body').append(popup);
-  //   ch8se.fixIframeSize();    
+  //   ch8se.fixIframeSize();
   // }
 
 }
@@ -373,9 +373,9 @@ ch8se.fixIframeSize = function() {
   //   console.log('resize');
   //   $iframeHolder.remove();
   // });
-  
+
   // $iframe.height($iframe.width()*9/16);
-  // 
+  //
 };
 
 ch8se.fixProductHeight = function() {
