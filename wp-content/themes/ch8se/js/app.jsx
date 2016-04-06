@@ -118,6 +118,20 @@ ch8se.init = function() {
     copyToClipboard($(this).find('span').text());
   });
 
+  // console.log(window.location.pathname)
+
+  if (window.location.pathname === '/') {
+    $('body').append(`
+      <div class="overlay" style="display: block;">
+        <a href="www.indiegogo.com/projects/ch8se" target="_blank"><img src="http://www.ch8se.com/wp-content/uploads/2016/04/IMG_4046.jpg" /></a>
+      </div>
+    `);
+
+    $('.overlay').on('click', e => {
+      $('.overlay').remove();
+    });
+  }
+
 
 }
 
