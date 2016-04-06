@@ -982,25 +982,55 @@ input {
 }
 
 .overlay {
-  background: rgba(0, 0, 0, 0.4);
+  background: rgba(0, 0, 0, 0.85);
   position: fixed;
   width: 100%;
   height: 100%;
   top: 0;
   left: 0;
-  z-index: 500;
+  z-index: 50000;
   display: none;
 
   .box {
+    position: absolute;
+    .center-transform;
+    max-width: 760px;
+    width: 90%;
 
+    h1 {
+      text-align: center;
+      a {
+        color: #fff;
+
+        @media screen and (max-width: 600px) {
+          font-size: 18px;
+        }
+      }
+    }
+
+    span.close {
+      background: #000;
+      display: block;
+      position: absolute;
+      right: -16px;
+      top: 57px;
+      width: 30px;
+      height: 30px;
+      color: #fff;
+      font-size: 30px;
+      text-align: center;
+      font-weight: bold;
+      border: 2px solid;
+      border-radius: 50%;
+      cursor: pointer;
+      z-index: 5;
+    }
   }
   img {
-  position: absolute;
-  .center-transform;
-    max-width: 90%;
-    max-height: 90%;
-    width: auto;
-    height: auto;
+    // max-width: 760px;
+    // max-height: 70%;
+    width: 100%;
+    // height: auto;
   }
 }
 

@@ -123,11 +123,16 @@ ch8se.init = function() {
   if (window.location.pathname === '/') {
     $('body').append(`
       <div class="overlay" style="display: block;">
-        <a href="http://www.indiegogo.com/projects/ch8se" target="_blank"><img src="http://www.ch8se.com/wp-content/uploads/2016/04/IMG_4046.jpg" /></a>
+        <div class="box">
+          <h1><a href="http://www.indiegogo.com/projects/ch8se" target="_blank">Check us out on indiegogo</a></h1>
+          <a href="http://www.indiegogo.com/projects/ch8se" target="_blank"><img src="http://www.ch8se.com/wp-content/uploads/2016/04/IMG_4046.jpg" /></a>
+          <span class="close">X</span>
+        </div>
       </div>
     `);
 
     $('.overlay').on('click', e => {
+      e.stopPropagation();
       $('.overlay').remove();
     });
   }
