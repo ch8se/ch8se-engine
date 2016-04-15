@@ -988,7 +988,7 @@ input {
   height: 100%;
   top: 0;
   left: 0;
-  z-index: 50000;
+  z-index: 10;
   display: none;
 
   .box {
@@ -1724,9 +1724,9 @@ input {
       margin: 10px auto;
     }
 
-    .single_variation_wrap {
-      margin-top: 20px;
-      display: inline-block;
+    form.cart .button {
+      background: transparent;
+      .btn;
     }
 
     .price .amount {
@@ -1734,6 +1734,16 @@ input {
       padding: 40px 0;
       display: inline-block;
       color: #000;
+    }
+
+    .single_variation_wrap {
+      margin-top: 20px !important;
+      display:  inline-block !important;
+      height: auto !important;
+    }
+
+    .single_variation {
+      display: none !important;
     }
   }
 

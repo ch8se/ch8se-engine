@@ -26,7 +26,7 @@ get_header(); ?>
           <h2 class="title">- <?php the_title(); ?> -</h2>
         </div>
 
-        <span class="price"><sup>$</sup><?php echo get_post_meta($post->ID, 'price', true); ?></span>
+        <span class="price"><?php woocommerce_get_template( 'loop/price.php' ); ?></span>
       </div>
 
     </a>
