@@ -16,6 +16,7 @@ ch8se.init = function() {
   ch8se.fixIframeSizePage();
   ch8se.homePageLoader();
   ch8se.initParallax();
+  ch8se.shopFixes();
 
   if (!$('.carousel').length) ch8se.instafeedInit(); //If there is no carousel load instafeed, if there is instafeed is loaded from ch8se.initCarosuel()
 
@@ -745,6 +746,30 @@ ch8se.initCarosuel = function() {
       if (this.complete) reloadImages();
     });
   });
+}
+
+ch8se.shopFixes = function() {
+  var $product = $('.type-product');
+
+  $product.find('.entry-summary > h1').each((i, el) => {
+    var $title = $(el);
+
+    $title.wrap('<div class="title"></div>');
+    $title.after(`
+      <h4>the firestarter collection</h4>
+        <br>
+      <h5>- handcrafted in europe -</h5>`
+    );
+  });
+
+
+  $product.find('.product_meta').after(
+    `<div class="social invert">
+      <p>Share</p>
+      <a target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=${window.location}"><i class="fa fa-facebook"></i></a>
+      <a target="_blank" href="https://twitter.com/home?status=${window.location}"><i class="fa fa-twitter"></i></a>
+    </div>`
+  );
 }
 
 

@@ -84,4 +84,4 @@
 
   <?php /*get_sidebar(); */?>
   <div class="wrap">
-    <div id="content" class="site-content">
+    <div id="content" class="site-content clearfix">
