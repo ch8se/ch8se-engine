@@ -63,6 +63,7 @@ add_theme_support( 'post-thumbnails' );
 
 
 
+
 add_action( 'init', 'register_ambassador' );
 
 function register_ambassador() {
@@ -148,5 +149,25 @@ function addCharityFunction() {
 add_action( 'woocommerce_single_product_summary', 'addCharityFunction', 6 );
 
 
+/**
+ * Register a custom menu page.
+ */
+function wpdocs_register_my_custom_menu_page() {
+    add_menu_page(
+        __( 'Redeem codes', 'textdomain' ),
+        'Redeem codes',
+        'manage_options',
+        'test-plugin',
+        'test_init',
+        'dashicons-editor-code',
+        6
+    );
+}
+ 
+function test_init(){
+        echo "<h1>Hello World!</h1>";
+}
+
+add_action( 'admin_menu', 'wpdocs_register_my_custom_menu_page' );
 
 ?>
