@@ -29,6 +29,7 @@ ch8se.init = function() {
     // ch8se.fixIframeSize();
   });
 
+  $('.um-profile-body').each(ch8se.codeRedeem)
 
 
   //TODO add these into seperate functions
@@ -772,6 +773,12 @@ ch8se.shopFixes = function() {
   );
 }
 
+
+ch8se.codeRedeem = function() {
+  var $this = $(this);
+
+  
+}
 
 ch8se.init();
 

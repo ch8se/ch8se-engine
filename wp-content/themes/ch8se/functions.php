@@ -17,49 +17,67 @@ add_action( 'wp_enqueue_scripts', 'ch8se_scripts' );
 add_theme_support( 'post-thumbnails' );
 
 
-// add_action( 'init', 'register_ch8se_product' );
+add_action( 'init', 'register_cpt_r_code' );
 
-// function register_ch8se_product() {
+function register_cpt_r_code() {
 
-//     $labels = array( 
-//         'name' => _x( 'Products', 'product' ),
-//         'singular_name' => _x( 'Product', 'product' ),
-//         'add_new' => _x( 'Add New', 'product' ),
-//         'add_new_item' => _x( 'Add New Product', 'product' ),
-//         'edit_item' => _x( 'Edit Product', 'product' ),
-//         'new_item' => _x( 'New Product', 'product' ),
-//         'view_item' => _x( 'View Product', 'product' ),
-//         'search_items' => _x( 'Search Products', 'product' ),
-//         'not_found' => _x( 'No products found', 'product' ),
-//         'not_found_in_trash' => _x( 'No products found in Trash', 'product' ),
-//         'parent_item_colon' => _x( 'Parent Product:', 'product' ),
-//         'menu_name' => _x( 'Products', 'product' ),
-//     );
+    $labels = array(
+        'name' => __( 'Reedem Codes', 'r_code' ),
+        'singular_name' => __( 'Reedem Code', 'r_code' ),
+        'add_new' => __( 'Add New', 'r_code' ),
+        'add_new_item' => __( 'Add New Reedem Code', 'r_code' ),
+        'edit_item' => __( 'Edit Reedem Code', 'r_code' ),
+        'new_item' => __( 'New Reedem Code', 'r_code' ),
+        'view_item' => __( 'View Reedem Code', 'r_code' ),
+        'search_items' => __( 'Search Reedem Codes', 'r_code' ),
+        'not_found' => __( 'No reedem codes found', 'r_code' ),
+        'not_found_in_trash' => __( 'No reedem codes found in Trash', 'r_code' ),
+        'parent_item_colon' => __( 'Parent Reedem Code:', 'r_code' ),
+        'menu_name' => __( 'Reedem Codes', 'r_code' ),
+    );
 
-//     $args = array( 
-//         'labels' => $labels,
-//         'menu_icon' => 'dashicons-carrot',
-//         'hierarchical' => false,
-//         'description' => 'Product',
-//         'supports' => array( 'title', 'thumbnail' ),
-//         'taxonomies' => array( 'Gender' ),
-//         'public' => true,
-//         'show_ui' => true,
-//         'show_in_menu' => true,
-        
-        
-//         'show_in_nav_menus' => true,
-//         'publicly_queryable' => true,
-//         'exclude_from_search' => false,
-//         'has_archive' => true,
-//         'query_var' => true,
-//         'can_export' => true,
-//         'rewrite' => true,
-//         'capability_type' => 'post'
-//     );
+    $args = array(
+        'labels' => $labels,
+        'hierarchical' => false,
+        'supports' => array( 'title' ),
+        'public' => false,
+        'show_ui' => true,
+        'show_in_nav_menus' => true,
+        'publicly_queryable' => false,
+        'exclude_from_search' => true,
+        'has_archive' => false,
+        'query_var' => true,
+        'can_export' => true,
+        'rewrite' => true,
+        'show_in_rest' => true,
+        'rest_base' => 'code-api',
+        'capability_type' => 'post'
+    );
 
-//     register_post_type( 'product', $args );
-// }
+    register_post_type( 'r_code', $args );
+}
+
+
+add_action( 'rest_api_init', 'registerTrees' );
+function registerTrees() {
+    $r_code_labels = array( 'trees', 'food', 'water', 'user', 'status' );
+
+    foreach ($r_code_labels as $val) {
+        register_rest_field( 'r_code',
+            $val,
+            array(
+                'get_callback'    => 'populateJson',
+                'update_callback' => null,
+                'schema'          => null,
+            )
+        );
+    }
+}
+
+function populateJson( $object, $field_name, $request ) {
+    return get_post_meta( $object[ 'id' ], $field_name, true );
+}
+
 
 
 
@@ -152,7 +170,7 @@ add_action( 'woocommerce_single_product_summary', 'addCharityFunction', 6 );
 /**
  * Register a custom menu page.
  */
-function wpdocs_register_my_custom_menu_page() {
+/*function wpdocs_register_my_custom_menu_page() {
     add_menu_page(
         __( 'Redeem codes', 'textdomain' ),
         'Redeem codes',
@@ -168,6 +186,6 @@ function test_init(){
         echo "<h1>Hello World!</h1>";
 }
 
-add_action( 'admin_menu', 'wpdocs_register_my_custom_menu_page' );
+add_action( 'admin_menu', 'wpdocs_register_my_custom_menu_page' );*/
 
 ?>
