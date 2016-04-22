@@ -58,29 +58,6 @@ function register_cpt_r_code() {
 }
 
 
-add_action( 'rest_api_init', 'registerTrees' );
-function registerTrees() {
-    $r_code_labels = array( 'trees', 'food', 'water', 'user', 'status' );
-
-    foreach ($r_code_labels as $val) {
-        register_rest_field( 'r_code',
-            $val,
-            array(
-                'get_callback'    => 'populateJson',
-                'update_callback' => null,
-                'schema'          => null,
-            )
-        );
-    }
-}
-
-function populateJson( $object, $field_name, $request ) {
-    return get_post_meta( $object[ 'id' ], $field_name, true );
-}
-
-
-
-
 
 add_action( 'init', 'register_ambassador' );
 
@@ -187,5 +164,54 @@ function test_init(){
 }
 
 add_action( 'admin_menu', 'wpdocs_register_my_custom_menu_page' );*/
+
+
+
+add_action( 'rest_api_init', 'registerTrees' );
+function registerTrees() {
+    $r_code_labels = array( 'trees', 'food', 'water', 'user', 'status' );
+
+    foreach ($r_code_labels as $val) {
+        register_rest_field( 'r_code',
+            $val,
+            array(
+                'get_callback'    => 'get_meta',
+                'update_callback' => null,
+                'schema'          => null,
+            )
+        );
+    }
+}
+
+function get_meta( $object, $field_name, $request ) {
+    return get_post_meta( $object[ 'id' ], $field_name, true );
+}
+
+
+add_action( 'rest_api_init', 'extend_user' );
+function extend_user() {
+    register_rest_field( 'user',
+        'trees',
+        array(
+            'get_callback'    => 'fetch_user_meta',
+            'update_callback' => 'post_user_meta',
+            'schema'          => null,
+        )
+    );
+}
+
+
+function fetch_user_meta( $object, $field_name, $request ) {
+    return get_user_meta( $object[ 'id' ], $field_name );
+}
+
+function post_user_meta( $value, $object, $field_name ) {
+    if ( ! $value || ! is_string( $value ) ) {
+        return;
+    }
+
+    return update_user_meta( $object->ID, $field_name, strip_tags( $value ) );
+}
+
 
 ?>
