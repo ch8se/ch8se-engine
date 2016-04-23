@@ -787,9 +787,11 @@ ch8se.codeRedeem = function() {
       <span class="food">0</span><br>
       <span class="water">0</span>
     </div>
-    <div>
-      <input type="text" class="redeem" />
-      <button>Submit</button>
+    <div class="redeem">
+      <h3>You can redeem your code here</h3>
+      <input type="text" />
+      <button class="btn">Submit</button>
+      <p class="error"></p>
     </div>
   </div>`;
 
@@ -804,7 +806,7 @@ ch8se.codeRedeem = function() {
   $.ajax({
     url: wpApiSettings.root + 'wp/v2/users/1',
     method: 'GET',
-  }).done(function(data) {
+  }).done((data) => {
 
     //If user has no impact
     if (!data.impact.length) return;
@@ -820,10 +822,23 @@ ch8se.codeRedeem = function() {
     });
   }
 
+  function handleError(error) {
+    $this.find('p.error').text(error).css({opacity: '1'});
+  }
+
+  function clearError() {
+    $this.find('p.error').css({opacity: '0'});
+    setTimeout(function() {
+      $this.find('p.error').text('');
+    }, 500);
+  }
+
+  
+
   /*
    * Handle input of new data
    */
-  var $redeem = $this.find('input.redeem');
+  var $redeem = $this.find('.redeem input');
   var $submit = $redeem.next('button');
 
   $redeem.on('keydown', (e) => { if (e.keyCode === 13) handleRedeem(e) });
@@ -832,15 +847,18 @@ ch8se.codeRedeem = function() {
   function handleRedeem(e) {
     e.preventDefault();
     var val = $redeem.val();
-    console.log($redeem.val())
 
-    if (!val.length) return;
+    //If field is empty don't even proceed
+    if (!val.length) {
+      handleError('Code field is empty');
+      return;
+    }
 
     //Fetch redeem code and check it's trees/food/water
     $.ajax({
       url: wpApiSettings.root + 'wp/v2/code-api/?filter[title]=' + val,
       method: 'GET',
-    }).done(function(data) {
+    }).done((data) => {
 
       if (data.length) { //Check if anything is returned
         var code = data[0];
@@ -856,64 +874,68 @@ ch8se.codeRedeem = function() {
 
         } else { 
           //Handle bad code.state
-          console.log('Used')
+          handleError('Code you have provided has already been used');
         }
 
       } else {
-        //TODO: no data or invalid code
-        console.log('invalid')
+        //Handle no data or invalid code
+        handleError('Invalid code, if you are sure code should be valid please contact us at hello@ch8se.com');
       }
 
       
-    }).error(function(error) {
-      //TODO: handle error
+    }).error((error) => {
+      //Ajax error
+      handleError('An error has occured, please try again later or contact us at hello@ch8se.com');
     });
   }
 
   function updateUser(data, codeId) {
-    $.ajax( {
-      url: wpApiSettings.root + 'wp/v2/users/' + userId,
-      method: 'POST',
-      beforeSend: function ( xhr ) {
-        xhr.setRequestHeader( 'X-WP-Nonce', wpApiSettings.nonce );
+    ch8se.POST({
+      callback: (cData) => {
+        updateCounter(data);
+        updateCode(codeId, data.username);
+        clearError();
+        $redeem.val('');
       },
-      data:{
+      error: (error) => {handleError('An error has occured, please try again later or contact us at hello@ch8se.com')},
+      endpoint: 'users',
+      id: userId,
+      data: {
         impact: JSON.stringify(data)
       }
-    }).done(function(data) {
-      updateCounter(impact);
-      updateCode(codeId, data.username);
-    }).error(error => {
-      console.log(error);
     });
   }
 
   function updateCode(codeId, username) {
-    $.ajax( {
-      url: wpApiSettings.root + 'wp/v2/code-api/' + codeId,
-      method: 'POST',
-      beforeSend: function ( xhr ) {
-        xhr.setRequestHeader( 'X-WP-Nonce', wpApiSettings.nonce );
-      },
+    ch8se.POST({
+      endpoint: 'code-api',
+      id: codeId,
       data:{
         state: 'used',
         user: username
       }
-    }).done(function(data) {
-
     });
   }
-
-
-
-  //   $.ajax( {
-  //     url: wpApiSettings.root + 'wp/v2/users/1',
-  //     method: 'GET',
-  //   }).done( function ( response ) {
-  //       console.log( response );
-  //   });
-
 }
+
+/*
+ * params - {Object} - should contain callback, error handle, endpoint and id
+ */
+ch8se.POST = function(params) {
+  $.ajax({
+    url: `${wpApiSettings.root}wp/v2/${params.endpoint}/${params.id}`,
+    method: 'POST',
+    beforeSend: function ( xhr ) {
+      xhr.setRequestHeader( 'X-WP-Nonce', wpApiSettings.nonce );
+    },
+    data: params.data
+  }).done((data) => {
+    if (params.callback) params.callback(data);
+  }).error(error => {
+    if (params.error) params.error(error);
+  });
+}
+
 
 ch8se.init();
 

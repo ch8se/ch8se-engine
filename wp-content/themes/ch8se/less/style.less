@@ -852,7 +852,6 @@ footer.site-footer {
       }
     }
   }
-
 }
 
 input {
@@ -3090,6 +3089,35 @@ div.um {
       padding-top: 40px;
       display: flex;
       justify-content: center;
+    }
+  }
+}
+
+.um-header {
+  .redeem {
+    text-align: center;
+
+    input {
+      &[type="text"] {
+        margin: 10px auto !important;
+        max-width: 300px;
+        border-radius: 10px;
+        text-align: center;
+      }
+    }
+
+    .btn {
+      background: transparent;
+    }
+
+    .error {
+      border-radius: 10px;
+      border: 1px solid red;
+      padding: 10px;
+      opacity: 0;
+      margin: 4px auto;
+      max-width: 300px;
+      .transition(all 0.5s linear);
     }
   }
 }

@@ -18,7 +18,7 @@ gulp.task("javascript", function () {
         }))
     .pipe(plumber.stop())
     .pipe(concat("app.js"))
-    .pipe(sourcemaps.write('.'))
+    // .pipe(sourcemaps.write('.'))
     .pipe(gulp.dest(path + '/js/'));
 });
 
