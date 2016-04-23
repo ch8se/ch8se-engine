@@ -4,7 +4,9 @@
   "description": "Ch8se wordpress website",
   "main": "index.php",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "gulp",
+    "build": "gulp build",
+    "prod": "gulp prod"
   },
   "repository": {
     "type": "git",
@@ -17,22 +19,20 @@
   "author": "Radomir Perisic, radeperisic@yahoo.com",
   "license": "ISC",
   "homepage": "http://www.ch8se.com",
-  "devDependencies": {
-    "babel-preset-es2015": "^6.3.13",
-    "gulp": "^3.9.0",
-    "gulp-babel": "^6.1.1",
-    "gulp-concat": "^2.6.0",
-    "gulp-connect": "^2.2.0",
-    "gulp-less": "^3.0.3",
+  "devDependencies": {},
+  "dependencies": {
+    "babel-preset-es2015": "^6.6.0",
+    "babel-preset-react": "^6.5.0",
+    "babelify": "^7.2.0",
+    "browserify": "^13.0.0",
+    "gulp": "^3.9.1",
+    "gulp-less": "^3.0.5",
+    "gulp-livereload": "^3.8.1",
     "gulp-notify": "^2.2.0",
-    "gulp-plumber": "^1.0.1",
-    "gulp-sourcemaps": "^1.6.0",
-    "gulp-uglify": "^1.5.1",
-    "plumber": "^0.4.8"
-  },
-  "scripts": {
-    "start": "gulp",
-    "build": "gulp build",
-    "prod": "gulp prod"
+    "gulp-plumber": "^1.1.0",
+    "gulp-uglify": "^1.5.3",
+    "vinyl-buffer": "^1.0.0",
+    "vinyl-source-stream": "^1.1.0",
+    "xlsx": "^0.8.0"
   }
 }
