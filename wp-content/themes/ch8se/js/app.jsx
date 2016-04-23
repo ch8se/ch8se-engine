@@ -29,7 +29,7 @@ ch8se.init = function() {
     // ch8se.fixIframeSize();
   });
 
-  $('.um-profile-body').each(ch8se.codeRedeem)
+  $('.um-header').each(ch8se.codeRedeem)
 
 
   //TODO add these into seperate functions
@@ -777,7 +777,142 @@ ch8se.shopFixes = function() {
 ch8se.codeRedeem = function() {
   var $this = $(this);
 
-  
+  // console.log(wpApiSettings);
+
+  var counter = `
+  <div class="counter-wrap">
+    <h2>Your contribution</h2>
+    <div class="counter clearfix">
+      <span class="trees">0</span><br>
+      <span class="food">0</span><br>
+      <span class="water">0</span>
+    </div>
+    <div>
+      <input type="text" class="redeem" />
+      <button>Submit</button>
+    </div>
+  </div>`;
+
+  $this.append(counter);
+
+  var impactTypes = ['trees', 'food', 'water'];
+  var impact = {};
+  var userId = $('.um-profile-photo').data('user_id');
+  /*
+   * Fetch user meta for impact and populate counters
+   */
+  $.ajax({
+    url: wpApiSettings.root + 'wp/v2/users/1',
+    method: 'GET',
+  }).done(function(data) {
+
+    //If user has no impact
+    if (!data.impact.length) return;
+
+    impact = JSON.parse(data.impact[0]);
+
+    updateCounter(impact);
+  });
+
+  function updateCounter(data) {
+    impactTypes.forEach(item => {
+      $this.find('.' + item).text(data[item] ? data[item] : 0);
+    });
+  }
+
+  /*
+   * Handle input of new data
+   */
+  var $redeem = $this.find('input.redeem');
+  var $submit = $redeem.next('button');
+
+  $redeem.on('keydown', (e) => { if (e.keyCode === 13) handleRedeem(e) });
+  $submit.on('click', handleRedeem);
+
+  function handleRedeem(e) {
+    e.preventDefault();
+    var val = $redeem.val();
+    console.log($redeem.val())
+
+    if (!val.length) return;
+
+    //Fetch redeem code and check it's trees/food/water
+    $.ajax({
+      url: wpApiSettings.root + 'wp/v2/code-api/?filter[title]=' + val,
+      method: 'GET',
+    }).done(function(data) {
+
+      if (data.length) { //Check if anything is returned
+        var code = data[0];
+
+        //check it code is sent, populated by user
+        if (code.state === 'sent') {
+
+          impactTypes.forEach(type => {
+            if (code[type].length) impact[type] += parseInt(code[type]);
+          });
+
+          updateUser(impact, code.id);
+
+        } else { 
+          //Handle bad code.state
+          console.log('Used')
+        }
+
+      } else {
+        //TODO: no data or invalid code
+        console.log('invalid')
+      }
+
+      
+    }).error(function(error) {
+      //TODO: handle error
+    });
+  }
+
+  function updateUser(data, codeId) {
+    $.ajax( {
+      url: wpApiSettings.root + 'wp/v2/users/' + userId,
+      method: 'POST',
+      beforeSend: function ( xhr ) {
+        xhr.setRequestHeader( 'X-WP-Nonce', wpApiSettings.nonce );
+      },
+      data:{
+        impact: JSON.stringify(data)
+      }
+    }).done(function(data) {
+      updateCounter(impact);
+      updateCode(codeId, data.username);
+    }).error(error => {
+      console.log(error);
+    });
+  }
+
+  function updateCode(codeId, username) {
+    $.ajax( {
+      url: wpApiSettings.root + 'wp/v2/code-api/' + codeId,
+      method: 'POST',
+      beforeSend: function ( xhr ) {
+        xhr.setRequestHeader( 'X-WP-Nonce', wpApiSettings.nonce );
+      },
+      data:{
+        state: 'used',
+        user: username
+      }
+    }).done(function(data) {
+
+    });
+  }
+
+
+
+  //   $.ajax( {
+  //     url: wpApiSettings.root + 'wp/v2/users/1',
+  //     method: 'GET',
+  //   }).done( function ( response ) {
+  //       console.log( response );
+  //   });
+
 }
 
 ch8se.init();

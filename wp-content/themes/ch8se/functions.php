@@ -6,13 +6,23 @@ function ch8se_scripts()
   wp_enqueue_style( 'slick-style', get_template_directory_uri() . '/js/libs/slick/slick.css' );
 
   wp_enqueue_script('instafeed-script', get_template_directory_uri() . '/js/libs/instafeed.min.js');
-  wp_enqueue_script('ch8se-script', get_template_directory_uri() . '/js/libs/slick/slick.min.js', array( 'jquery' ));
-  wp_enqueue_script('slick-script', get_template_directory_uri() . '/js/app.js', array( 'jquery' ));
+  wp_enqueue_script('slick-script', get_template_directory_uri() . '/js/libs/slick/slick.min.js', array( 'jquery' ));
+  // wp_enqueue_script('slick-script', get_template_directory_uri() . '/js/app.js', array( 'jquery' ));
 
 }
 
 
 add_action( 'wp_enqueue_scripts', 'ch8se_scripts' );
+
+
+wp_register_script( 'api-extend', get_template_directory_uri() . '/js/app.js', array( 'jquery' ) );
+wp_localize_script( 'api-extend', 'wpApiSettings', array( 'root' => esc_url_raw( rest_url() ), 'nonce' => wp_create_nonce( 'wp_rest' ) ) );
+
+wp_enqueue_script('api-extend');
+
+
+
+
 
 add_theme_support( 'post-thumbnails' );
 
@@ -169,14 +179,14 @@ add_action( 'admin_menu', 'wpdocs_register_my_custom_menu_page' );*/
 
 add_action( 'rest_api_init', 'registerTrees' );
 function registerTrees() {
-    $r_code_labels = array( 'trees', 'food', 'water', 'user', 'status' );
+    $r_code_labels = array( 'trees', 'food', 'water', 'user', 'state' );
 
     foreach ($r_code_labels as $val) {
         register_rest_field( 'r_code',
             $val,
             array(
                 'get_callback'    => 'get_meta',
-                'update_callback' => null,
+                'update_callback' => 'update_my_meta',
                 'schema'          => null,
             )
         );
@@ -187,11 +197,19 @@ function get_meta( $object, $field_name, $request ) {
     return get_post_meta( $object[ 'id' ], $field_name, true );
 }
 
+function update_my_meta( $value, $object, $field_name ) {
+    if ( ! $value || ! is_string( $value ) ) {
+        return;
+    }
+
+    return update_post_meta( $object->ID, $field_name, strip_tags( $value ) );
+
+}
 
 add_action( 'rest_api_init', 'extend_user' );
 function extend_user() {
     register_rest_field( 'user',
-        'trees',
+        'impact',
         array(
             'get_callback'    => 'fetch_user_meta',
             'update_callback' => 'post_user_meta',
@@ -212,6 +230,9 @@ function post_user_meta( $value, $object, $field_name ) {
 
     return update_user_meta( $object->ID, $field_name, strip_tags( $value ) );
 }
+
+
+
 
 
 ?>
