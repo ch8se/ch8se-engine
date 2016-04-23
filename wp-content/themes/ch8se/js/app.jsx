@@ -791,8 +791,7 @@ ch8se.codeRedeem = function() {
       <h3>You can redeem your code here</h3>
       <input type="text" />
       <button class="btn">Submit</button>
-      <p class="error"></p>
-      <p class="success"></p>
+      <p class="message"></p>
     </div>
   </div>`;
 
@@ -844,18 +843,18 @@ ch8se.codeRedeem = function() {
   }
 
   function handleError(error) {
-    $this.find('p.error').text(error).css({opacity: '1', borderColor: 'red'});
+    $this.find('p.message').text(error).css({opacity: '1', borderColor: 'red'});
   }
 
   function clearError() {
-    $this.find('p.error').css({opacity: '0'});
+    $this.find('p.message').css({opacity: '0'});
     setTimeout(function() {
-      $this.find('p.error').text('');
+      $this.find('p.message').text('');
     }, 500);
   }
 
   function handleSuccess(message) {
-    $this.find('p.error').text(message).css({opacity: '1', borderColor: 'green'});
+    $this.find('p.message').text(message).css({opacity: '1', borderColor: 'green'});
   }
 
   
