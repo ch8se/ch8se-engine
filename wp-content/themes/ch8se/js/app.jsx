@@ -792,6 +792,7 @@ ch8se.codeRedeem = function() {
       <input type="text" />
       <button class="btn">Submit</button>
       <p class="error"></p>
+      <p class="success"></p>
     </div>
   </div>`;
 
@@ -818,12 +819,32 @@ ch8se.codeRedeem = function() {
 
   function updateCounter(data) {
     impactTypes.forEach(item => {
-      $this.find('.' + item).text(data[item] ? data[item] : 0);
+      var clr = null;
+      var $item = $this.find('.' + item);
+      var loop;
+
+      if (!data[item]) {
+        $item.html('0');
+        return;
+      }
+
+      var diff = data[item] - parseInt($item.html());
+
+      var jump = diff > 50 ? (diff > 100 ? 10 : 5) : 1;
+
+      (loop = function() {
+        $item.html(parseInt($item.html()) + jump);
+        if (parseInt($item.html()) >= data[item]) {
+          $item.html(parseInt(data[item]));
+          return;
+        }
+        clr = setTimeout(loop, 30);
+      })();
     });
   }
 
   function handleError(error) {
-    $this.find('p.error').text(error).css({opacity: '1'});
+    $this.find('p.error').text(error).css({opacity: '1', borderColor: 'red'});
   }
 
   function clearError() {
@@ -831,6 +852,10 @@ ch8se.codeRedeem = function() {
     setTimeout(function() {
       $this.find('p.error').text('');
     }, 500);
+  }
+
+  function handleSuccess(message) {
+    $this.find('p.error').text(message).css({opacity: '1', borderColor: 'green'});
   }
 
   
@@ -854,7 +879,7 @@ ch8se.codeRedeem = function() {
       return;
     }
 
-    //Fetch redeem code and check it's trees/food/water
+    //Fetch redeem code and check its trees/food/water
     $.ajax({
       url: wpApiSettings.root + 'wp/v2/code-api/?filter[title]=' + val,
       method: 'GET',
@@ -894,7 +919,7 @@ ch8se.codeRedeem = function() {
       callback: (cData) => {
         updateCounter(data);
         updateCode(codeId, data.username);
-        clearError();
+        handleSuccess('Thank you for your impact');
         $redeem.val('');
       },
       error: (error) => {handleError('An error has occured, please try again later or contact us at hello@ch8se.com')},
