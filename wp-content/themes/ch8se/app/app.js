@@ -812,8 +812,11 @@ ch8se.codeRedeem = function() {
    * Fetch user meta for impact and populate counters
    */
   $.ajax({
-    url: wpApiSettings.root + 'wp/v2/users/1',
+    url: wpApiSettings.root + 'wp/v2/users/' + userId,
     method: 'GET',
+    beforeSend: function ( xhr ) {
+      xhr.setRequestHeader( 'X-WP-Nonce', wpApiSettings.nonce );
+    },
   }).done((data) => {
 
     //If user has no impact
@@ -890,6 +893,9 @@ ch8se.codeRedeem = function() {
     $.ajax({
       url: wpApiSettings.root + 'wp/v2/code-api/?filter[title]=' + val,
       method: 'GET',
+      beforeSend: function ( xhr ) {
+        xhr.setRequestHeader( 'X-WP-Nonce', wpApiSettings.nonce );
+      },
     }).done((data) => {
 
       if (data.length) { //Check if anything is returned
@@ -925,7 +931,7 @@ ch8se.codeRedeem = function() {
     services.post({
       callback: (cData) => {
         updateCounter(data);
-        updateCode(codeId, data.username);
+        updateCode(codeId, cData.username);
         handleSuccess('Thank you for your impact');
         $redeem.val('');
       },
