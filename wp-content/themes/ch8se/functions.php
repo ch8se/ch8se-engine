@@ -68,6 +68,35 @@ function register_cpt_r_code() {
 }
 
 
+add_action('admin_menu', 'mt_add_pages');
+function mt_add_pages() {
+    add_submenu_page('edit.php?post_type=r_code', 
+        'Import codes',
+        'Import codes',
+        'manage_options', 
+        'testsettings', 
+        'mt_settings_page');
+
+
+
+    function mt_settings_page() {
+        echo '<div id="code-import"></div>'; 
+
+    }
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
 
 add_action( 'init', 'register_ambassador' );
 

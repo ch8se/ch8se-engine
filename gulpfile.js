@@ -37,7 +37,7 @@ function handleErrors() {
 }
 
 gulp.task('browserify', function() {
-  return browserify(path + "/js/app.jsx", {debug: true})
+  return browserify(path + "/app/app.js", {debug: true})
     .transform(babelify, {presets: ["es2015", "react"]})
     .bundle().on('error', handleErrors)
     .pipe(source("js/app.js"))
@@ -46,7 +46,7 @@ gulp.task('browserify', function() {
 });
 
 gulp.task('browserify-uglify', function() {
-  return browserify(path + "/js/app.jsx", {debug: false})
+  return browserify(path + "/app/app.js", {debug: false})
     .transform(babelify, {presets: ["es2015", "react"]})
     .bundle().on('error', handleErrors)
     .pipe(source("js/app.js"))
@@ -59,7 +59,7 @@ gulp.task('browserify-uglify', function() {
 
 gulp.task('watch', function() {
   gulp.watch(path + '/less/*.less' , ['compile-less']);
-  gulp.watch(path + '/js/app.jsx' , ['browserify']);
+  gulp.watch(path + '/app/**/*.js' , ['browserify']);
   // gulp.watch('/*.html' , ['html']);
   livereload.listen();
 });

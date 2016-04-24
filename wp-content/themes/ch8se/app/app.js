@@ -1,5 +1,6 @@
 
 var ch8se = window.ch8se || {};
+var services = require('./utils/services');
 
 jQuery( document ).ready(function( $ ) {
 ch8se.init = function() {
@@ -29,7 +30,14 @@ ch8se.init = function() {
     // ch8se.fixIframeSize();
   });
 
-  $('.um-header').each(ch8se.codeRedeem)
+  $('.um-header').each(ch8se.codeRedeem);
+
+
+
+
+  var codeImporter = require('./components/codeImporter');
+
+  $('#code-import').each(codeImporter.init);
 
 
   //TODO add these into seperate functions
@@ -887,8 +895,8 @@ ch8se.codeRedeem = function() {
       if (data.length) { //Check if anything is returned
         var code = data[0];
 
-        //check it code is sent, populated by user
-        if (code.state === 'sent') {
+        //check it code is not used
+        if (code.state !== 'used') {
 
           impactTypes.forEach(type => {
             if (code[type].length) impact[type] += parseInt(code[type]);
@@ -914,7 +922,7 @@ ch8se.codeRedeem = function() {
   }
 
   function updateUser(data, codeId) {
-    ch8se.POST({
+    services.post({
       callback: (cData) => {
         updateCounter(data);
         updateCode(codeId, data.username);
@@ -931,7 +939,7 @@ ch8se.codeRedeem = function() {
   }
 
   function updateCode(codeId, username) {
-    ch8se.POST({
+    services.post({
       endpoint: 'code-api',
       id: codeId,
       data:{
@@ -940,24 +948,6 @@ ch8se.codeRedeem = function() {
       }
     });
   }
-}
-
-/*
- * params - {Object} - should contain callback, error handle, endpoint and id
- */
-ch8se.POST = function(params) {
-  $.ajax({
-    url: `${wpApiSettings.root}wp/v2/${params.endpoint}/${params.id}`,
-    method: 'POST',
-    beforeSend: function ( xhr ) {
-      xhr.setRequestHeader( 'X-WP-Nonce', wpApiSettings.nonce );
-    },
-    data: params.data
-  }).done((data) => {
-    if (params.callback) params.callback(data);
-  }).error(error => {
-    if (params.error) params.error(error);
-  });
 }
 
 
