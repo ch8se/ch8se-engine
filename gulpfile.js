@@ -12,11 +12,6 @@ var buffer = require('vinyl-buffer');
 var path = 'wp-content/themes/ch8se';
 
 
-gulp.task('apply-prod-environment', function() {
-  process.env.NODE_ENV = 'production';
-});
-
-
 
 gulp.task('compile-less', function() {
   return gulp.src(path + '/less/style.less')
@@ -46,6 +41,8 @@ gulp.task('browserify', function() {
 });
 
 gulp.task('browserify-uglify', function() {
+  process.env.NODE_ENV = 'production';
+
   return browserify(path + "/app/app.js", {debug: false})
     .transform(babelify, {presets: ["es2015", "react"]})
     .bundle().on('error', handleErrors)
@@ -65,5 +62,5 @@ gulp.task('watch', function() {
 });
 
 gulp.task('build', ['browserify', 'compile-less']);
-gulp.task('production', ['apply-prod-environment', 'browserify-uglify', 'compile-less']);
+gulp.task('production', ['browserify-uglify', 'compile-less']);
 gulp.task('default', ['build', 'watch']);
