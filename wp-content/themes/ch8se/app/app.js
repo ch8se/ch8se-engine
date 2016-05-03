@@ -12,7 +12,6 @@ ch8se.init = function() {
   ch8se.opacitySlider();
   ch8se.fixProductHeight();
   ch8se.productView();
-  // ch8se.youtubePopup();
   ch8se.champSubscribe();
   ch8se.fixIframeSizePage();
   ch8se.homePageLoader();
@@ -39,13 +38,7 @@ ch8se.init = function() {
 
 
   //TODO add these into seperate functions
-  // $.ajax({
-  //   type: 'GET',
-  //   url: 'http://api.hostip.info/get_html.php',
-  //   success: function(data) {
-  //     $('input[name="ip-address"]').val(data.split('IP: ')[1]);
-  //   }
-  // });
+
 
   $('.get-notified').on('click', e => {
     e.preventDefault();
@@ -126,8 +119,8 @@ ch8se.init = function() {
     copyToClipboard($(this).find('span').text());
   });
 
-  // console.log(window.location.pathname)
 
+  // Add overlay on homepage
   if (window.location.pathname === '/') {
     $('body').append(`
       <div class="overlay" style="display: block;">
@@ -148,6 +141,9 @@ ch8se.init = function() {
 
 }
 
+/*
+ * Copy text to clipboard
+ */
 function copyToClipboard(textToCopy) {
   $('.mail-copy').addClass('show-popup');
   $("body")
@@ -158,19 +154,20 @@ function copyToClipboard(textToCopy) {
   try {
     var successful = document.execCommand('copy');
     var msg = successful ? 'successful' : 'unsuccessful';
-    console.log('copy to clipboard', msg);
   } catch (err) {}
 
   $('.textToCopyInput').remove();
 }
 
-
+/*
+ * Generate random ID from numbers and letters
+ */
 function makeid() {
     var text = "";
     var possible = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
 
     for( var i=0; i < 6; i++ )
-        text += possible.charAt(Math.floor(Math.random() * possible.length));
+      text += possible.charAt(Math.floor(Math.random() * possible.length));
 
     return text;
 }
@@ -181,6 +178,10 @@ function isMobileOs() {
   return userAgent.match( /iPad/i ) || userAgent.match( /iPhone/i ) || userAgent.match( /iPod/i ) || userAgent.match( /Android/i );
 }
 
+
+/*
+ * True window width and height, returns same value in all browsers.
+ */
 function trueWindowWidth() {
   return Math.max(document.documentElement.clientWidth, window.innerWidth || 0);
 }
@@ -188,6 +189,10 @@ function trueWindowHeight() {
   return Math.max(document.documentElement.clientHeight, window.innerHeight || 0);
 }
 
+
+/*
+ * Loader for homepage image
+ */
 ch8se.homePageLoader = function () {
   if (!$('body').hasClass('home')) return;
   var $pageContent = $('body.home .page-content');
@@ -223,6 +228,10 @@ ch8se.homePageLoader = function () {
   }
 }
 
+
+/*
+ * Main menu animation on mouse hover...
+ */
 ch8se.menuAnimation = function() {
   var $blocks = $('.site-nav > ul > li');
   var $animationBlock = $('.animation-block');
@@ -247,7 +256,42 @@ ch8se.menuAnimation = function() {
   $('.site-nav .logo').on('mouseenter', function() {
     resetMenuAnimation();
   })
+}
 
+/*
+ * Main menu fix on variouse resolution
+ * moves submenu element to correct position on desktop
+ * Adds spetial class for submenus for mobile
+ */
+ch8se.menuFix = function() {
+  var $siteNav = $('.site-nav');
+
+  $siteNav.find('> ul > li').each(function(i) {
+    var $this = $(this),
+        $ul = $(this).find('> div > ul');
+
+    if (trueWindowWidth() >= 783) {
+      $this.find('> a, > span').removeClass('has-children');
+
+
+      if ($ul.length) {
+        $this.find('> div').css({display: 'block'}); //js can't calculate width of hidden element
+
+        $ul.css({'margin-left': ($this.position().left - $ul.find('li:first-child').width() - ($ul.hasClass('man-woman') ? 0 : 50))});
+
+        $this.find('> div').css({display: ''});
+      }
+    } else {
+      $ul.removeAttr('style');
+
+      if (i >= 0 && i <= 3) {
+        $this.find('> a, > span').addClass('has-children');
+      }
+      // if (i >= 2) {
+      //   $this.css({transform: 'translateY(-' + $siteNav.find('> ul > li:first-child').height() + 'px)'});
+      // }
+    }
+  });
 }
 
 ch8se.champSubscribe = function() {
@@ -291,119 +335,14 @@ ch8se.champSubscribe = function() {
 
 }
 
-ch8se.youtubePopup = function() {
 
-  var popup = `<div class="iframe-holder">
-    <div class="underlay">
-      <i class="fa fa-times-circle"></i>
-      <iframe src="https://www.youtube.com/embed/S35ikoNnjKM" frameborder="0" allowfullscreen></iframe>
-    </div>
-  </div>`
-
-  ch8se.$youtubeLink = $('.fa-youtube-play');
-  $('.youtube-play').on('click', function() {
-    $('body').append(popup);
-    ch8se.fixIframeSize();
-  });
-
-  // if ($('body').hasClass('home')) {
-  //   $('body').append(popup);
-  //   ch8se.fixIframeSize();
-  // }
-
-}
 
 ch8se.fixIframeSizePage = function() {
   var $videoWrapper = $('.videoWrapper');
   $videoWrapper.css({height: ($videoWrapper.width() * 9 / 16)});
 }
 
-ch8se.fixIframeSize = function() {
-  var $iframeHolder = $('.iframe-holder');
-  var $iframe = $('.iframe-holder iframe');
-  if (!$iframe.length) return;
 
-  //Get youtubeLink position and start iframe size from it
-  //console.log(ch8se.$youtubeLink.offset(), ch8se.$youtubeLink.width());
-    var $underlay = $iframeHolder.find('.underlay');
-
-    var originalCss = {
-      backgroundColor: 'rgba(0, 0, 0, 0)',
-      position: 'absolute',
-      top: ch8se.$youtubeLink.offset().top,
-      left: ch8se.$youtubeLink.offset().left,
-      width: ch8se.$youtubeLink.width(),
-      height: ch8se.$youtubeLink.height()
-    };
-
-
-    $underlay.css(originalCss);
-
-
-    var animationStyles = trueWindowWidth() / trueWindowHeight() <= 16/9 ? {
-      top: (trueWindowHeight() - trueWindowWidth() * 0.9 * 9 / 16) / 2,
-      left: (trueWindowWidth() - trueWindowWidth() * 0.9)  / 2,
-      width: trueWindowWidth() * 0.9,
-      height: trueWindowWidth() * 0.9 * 9 / 16
-    } : {
-      top: (trueWindowHeight() - trueWindowHeight() * 0.9) / 2,
-      left: (trueWindowWidth() - trueWindowHeight() * 0.9 * 16 / 9) / 2,
-      width: trueWindowHeight() * 0.9 * 16 / 9,
-      height: trueWindowHeight() * 0.9
-    };
-
-    $iframeHolder.css({backgroundColor: 'rgba(34, 34, 34, 0.64)'});
-    $underlay.css($.extend({
-      transition: 'all 0.5s ease',
-      backgroundColor: 'rgba(0, 0, 0, 1)',
-    }, animationStyles));
-
-    setTimeout(function() {
-      // $underlay.hide();
-
-      $iframe.css({
-        display: 'block'
-      });
-
-      $iframe.siblings('i').css({opacity: 1 });
-    }, 500);
-
-
-    $iframeHolder.on('click', function(e) {
-      // console.log('click');
-      var $target = $(e.target);
-
-      if ($target.hasClass('iframe-holder') || $target.hasClass('fa')) {
-        // $iframeHolder.hide();
-        // $underlay.show();
-
-        $iframe.siblings('i').hide();
-        $iframe.css({
-          display: 'none'
-        });
-
-        $iframeHolder.css({backgroundColor: 'rgba(34, 34, 34, 0)'});
-        $underlay.css($.extend({backgroundColor: 'rgba(0, 0, 0, 0)'}, originalCss));
-
-        setTimeout(function() {
-          $iframeHolder.remove();
-          ch8se.$youtubeLink.addClass('swing animated');
-
-          setTimeout(function() {
-            ch8se.$youtubeLink.removeClass('swing animated');
-          }, 1000);
-        }, 500);
-      }
-    });
-
-  // $(window).on('resize', function() {
-  //   console.log('resize');
-  //   $iframeHolder.remove();
-  // });
-
-  // $iframe.height($iframe.width()*9/16);
-  //
-};
 
 ch8se.fixProductHeight = function() {
   var trueHeight = 0; //Make sure same width is used for all elements
@@ -461,36 +400,18 @@ ch8se.menuToggle = function() {
   });
 }
 
-ch8se.menuFix = function() {
-  var $siteNav = $('.site-nav');
 
-  $siteNav.find('> ul > li').each(function(i) {
-    var $this = $(this),
-        $ul = $(this).find('> div > ul');
-
-    if (trueWindowWidth() >= 783) {
-      $this.find('> a, > span').removeClass('has-children');
-
-
-      if ($ul.length) {
-        $this.find('> div').css({display: 'block'}); //js can't calculate width of hidden element
-
-        $ul.css({'margin-left': ($this.position().left - $ul.find('li:first-child').width() - ($ul.hasClass('man-woman') ? 0 : 50))});
-
-        $this.find('> div').css({display: ''});
-      }
-    } else {
-      $ul.removeAttr('style');
-
-      if (i >= 0 && i <= 3) {
-        $this.find('> a, > span').addClass('has-children');
-      }
-      // if (i >= 2) {
-      //   $this.css({transform: 'translateY(-' + $siteNav.find('> ul > li:first-child').height() + 'px)'});
-      // }
-    }
-  });
-}
+/*
+ * Instagram feed
+ * Searches for 'instafeed' class and depending on data attributes applies filters to instagram query
+ * options for data:
+ * @slideshow {Boolean} - Will apply slick slider to instagram feed and allow scrolling of it if true
+ * @tagName {String} - Fetches images by tag name
+ * @userId {String} - Fetches images by user ID - preffer over userName if possible
+ * @userName {String} - Fetches images by user name
+ *
+ * Example of element: <div data-tag-name="car"></div>
+ */
 ch8se.instafeedStarted = false;
 ch8se.instafeedInit = function() {
   if (ch8se.instafeedStarted) return;
@@ -644,6 +565,10 @@ ch8se.instafeedInit = function() {
   });
 }
 
+
+/*
+ * Slider for automatic and instant image changing
+ */
 ch8se.opacitySlider = function() {
   var $parent = $('.graphic-slideshow');
   var $slides = $parent.find('img');
@@ -664,6 +589,7 @@ ch8se.opacitySlider = function() {
 
 }
 
+
 ch8se.productView = function() {
   var $preview = $('.single-product-block'),
       $enlargedImg = $preview.find('.enlarged img'),
@@ -680,6 +606,11 @@ ch8se.productView = function() {
     $this.addClass('active');
   });
 }
+
+
+/*
+ * Simple parralax effect
+ */
 ch8se.initParallax = function() {
   if (isMobileOs()) return; //TODO: find a good parallax for mobile devices
 
@@ -701,6 +632,11 @@ ch8se.initParallax = function() {
   });
 }
 
+
+/*
+ * Carousel initiation
+ * Doesn't load images untill they are slided to
+ */
 ch8se.initCarosuel = function() {
     $('.carousel').each(function() {
     var $this = $(this);
@@ -755,6 +691,10 @@ ch8se.initCarosuel = function() {
   });
 }
 
+
+/*
+ * General fixes on shop page
+ */
 ch8se.shopFixes = function() {
   var $product = $('.type-product');
 
@@ -780,6 +720,10 @@ ch8se.shopFixes = function() {
 }
 
 
+/*
+ * Redeem codes functionality
+ * Exists on user page
+ */
 ch8se.codeRedeem = function() {
   var $this = $(this);
 

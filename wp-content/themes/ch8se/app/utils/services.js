@@ -1,4 +1,6 @@
-// var $ = jQuery;
+/*
+ * Services module, all services should use this for ajax calls
+ */
 
 var services = {
 

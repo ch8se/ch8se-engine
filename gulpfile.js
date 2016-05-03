@@ -23,6 +23,7 @@ gulp.task('compile-less', function() {
     .pipe(livereload());
 });
 
+// Handle JS errors
 function handleErrors() {
   var args = Array.prototype.slice.call(arguments);
   notify.onError({
@@ -32,6 +33,8 @@ function handleErrors() {
   this.emit('end'); // Keep gulp from hanging on this task
 }
 
+// Compile JS
+// There are 2 files: app used for frontent side and admin used only in admin. They have acces to same modules
 function compileJs(file, minify) {
   return browserify(path + "/app/" + file + ".js", {debug: true})
     .transform(babelify, {presets: ["es2015", "react"]})

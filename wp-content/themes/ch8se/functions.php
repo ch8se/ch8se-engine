@@ -22,11 +22,10 @@ wp_enqueue_script('api-extend');
 
 
 
-
+/*
+ * Enque scrip for admin section only
+ */
 function admin_scripts( $hook ) {
-    // if ('edit.php' != $hook) {
-    //     return;
-    // }
     wp_enqueue_script( 'admin-script', get_template_directory_uri() . '/js/admin.js', array( 'jquery' ) );
 }
 
@@ -109,6 +108,9 @@ function mt_add_pages() {
 
 
 
+//----------------------------------------
+//  Custom post types
+//----------------------------------------
 
 
 
@@ -197,28 +199,13 @@ function addCharityFunction() {
 add_action( 'woocommerce_single_product_summary', 'addCharityFunction', 6 );
 
 
-/**
- * Register a custom menu page.
- */
-/*function wpdocs_register_my_custom_menu_page() {
-    add_menu_page(
-        __( 'Redeem codes', 'textdomain' ),
-        'Redeem codes',
-        'manage_options',
-        'test-plugin',
-        'test_init',
-        'dashicons-editor-code',
-        6
-    );
-}
- 
-function test_init(){
-        echo "<h1>Hello World!</h1>";
-}
-
-add_action( 'admin_menu', 'wpdocs_register_my_custom_menu_page' );*/
 
 
+
+
+//----------------------------------------
+//  Modify Rest-api plugin endpoints to include custom fields
+//----------------------------------------
 
 add_action( 'rest_api_init', 'registerTrees' );
 function registerTrees() {
@@ -270,7 +257,6 @@ function post_user_meta( $value, $object, $field_name ) {
     if ( ! $value || ! is_string( $value ) ) {
         return;
     }
-
     return update_user_meta( $object->ID, $field_name, strip_tags( $value ) );
 }
 

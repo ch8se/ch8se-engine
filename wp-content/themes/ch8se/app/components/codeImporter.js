@@ -3,6 +3,14 @@ var ReactDOM = require('react-dom');
 var xlsx = require('xlsx-browserify-shim');
 var services = require('../utils/services');
 
+/*
+ * Code importer script
+ * Loads a excel document supported by: https://www.npmjs.com/package/xlsx
+ * Reads first row to get column names and expects: Code, Trees, Water, Food; columns. With 1st capital letter
+ */
+
+
+
 
 var Importer = React.createClass({
   getInitialState: function() {
