@@ -4,6 +4,7 @@ var livereload = require('gulp-livereload'); //requires LiveReload plugin in bro
 var plumber = require('gulp-plumber');
 var notify = require('gulp-notify');
 var uglify = require('gulp-uglify');
+var gulpif = require('gulp-if');
 var browserify = require('browserify');
 var babelify = require('babelify');
 var source = require('vinyl-source-stream');
@@ -31,36 +32,40 @@ function handleErrors() {
   this.emit('end'); // Keep gulp from hanging on this task
 }
 
-gulp.task('browserify', function() {
-  return browserify(path + "/app/app.js", {debug: true})
+function compileJs(file, minify) {
+  console.log(file, minify)
+  return browserify(path + "/app/" + file + ".js", {debug: true})
     .transform(babelify, {presets: ["es2015", "react"]})
     .bundle().on('error', handleErrors)
-    .pipe(source("js/app.js"))
+    .pipe(source("js/" + file + ".js"))
+    .pipe(gulpif(minify, buffer()))
+    .pipe(gulpif(minify, uglify()))
     .pipe(gulp.dest(path))
     .pipe(livereload());
+}
+
+gulp.task('compile-app', function() {
+  return compileJs('app');
+});
+gulp.task('compile-admin', function() {
+  return compileJs('admin');
 });
 
-gulp.task('browserify-uglify', function() {
+gulp.task('compile-app-uglify', function() {
   process.env.NODE_ENV = 'production';
 
-  return browserify(path + "/app/app.js", {debug: false})
-    .transform(babelify, {presets: ["es2015", "react"]})
-    .bundle().on('error', handleErrors)
-    .pipe(source("js/app.js"))
-    .pipe(buffer())
-    .pipe(uglify())
-    .pipe(gulp.dest(path))
-    .pipe(livereload());
+  compileJs('app', true);
+  compileJs('admin', true);
 });
 
 
 gulp.task('watch', function() {
   gulp.watch(path + '/less/*.less' , ['compile-less']);
-  gulp.watch(path + '/app/**/*.js' , ['browserify']);
+  gulp.watch(path + '/app/**/*.js' , ['compile-app', 'compile-admin']);
   // gulp.watch('/*.html' , ['html']);
   livereload.listen();
 });
 
-gulp.task('build', ['browserify', 'compile-less']);
-gulp.task('production', ['browserify-uglify', 'compile-less']);
+gulp.task('build', ['compile-app', 'compile-admin', 'compile-less']);
+gulp.task('production', ['compile-app-uglify', 'compile-less']);
 gulp.task('default', ['build', 'watch']);

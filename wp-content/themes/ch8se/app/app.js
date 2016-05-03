@@ -35,9 +35,7 @@ ch8se.init = function() {
 
 
 
-  var codeImporter = require('./components/codeImporter');
-
-  $('#code-import').each(codeImporter.init);
+  
 
 
   //TODO add these into seperate functions

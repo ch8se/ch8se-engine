@@ -23,6 +23,20 @@ wp_enqueue_script('api-extend');
 
 
 
+function admin_scripts( $hook ) {
+    // if ('edit.php' != $hook) {
+    //     return;
+    // }
+    wp_enqueue_script( 'admin-script', get_template_directory_uri() . '/js/admin.js', array( 'jquery' ) );
+}
+
+add_action('admin_enqueue_scripts', 'admin_scripts');
+
+
+
+
+
+
 
 add_theme_support( 'post-thumbnails' );
 
