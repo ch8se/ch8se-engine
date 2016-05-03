@@ -33,7 +33,6 @@ function handleErrors() {
 }
 
 function compileJs(file, minify) {
-  console.log(file, minify)
   return browserify(path + "/app/" + file + ".js", {debug: true})
     .transform(babelify, {presets: ["es2015", "react"]})
     .bundle().on('error', handleErrors)
