@@ -2,6 +2,7 @@ wp-content/cache
 wp-content/uploads
 wp-content/themes/ch8se/style.css
 wp-content/themes/ch8se/js/app.js
+wp-content/themes/ch8se/js/admin.js
 wp-content/themes/ch8se/js/app.js.map
 node_modules
 wp-config.php
