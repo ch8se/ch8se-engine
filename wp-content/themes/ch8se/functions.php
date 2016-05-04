@@ -87,7 +87,7 @@ function mt_add_pages() {
         'Import codes',
         'Import codes',
         'manage_options', 
-        'testsettings', 
+        'import-codes', 
         'mt_settings_page');
 
 
